@@ -1,0 +1,55 @@
+.nav {
+    color: black;
+    font-family: Arial, sans-serif;
+    display: flex; /* Add flex display */
+    align-items: center; /* Vertically align items */
+
+
+}
+
+.logo {
+    display: flex; /* Add flex display for logo and title alignment */
+    align-items: center; /* Vertically align items */
+}
+
+
+.logo img {
+    height: 90px; /* Adjust the height as needed */
+    margin-top: 10px; /* Adjust the margin as needed */
+    margin-bottom: 10px; /* Adjust the margin as needed */
+}
+
+span.logo-title {
+	font-size: 28px; 
+    margin-left: 10px; 
+    font-family: 'Pattaya',sans-serif;
+    text-decoration: none !important;
+    padding-right: 10px;
+
+}
+
+.nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Add flex display */
+    align-items: center;
+}
+
+.nav ul li {
+    display: inline-block;
+}
+
+.nav ul li a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: black;
+    border-radius: 20px; /* Rounded border radius */
+    transition: background-size 0.3s;
+}
+
+.nav ul li a:hover {
+    background-color: #4bc25b;
+    background-size: 50% 50%;
+}

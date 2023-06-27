@@ -43,10 +43,12 @@ add_action( 'after_setup_theme', 'frost_setup' );
 // Enqueue style sheet.
 add_action( 'wp_enqueue_scripts', 'frost_enqueue_style_sheet' );
 function frost_enqueue_style_sheet() {
-
+	wp_enqueue_style( 'custom-fonts', 'https://fonts.googleapis.com/css2?family=Pattaya&display=swap', array(), wp_get_theme()->get( 'Version' ));
 	wp_enqueue_style( 'frost', get_template_directory_uri() . '/style.css', array(), wp_get_theme()->get( 'Version' ) );
+	wp_enqueue_style( 'header', get_template_directory_uri() . '/assets/styles/header.css', array(), wp_get_theme()->get( 'Version' ) );
 
 }
+
 
 /**
  * Register block styles.

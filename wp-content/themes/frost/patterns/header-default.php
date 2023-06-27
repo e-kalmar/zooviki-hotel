@@ -10,8 +10,23 @@
 <div class="wp-block-group alignfull" style="margin-top:0px;padding-top:30px;padding-bottom:30px">
 <!-- wp:group {"align":"wide","layout":{"type":"flex","justifyContent":"space-between"}} -->
 <div class="wp-block-group alignwide">
-<!-- wp:site-title /-->
-<!-- wp:navigation {"layout":{"type":"flex","setCascadingProperties":true}} /-->
+    
+
+    <div class="nav">
+        <a href="/" class="logo">
+            <img src="https://zooviki.eu/wp-content/uploads/2020/05/logo-zoo.png" alt="Logo">
+        </a>
+        <span class="logo-title">Хотел Вики</span>
+
+        <ul>
+            <li><a href="#">Хотел</a></li>
+            <li><a href="#">Цени</a></li>
+            <li><a href="#">Често Задавани Въпроси</a></li>
+            <li><a href="#">Галерия</a></li>
+            <li><a href="#">Контакти</a></li>
+        </ul>
+    </div>
+   
 </div>
 <!-- /wp:group -->
 </div>
