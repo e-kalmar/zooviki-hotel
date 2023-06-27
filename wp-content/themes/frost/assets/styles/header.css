@@ -42,12 +42,13 @@ header {
 }
 
 .logo-title-description {
-    font-size: .575em;
+    font-size: .675em;
     margin-left: 10px;
     text-decoration: none !important;
     padding-left: 15%;
     width: fit-content;
     pointer-events: none;
+    color: #404040;
 }
 
 .nav ul {
@@ -66,7 +67,7 @@ header {
     display: block;
     padding: 10px 20px;
     text-decoration: none;
-    color: black;
+    color: #404040;
     border-radius: 20px; /* Rounded border radius */
     transition: background-size 0.3s;
 }

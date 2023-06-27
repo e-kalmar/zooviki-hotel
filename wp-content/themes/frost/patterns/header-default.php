@@ -18,7 +18,7 @@
         </a>
         <div class="logo-text-container">
             <span class="logo-title">ХотелВики</span>
-            <span class="logo-title-description">Зоо хотел</span>
+            <span class="logo-title-description">Зоохотел</span>
         </div>
 
         <ul>
