@@ -10,13 +10,16 @@
 <div class="wp-block-group alignfull" style="margin-top:0px;padding-top:30px;padding-bottom:30px">
 <!-- wp:group {"align":"wide","layout":{"type":"flex","justifyContent":"space-between"}} -->
 <div class="wp-block-group alignwide">
-    
+
 
     <div class="nav">
         <a href="/" class="logo">
             <img src="https://zooviki.eu/wp-content/uploads/2020/05/logo-zoo.png" alt="Logo">
         </a>
-        <span class="logo-title">Хотел Вики</span>
+        <div class="logo-text-container">
+            <span class="logo-title">ХотелВики</span>
+            <span class="logo-title-description">Зоо хотел</span>
+        </div>
 
         <ul>
             <li><a href="#">Хотел</a></li>
@@ -26,7 +29,7 @@
             <li><a href="#">Контакти</a></li>
         </ul>
     </div>
-   
+
 </div>
 <!-- /wp:group -->
 </div>
