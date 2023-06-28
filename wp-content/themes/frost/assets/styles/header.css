@@ -73,12 +73,18 @@ header {
 }
 
 .nav ul li a:hover {
-    background-color: #4bc25b;
+    background-color: #4bc25b6e;
     background-size: 50% 50%;
 }
 
 /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
-@media screen and (min-width:320px)  {  }
+@media screen and (min-width:320px)  {
+    .logo img {
+        height: auto;
+        max-width: 58px;
+        max-height: none;
+    }
+}
 
 /* smartphones, Android phones, landscape iPhone */
 @media screen and (min-width:480px)  {

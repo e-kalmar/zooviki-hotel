@@ -17,16 +17,16 @@
             <img src="https://zooviki.eu/wp-content/uploads/2020/05/logo-zoo.png" alt="Logo">
         </a>
         <div class="logo-text-container">
-            <span class="logo-title">ХотелВики</span>
+            <span class="logo-title">Хотел Вики</span>
             <span class="logo-title-description">Зоохотел</span>
         </div>
 
         <ul>
-            <li><a href="#">Хотел</a></li>
-            <li><a href="#">Цени</a></li>
-            <li><a href="#">Често Задавани Въпроси</a></li>
-            <li><a href="#">Галерия</a></li>
-            <li><a href="#">Контакти</a></li>
+            <li><a href="<?php echo site_url() . '/?page_id=5' ?>">Хотел</a></li>
+            <li><a href="<?php echo site_url() . '/?page_id=9' ?>">Цени</a></li>
+            <li><a href="<?php echo site_url() . '/?page_id=2' ?>">Често Задавани Въпроси</a></li>
+            <li><a href="<?php echo site_url() . '/?page_id=15' ?>">Галерия</a></li>
+            <li><a href="<?php echo site_url() . '/?page_id=17' ?>">Контакти</a></li>
         </ul>
     </div>
 
