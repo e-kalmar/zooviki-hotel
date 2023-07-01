@@ -14,21 +14,21 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/">Хотел</a>
+                        <a class="nav-link" aria-current="page" href="/">Хотел</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo site_url() . '/pricing' ?>">Цени</a>
                     </li>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="<?php echo site_url() . '/fq' ?>">Въпроси</a>
+                        <a class="nav-link" href="<?php echo site_url() . '/fq' ?>">Въпроси</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="<?php echo site_url() . '/gallery' ?>">Галерия</a>
+                        <a class="nav-link" href="<?php echo site_url() . '/gallery' ?>">Галерия</a>
                     </li>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="<?php echo site_url() . '/contacts' ?>">Контакти</a>
+                        <a class="nav-link" href="<?php echo site_url() . '/contacts' ?>">Контакти</a>
                     </li>
                 </ul>
             </div>
