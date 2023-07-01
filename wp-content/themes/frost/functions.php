@@ -54,7 +54,7 @@ function frost_enqueue_style_sheet() {
 add_action( 'wp_head', 'frost_enqueue_header_scripts' );
 function frost_enqueue_header_scripts() {
 	wp_enqueue_script( 'custom-header-js', get_template_directory_uri() . '/assets/js/header.js', false );
-	wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js', false );
+	wp_enqueue_script( 'bootstrap-js', 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js', false );
 }
 
 /**
