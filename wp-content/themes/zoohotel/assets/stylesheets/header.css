@@ -1,5 +1,13 @@
+header {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, -2.9);
+}
+
+.navbar-nav {
+  align-items: center;
+}
+
 .navbar-brand .zoo-hotel-logo-container img {
-  width: 75px;
+  width: 95px;
   padding: 15px;
   top:0;
   left: 0;
@@ -17,7 +25,7 @@
   font-size: 17px;
   width: 25%; /* Four equal-width links. If you have two links, use 50%, and 33.33% for three links, etc.. */
   text-align: center; /* If you want the text to be centered */
-
+  
   padding-bottom: .15em;
   background: var(--c), var(--c);
   background-size: .3em .1em;
@@ -28,4 +36,8 @@
 .nav-item:hover {
   background-size: 40% .1em;
   background-position: 10% 100%, 90% 100%;
+}
+
+.nav-link {
+  font-family: "Poppins", sans-serif;
 }

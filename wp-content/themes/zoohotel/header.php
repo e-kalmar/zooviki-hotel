@@ -1,3 +1,4 @@
+
 <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
@@ -21,7 +22,7 @@
                     </li>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo site_url() . '/fq' ?>">Въпроси</a>
+                        <a class="nav-link" href="<?php echo site_url() . '/faq' ?>">Въпроси</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo site_url() . '/gallery' ?>">Галерия</a>

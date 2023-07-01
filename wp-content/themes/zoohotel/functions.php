@@ -20,7 +20,6 @@ function zoohotel_scripts() {
 	// CDNs
 	wp_enqueue_script( 'jq', 						'https://code.jquery.com/jquery-3.7.0.min.js' );
 	wp_enqueue_script( 'bootstrap-js', 	'https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js' );
-	wp_enqueue_script( 'ion-icons-esm', 'https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js' );
 	wp_enqueue_script( 'ion-icons', 		'https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js' );
 }
 add_action( 'wp_enqueue_scripts', 'zoohotel_scripts', 10, 1 );
