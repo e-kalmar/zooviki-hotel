@@ -11,7 +11,13 @@
 
 .nav-item {
   --c:linear-gradient(#4dc45c 0 0); /* update the color here */
-  
+
+  float: left;
+  padding: 12px;
+  font-size: 17px;
+  width: 25%; /* Four equal-width links. If you have two links, use 50%, and 33.33% for three links, etc.. */
+  text-align: center; /* If you want the text to be centered */
+
   padding-bottom: .15em;
   background: var(--c), var(--c);
   background-size: .3em .1em;
