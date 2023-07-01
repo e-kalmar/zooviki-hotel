@@ -24,9 +24,9 @@
         <ul>
             <li><a href="<?php echo site_url() . '/home' ?>">Хотел</a></li>
             <li><a href="<?php echo site_url() . '/pricing' ?>">Цени</a></li>
-            <li><a href="<?php echo site_url() . '/?page_id=2' ?>">Често Задавани Въпроси</a></li>
-            <li><a href="<?php echo site_url() . '/?page_id=15' ?>">Галерия</a></li>
-            <li><a href="<?php echo site_url() . '/?page_id=17' ?>">Контакти</a></li>
+            <li><a href="<?php echo site_url() . '/faq' ?>">Често Задавани Въпроси</a></li>
+            <li><a href="<?php echo site_url() . '/gallery' ?>">Галерия</a></li>
+            <li><a href="<?php echo site_url() . '/contacts' ?>">Контакти</a></li>
         </ul>
     </div>
 
