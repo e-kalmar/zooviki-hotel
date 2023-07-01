@@ -1,12 +1,25 @@
-.nav-item a {
-  display: block;
-  padding: 10px 20px;
-  color: #404040;
-  border-radius: 20px; /* Rounded border radius */
-  transition: background-size 0.3s;
+.navbar-brand .zoo-hotel-logo-container img {
+  width: 75px;
+  padding: 15px;
+  top:0;
+  left: 0;
 }
 
-.nav-item a:hover {
-  background-color: #4bc25b;
-  background-size: 50% 50%;
+.logo-title {
+  font-family: 'pattaya';
+}
+
+.nav-item {
+  --c:linear-gradient(#4dc45c 0 0); /* update the color here */
+  
+  padding-bottom: .15em;
+  background: var(--c), var(--c);
+  background-size: .3em .1em;
+  background-position:50% 100%;
+  background-repeat: no-repeat;
+  transition: .3s linear, background-size .3s .2s linear;
+}
+.nav-item:hover {
+  background-size: 40% .1em;
+  background-position: 10% 100%, 90% 100%;
 }

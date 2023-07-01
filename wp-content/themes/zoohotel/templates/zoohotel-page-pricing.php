@@ -8,6 +8,9 @@ get_header();
 ?>
 
 <!-- PAGE TEMPLATE STARTS HERE -->
+<h1 class="text-center" style="font-family: pattaya;">Ценоразпис:</h1>
+
+
 <div class="row">
   <div class="card p-3 m-5" style="width: 18rem;">
     <img src="https://doghotel.bg/wp-content/uploads/2018/01/малка-стая-2-380x312.jpg" class="card-img-top img-fluid">
