@@ -1,0 +1,2 @@
+<?php
+// Silecne is golden ..
