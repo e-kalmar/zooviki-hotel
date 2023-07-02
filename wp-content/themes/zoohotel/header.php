@@ -1,12 +1,12 @@
 
 <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
+        <div class="container">
             <a class="navbar-brand" href="/">
                 <div class="logo-text-container zoo-hotel-logo-container">
                     <img src="https://zooviki.eu/wp-content/uploads/2020/05/logo-zoo.png" alt="Logo">
+                    <span class="logo-title">Зоохотел Вики</span>
                 </div>
-                <span class="logo-title">Зоохотел Вики</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

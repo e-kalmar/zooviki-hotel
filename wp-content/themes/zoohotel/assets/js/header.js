@@ -1,8 +1,4 @@
 (() => {
-    document.querySelector('.logo-title').addEventListener('click', () => {
-        location.href = location.origin
-    })
-
-    alert('header');
-    console.log('pig')
+    "use strict"
+    // Add JS code below...
 })()

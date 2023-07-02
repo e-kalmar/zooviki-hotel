@@ -1,5 +1,5 @@
 header {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, -2.9);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.19), 0 -1px 6px rgba(0,0,0,0.23);
 }
 
 .navbar-nav {
@@ -7,8 +7,8 @@ header {
 }
 
 .navbar-brand .zoo-hotel-logo-container img {
-  width: 95px;
-  padding: 15px;
+  width: 50px;
+/*  padding: 15px;*/
   top:0;
   left: 0;
 }
@@ -33,6 +33,7 @@ header {
   background-repeat: no-repeat;
   transition: .3s linear, background-size .3s .2s linear;
 }
+
 .nav-item:hover {
   background-size: 40% .1em;
   background-position: 10% 100%, 90% 100%;

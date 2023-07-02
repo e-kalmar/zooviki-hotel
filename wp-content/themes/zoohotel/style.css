@@ -1,11 +1,17 @@
-html {
-  height: 100%;
+html, body, .container {
+    height: 100%;
 }
 
-body {
-  min-height: 100%;
+body .container {
+  padding: 20px;
 }
 
 .navbar-collapse {
   flex-grow: 0;
+}
+
+button,
+.btn {
+  background: #fb921f !important;
+  --bs-btn-border-color: none !important;
 }
