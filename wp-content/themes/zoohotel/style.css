@@ -11,7 +11,7 @@ body .container {
 }
 
 button,
-.btn {
+.btn{
   background: #fb921f !important;
   --bs-btn-border-color: none !important;
 }
