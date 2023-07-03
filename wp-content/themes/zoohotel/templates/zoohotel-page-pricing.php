@@ -14,18 +14,12 @@ get_header();
     <div class="card col-md-3 m-4 p-2">
       <img src="https://doghotel.bg/wp-content/uploads/2018/01/малка-стая-2-380x312.jpg" class="card-img-top img-fluid">
       <div class="card-body">
-<<<<<<< HEAD
         <h5 class="card-title text-success"><i class="fas fa-house"></i> Малка стая</h5>
         <ul class="list-group list-group-light">
           <li class="list-group-item px-3">Площ: 3 m²</li>
           <li class="list-group-item px-3">Цена: <b>24 лв.</b></li>
         </ul>
         <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#pricing-1">Резервирай</button>
-=======
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#pricing-01">Show more</button>
->>>>>>> f643217f20e1cd94550e435e39f69c6d0405e547
       </div>
     </div>
 
@@ -97,10 +91,9 @@ get_header();
   </div> <!-- end of row -->
 </div>
 
-<!-- Modal -->
+<!-- Modal 1 -->
 <div class="modal fade" id="pricing-1" tabindex="-1" aria-labelledby="pricing-label-1" aria-hidden="true">
   <div class="modal-dialog">
-<<<<<<< HEAD
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="pricing-label-1">Modal title</h5>
@@ -129,41 +122,10 @@ get_header();
           </div>
         </form>
       </div>
-=======
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="pricing-01Label">Modal title</h5>
-      </div>
-      <div class="modal-body">
-        <form id="form1">
-          <div class="form-group row">
-            <label for="date1 class="col-form-label">Пристигане</label>
-            <input type="date" name="date1" class="form-control" id="date1">
-          </div>
-          <div class="form-group row">
-            <label for="date2" class="col-form-label">Заминаване</label>
-            <input type="date" name="date2" class="form-control" id="date2">
-          </div>
-          <div class="form-group row">
-          <label for="dogs-count" class="col-form-label">Изберете брой кучета</label>
-          <select class="form-control" aria-label="Default select example" name="dogs-count"> 
-            <option selected value="1">1</option>
-          </select>
-          <input type="number" name="room-type" value="1" hidden>
-          </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </div>
-      </form>
-
-    </div>
->>>>>>> f643217f20e1cd94550e435e39f69c6d0405e547
   </div>
 </div>
 
-<!-- Modal -->
+<!-- Modal 2 -->
 <div class="modal fade" id="pricing-2" tabindex="-1" aria-labelledby="pricing-label-2" aria-hidden="true">
   <div class="modal-dialog">
       <div class="modal-content">
@@ -198,7 +160,7 @@ get_header();
   </div>
 </div>
 
-<!-- Modal -->
+<!-- Modal 3 -->
 <div class="modal fade" id="pricing-3" tabindex="-1" aria-labelledby="pricing-label-3" aria-hidden="true">
   <div class="modal-dialog">
       <div class="modal-content">
@@ -233,5 +195,109 @@ get_header();
   </div>
 </div>
 
+<!-- Modal 4 -->
+<div class="modal fade" id="pricing-4" tabindex="-1" aria-labelledby="pricing-label-4" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="pricing-label-4">Modal title</h5>
+        </div>
+        <form id="pricing-form-4" class="hotel-pricing-form">
+          <div class="modal-body">
+              <div class="form-group row">
+                <label for="pricing-form-4-date-1" class="col-form-label">Пристигане</label>
+                <input type="date" name="pricing-form-4-date-1" class="form-control" id="pricing-form-4-date-1">
+              </div>
+              <div class="form-group row">
+                <label for="pricing-form-4-date-2" class="col-form-label">Заминаване</label>
+                <input type="date" name="pricing-form-4-date-2" class="form-control" id="pricing-form-4-date-2">
+              </div>
+              <div class="form-group row">
+              <label for="dogs-count" class="col-form-label">Изберете брой кучета</label>
+              <select class="form-control" aria-label="Default select example" name="dogs-count"> 
+                <option selected value="1">1</option>
+              </select>
+              <input type="number" name="room-type" value="4" hidden>
+              </div>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+      </div>
+  </div>
+</div>
+
+<!-- Modal 5 -->
+<div class="modal fade" id="pricing-5" tabindex="-1" aria-labelledby="pricing-label-5" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="pricing-label-5">Modal title</h5>
+        </div>
+        <form id="pricing-form-5" class="hotel-pricing-form">
+          <div class="modal-body">
+              <div class="form-group row">
+                <label for="pricing-form-5-date-1" class="col-form-label">Пристигане</label>
+                <input type="date" name="pricing-form-5-date-1" class="form-control" id="pricing-form-5-date-1">
+              </div>
+              <div class="form-group row">
+                <label for="pricing-form-5-date-2" class="col-form-label">Заминаване</label>
+                <input type="date" name="pricing-form-5-date-2" class="form-control" id="pricing-form-5-date-2">
+              </div>
+              <div class="form-group row">
+              <label for="dogs-count" class="col-form-label">Изберете брой кучета</label>
+              <select class="form-control" aria-label="Default select example" name="dogs-count"> 
+                <option selected value="1">1</option>
+              </select>
+              <input type="number" name="room-type" value="5" hidden>
+              </div>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+      </div>
+  </div>
+</div>
+
+<!-- Modal 5 -->
+<div class="modal fade" id="pricing-6" tabindex="-1" aria-labelledby="pricing-label-5" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="pricing-label-6">Modal title</h5>
+        </div>
+        <form id="pricing-form-6" class="hotel-pricing-form">
+          <div class="modal-body">
+              <div class="form-group row">
+                <label for="pricing-form-6-date-1" class="col-form-label">Пристигане</label>
+                <input type="date" name="pricing-form-6-date-1" class="form-control" id="pricing-form-6-date-1">
+              </div>
+              <div class="form-group row">
+                <label for="pricing-form-6-date-2" class="col-form-label">Заминаване</label>
+                <input type="date" name="pricing-form-6-date-2" class="form-control" id="pricing-form-6-date-2">
+              </div>
+              <div class="form-group row">
+              <label for="dogs-count" class="col-form-label">Изберете брой кучета</label>
+              <select class="form-control" aria-label="Default select example" name="dogs-count"> 
+                <option selected value="1">1</option>
+              </select>
+              <input type="number" name="room-type" value="6" hidden>
+              </div>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+      </div>
+  </div>
+</div>
 
 <?php get_footer();
