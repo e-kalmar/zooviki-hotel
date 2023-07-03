@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * Plugin Name: Zoohotel booking plugin
  * Description: Pet hotel booking helper
@@ -60,7 +60,6 @@ class ZooHotelPlugin {
         $params = $data->get_params();
         $nonce = $headers['x_wp_nonce'][0];
 
-        
         if(!wp_verify_nonce($nonce, 'wp_rest')){
             return new WP_REST_Response("Message not sent", 422);
         }

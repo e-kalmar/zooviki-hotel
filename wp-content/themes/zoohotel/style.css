@@ -9,8 +9,7 @@ html, body {
   flex-grow: 0;
 }
 
-.card button,
-.btn{
+.card button {
   background: #fb921f !important;
   --bs-btn-border-color: none !important;
 }
@@ -35,10 +34,3 @@ html, body {
   background-color: #fb921f;
   color: black;
 }
-
-/*.card button {
-  position: absolute;
-  left: 20;
-  bottom: 20;
-  margin: 10px;
-}*/
