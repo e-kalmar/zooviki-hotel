@@ -1,7 +1,4 @@
-<?php
-wp_head();
-get_header();
-?>
+<?php get_header(); ?>
 
 <div class="container">
   <div class="row">
@@ -10,5 +7,4 @@ get_header();
   </div>
 </div>
 
-<?php
-get_footer();
+<?php get_footer();

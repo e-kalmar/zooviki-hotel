@@ -1,24 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
 
-/** {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}*/
-
-.footer-body {
-  left: 0;
+.footer {
+/*  position: relative;*/
+/*  left: 0;
   bottom: 0;
+  height: 2em;
+  text-align: center;*/
+
+  position: relative;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 2em;
   width: 100%;
-  height: 15vh;
   text-align: center;
 }
 
-.footer {
-  position: relative;
+footer {
   width: 100%;
-  background: #4dc45c0a;
+  background: #4dc45c1f;
   min-height: 100px;
   padding: 20px 50px;
   display: flex;
@@ -71,9 +71,13 @@
   color:#fb921f !important;
 }
 
-.footer p {
+footer p {
   color: dimgrey;
   margin: 15px 0 10px 0;
   font-size: 1rem;
   font-weight: 300;
+}
+
+.footer-trademark {
+  pointer-events: none;
 }

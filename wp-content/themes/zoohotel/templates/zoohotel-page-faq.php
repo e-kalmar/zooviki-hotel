@@ -3,14 +3,14 @@
  * @package WordPress
  * @subpackage zoohotel
  * @since zoohotel 1.0 */
-wp_head();
+
 get_header();
 ?>
 
 <!-- PAGE TEMPLATE STARTS HERE -->
-<!--Section: FAQ-->
+
 <div class="container">
-  <div class="row">
+  <div class="row justify-content-center">
     <section>
       <h3 class="text-center mb-4 pb-2 text-primary fw-bold">FAQ</h3>
       <p class="text-center mb-5">
@@ -80,8 +80,4 @@ get_header();
   </div>
 </div>
 
-<!--Section: FAQ-->
-
-<?php
-get_footer();
-?>
+<?php get_footer();
