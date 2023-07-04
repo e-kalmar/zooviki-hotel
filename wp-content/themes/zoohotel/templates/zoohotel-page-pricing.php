@@ -8,11 +8,11 @@ get_header();
 ?>
 
 <!-- PAGE TEMPLATE STARTS HERE -->
-<div class="container">
-  <h1 class="text-center" style="font-family: pattaya;">Ценоразпис:</h1>
+<div class="container zoo-hotel-pricing-page">
+  <h2 class="h1-responsive font-weight-bold text-center my-4">Ценоразпис</h2>
   <div class="row justify-content-center">
     <div class="card col-md-3 m-4 p-2">
-      <img src="https://doghotel.bg/wp-content/uploads/2018/01/малка-стая-2-380x312.jpg" class="card-img-top img-fluid">
+      <img src="https://fakeimg.pl/640x360" class="card-img-top img-fluid">
       <div class="card-body">
         <h5 class="card-title text-success"><i class="fas fa-house"></i> Малка стая</h5>
         <ul class="list-group list-group-light">
@@ -24,7 +24,7 @@ get_header();
     </div>
 
     <div class="card col-md-3 m-4 p-2">
-      <img src="https://doghotel.bg/wp-content/uploads/2018/01/малка-стая-1-380x312.jpg" class="card-img-top img-fluid">
+      <img src="https://fakeimg.pl/640x360" class="card-img-top img-fluid">
       <div class="card-body">
         <h5 class="card-title text-success"><i class="fas fa-house"></i> Стандартна стая</h5>
         <ul class="list-group list-group-light">
@@ -36,7 +36,7 @@ get_header();
     </div>
 
     <div class="card col-md-3 m-4 p-2">
-      <img src="https://doghotel.bg/wp-content/uploads/2018/01/двойна-стая-380x312.jpg" class="card-img-top img-fluid">
+      <img src="https://fakeimg.pl/640x360" class="card-img-top img-fluid">
       <div class="card-body">
         <h5 class="card-title text-success"><i class="fas fa-house"></i> Двойна стая</h5>
         <ul class="list-group list-group-light">
@@ -48,7 +48,7 @@ get_header();
     </div>
 
     <div class="card col-md-3 m-4 p-2">
-      <img src="https://doghotel.bg/wp-content/uploads/2018/01/малка-стая-2-380x312.jpg" class="card-img-top img-fluid">
+      <img src="https://fakeimg.pl/640x360" class="card-img-top img-fluid">
       <div class="card-body">
         <h5 class="card-title text-success"><i class="fas fa-house"></i> VIP стая</h5>
         <ul class="list-group list-group-light">
@@ -62,7 +62,7 @@ get_header();
     </div>
 
     <div class="card col-md-3 m-4 p-2">
-      <img src="https://doghotel.bg/wp-content/uploads/2018/01/малка-стая-1-380x312.jpg" class="card-img-top img-fluid">
+      <img src="https://fakeimg.pl/640x360" class="card-img-top img-fluid">
       <div class="card-body">
         <h5 class="card-title text-success"><i class="fas fa-house"></i> VIP стая</h5>
         <ul class="list-group list-group-light">
@@ -76,7 +76,7 @@ get_header();
     </div>
 
     <div class="card col-md-3 m-4 p-2">
-      <img src="https://doghotel.bg/wp-content/uploads/2018/01/двойна-стая-380x312.jpg" class="card-img-top img-fluid">
+      <img src="https://fakeimg.pl/640x360" class="card-img-top img-fluid">
       <div class="card-body">
         <h5 class="card-title text-success"><i class="fas fa-house"></i> VIP стая</h5>
         <ul class="list-group list-group-light">

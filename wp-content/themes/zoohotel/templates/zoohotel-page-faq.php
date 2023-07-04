@@ -9,10 +9,11 @@ get_header();
 
 <!-- PAGE TEMPLATE STARTS HERE -->
 
-<div class="container">
+<div class="container zoohotel-faq-page">
+
   <div class="row justify-content-center">
+    <img src="<?php echo get_template_directory_uri() . "/assets/media/img/FAQ.png"; ?>" class="img-fluid z-depth-1 header-image" alt="FAQ image">
     <section>
-      <h3 class="text-center mb-4 pb-2 text-primary fw-bold">FAQ</h3>
       <p class="text-center mb-5">
         Find the answers for the most frequently asked questions below
       </p>
