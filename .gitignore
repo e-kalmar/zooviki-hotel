@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .htaccess
 id_rsa_pethotelviki
 id_rsa_pethotelviki.pub
@@ -25,3 +26,32 @@ wp-config.php
 error_log
 php.fcgi
 php74-fcgi.ini
+=======
+.htaccess
+id_rsa_pethotelviki
+id_rsa_pethotelviki.pub
+index.html_
+index.php
+license.txt
+readme.html
+wp-activate.php
+wp-admin/
+wp-blog-header.php
+wp-comments-post.php
+wp-config-sample.php
+wp-config.php
+wp-cron.php
+wp-includes/
+wp-links-opml.php
+wp-load.php
+wp-login.php
+wp-mail.php
+wp-settings.php
+wp-signup.php
+wp-trackback.php
+xmlrpc.php
+wp-config.php
+error_log
+php.fcgi
+php74-fcgi.ini
+>>>>>>> 59f1548263f228d963321a1dd1ff8c55d58e9178
