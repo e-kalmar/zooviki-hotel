@@ -8,6 +8,8 @@ get_header();
 ?>
 
 <!-- PAGE TEMPLATE STARTS HERE -->
+
+
 <div class="container zoo-hotel-pricing-page">
   <h2 class="h1-responsive font-weight-bold text-center my-4">Ценоразпис</h2>
   <div class="row justify-content-center">
@@ -91,6 +93,23 @@ get_header();
   </div> <!-- end of row -->
 </div>
 
+<!-- Success Modal -->
+<div class="modal" aria-hidden="true" tabindex="-1" role="dialog" id="success-modal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Успешна резервация !</h5>
+      </div>
+      <div class="modal-body">
+        <p>Вие успешно резервирахте стая за вашето куче за избрания период.<br/>
+      Наш служител ще се свърже с вас за потвърждние.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="close-btn">Затвори</button>
+      </div>
+    </div>
+  </div>
+</div>
 <!-- Modal 1 -->
 <div class="modal fade" id="pricing-1" tabindex="-1" aria-labelledby="pricing-label-1" aria-hidden="true">
   <div class="modal-dialog">
@@ -98,27 +117,32 @@ get_header();
         <div class="modal-header">
           <h5 class="modal-title" id="pricing-label-1">Modal title</h5>
         </div>
-        <form id="pricing-form-1" class="hotel-pricing-form">
+        <form id="pricing-form-1" class="hotel-pricing-form needs-validation" novalidate>
           <div class="modal-body">
               <div class="form-group row">
                 <label for="pricing-form-1-date-1" class="col-form-label">Пристигане</label>
-                <input type="date" name="pricing-form-1-date-1" class="form-control" id="pricing-form-1-date-1">
+                <input type="date" name="pricing-form-1-date-1" class="form-control" id="pricing-form-1-date-1" required >
+                <div class="invalid-feedback">Моля въведете дата.</div>
+
               </div>
               <div class="form-group row">
                 <label for="pricing-form-1-date-2" class="col-form-label">Заминаване</label>
-                <input type="date" name="pricing-form-1-date-2" class="form-control" id="pricing-form-1-date-2">
+                <input required type="date" name="pricing-form-1-date-2" class="form-control" id="pricing-form-1-date-2">
+                <div class="invalid-feedback">Моля въведете дата.</div>
               </div>
               <div class="form-group row">
               <label for="dogs-count" class="col-form-label">Изберете брой кучета</label>
-              <select class="form-control" aria-label="Default select example" name="dogs-count"> 
+              <select required class="form-control" aria-label="Default select example" name="dogs-count"> 
                 <option selected value="1">1</option>
               </select>
               <input type="number" name="room-type" value="1" hidden>
               </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary">Submit</button>
+
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Затвори</button>
+            <button type="submit" class="btn btn-primary" id="submit-btn">Submit <span id="loader" class="spinner-border spinner-border-sm" role="status" aria-hidden="true" hidden></span>
+            </button>
           </div>
         </form>
       </div>
@@ -152,8 +176,8 @@ get_header();
           </div>
 
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Затвори</button>
+            <button type="submit" class="btn btn-primary">Submit <span id="loader" class="spinner-border spinner-border-sm" role="status" aria-hidden="true" hidden></span></button>
           </div>
         </form>
       </div>
@@ -181,14 +205,15 @@ get_header();
               <label for="dogs-count" class="col-form-label">Изберете брой кучета</label>
               <select class="form-control" aria-label="Default select example" name="dogs-count"> 
                 <option selected value="1">1</option>
+                <option value="2">2</option>
               </select>
               <input type="number" name="room-type" value="3" hidden>
               </div>
           </div>
 
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Затвори</button>
+            <button type="submit" class="btn btn-primary">Submit <span id="loader" class="spinner-border spinner-border-sm" role="status" aria-hidden="true" hidden></span></button>
           </div>
         </form>
       </div>
@@ -222,8 +247,8 @@ get_header();
           </div>
 
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Затвори</button>
+            <button type="submit" class="btn btn-primary">Submit <span id="loader" class="spinner-border spinner-border-sm" role="status" aria-hidden="true" hidden></span></button>
           </div>
         </form>
       </div>
@@ -257,8 +282,8 @@ get_header();
           </div>
 
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Затвори</button>
+            <button type="submit" class="btn btn-primary">Submit <span id="loader" class="spinner-border spinner-border-sm" role="status" aria-hidden="true" hidden></span></button>
           </div>
         </form>
       </div>
@@ -286,14 +311,15 @@ get_header();
               <label for="dogs-count" class="col-form-label">Изберете брой кучета</label>
               <select class="form-control" aria-label="Default select example" name="dogs-count"> 
                 <option selected value="1">1</option>
+                <option value="2">2</option>
               </select>
               <input type="number" name="room-type" value="6" hidden>
               </div>
           </div>
 
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Затвори</button>
+            <button type="submit" class="btn btn-primary">Submit <span id="loader" class="spinner-border spinner-border-sm" role="status" aria-hidden="true" hidden></span></button>
           </div>
         </form>
       </div>
