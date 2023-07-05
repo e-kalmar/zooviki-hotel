@@ -122,13 +122,13 @@ get_header();
               <div class="form-group row">
                 <label for="pricing-form-1-date-1" class="col-form-label">Пристигане</label>
                 <input type="date" name="pricing-form-1-date-1" class="form-control" id="pricing-form-1-date-1" required >
-                <div class="invalid-feedback">Моля въведете дата.</div>
+                <div class="invalid-feedback">Моля въведете дата на настаняване.</div>
 
               </div>
               <div class="form-group row">
-                <label for="pricing-form-1-date-2" class="col-form-label">Заминаване</label>
+                <label for="pricing-form-1-date-2" class="col-form-label">Напускане</label>
                 <input required type="date" name="pricing-form-1-date-2" class="form-control" id="pricing-form-1-date-2">
-                <div class="invalid-feedback">Моля въведете дата.</div>
+                <div class="invalid-feedback">Моля въведете дата напускане.</div>
               </div>
               <div class="form-group row">
               <label for="dogs-count" class="col-form-label">Изберете брой кучета</label>
@@ -156,15 +156,19 @@ get_header();
         <div class="modal-header">
           <h5 class="modal-title" id="pricing-label-2">Modal title</h5>
         </div>
-        <form id="pricing-form-2" class="hotel-pricing-form">
+        <form id="pricing-form-2" class="hotel-pricing-form" needs-validation" novalidate>
           <div class="modal-body">
               <div class="form-group row">
                 <label for="pricing-form-2-date-1" class="col-form-label">Пристигане</label>
-                <input type="date" name="pricing-form-2-date-1" class="form-control" id="pricing-form-2-date-1">
+                <input type="date" name="pricing-form-2-date-1" class="form-control" id="pricing-form-2-date-1" required>
+                <div class="invalid-feedback">Моля въведете дата на настаняване.</div>
+
               </div>
               <div class="form-group row">
-                <label for="pricing-form-2-date-2" class="col-form-label">Заминаване</label>
-                <input type="date" name="pricing-form-2-date-2" class="form-control" id="pricing-form-2-date-2">
+                <label for="pricing-form-2-date-2" class="col-form-label">Напускане</label>
+                <input type="date" name="pricing-form-2-date-2" class="form-control" id="pricing-form-2-date-2" required>
+                <div class="invalid-feedback">Моля въведете дата на напускане.</div>
+
               </div>
               <div class="form-group row">
               <label for="dogs-count" class="col-form-label">Изберете брой кучета</label>
@@ -191,15 +195,17 @@ get_header();
         <div class="modal-header">
           <h5 class="modal-title" id="pricing-label-3">Modal title</h5>
         </div>
-        <form id="pricing-form-3" class="hotel-pricing-form">
+        <form id="pricing-form-3" class="hotel-pricing-form needs-validation" novalidate>
           <div class="modal-body">
               <div class="form-group row">
                 <label for="pricing-form-3-date-1" class="col-form-label">Пристигане</label>
-                <input type="date" name="pricing-form-3-date-1" class="form-control" id="pricing-form-3-date-1">
+                <input type="date" name="pricing-form-3-date-1" class="form-control" id="pricing-form-3-date-1" required>
+                <div class="invalid-feedback">Моля въведете дата на настаняване.</div>
               </div>
               <div class="form-group row">
-                <label for="pricing-form-3-date-2" class="col-form-label">Заминаване</label>
-                <input type="date" name="pricing-form-3-date-2" class="form-control" id="pricing-form-3-date-2">
+                <label for="pricing-form-3-date-2" class="col-form-label">Напускане</label>
+                <input type="date" name="pricing-form-3-date-2" class="form-control" id="pricing-form-3-date-2" required>
+                <div class="invalid-feedback">Моля въведете дата на напускане.</div>
               </div>
               <div class="form-group row">
               <label for="dogs-count" class="col-form-label">Изберете брой кучета</label>
@@ -227,15 +233,17 @@ get_header();
         <div class="modal-header">
           <h5 class="modal-title" id="pricing-label-4">Modal title</h5>
         </div>
-        <form id="pricing-form-4" class="hotel-pricing-form">
+        <form id="pricing-form-4" class="hotel-pricing-form needs-validation" novalidate>
           <div class="modal-body">
               <div class="form-group row">
                 <label for="pricing-form-4-date-1" class="col-form-label">Пристигане</label>
-                <input type="date" name="pricing-form-4-date-1" class="form-control" id="pricing-form-4-date-1">
+                <input type="date" name="pricing-form-4-date-1" class="form-control" id="pricing-form-4-date-1" required>
+                <div class="invalid-feedback">Моля въведете дата на настаняване.</div>
               </div>
               <div class="form-group row">
-                <label for="pricing-form-4-date-2" class="col-form-label">Заминаване</label>
-                <input type="date" name="pricing-form-4-date-2" class="form-control" id="pricing-form-4-date-2">
+                <label for="pricing-form-4-date-2" class="col-form-label">Напускане</label>
+                <input type="date" name="pricing-form-4-date-2" class="form-control" id="pricing-form-4-date-2" required>
+                <div class="invalid-feedback">Моля въведете дата на напускане.</div>
               </div>
               <div class="form-group row">
               <label for="dogs-count" class="col-form-label">Изберете брой кучета</label>
@@ -262,15 +270,17 @@ get_header();
         <div class="modal-header">
           <h5 class="modal-title" id="pricing-label-5">Modal title</h5>
         </div>
-        <form id="pricing-form-5" class="hotel-pricing-form">
+        <form id="pricing-form-5" class="hotel-pricing-form needs-validation" novalidate>
           <div class="modal-body">
               <div class="form-group row">
                 <label for="pricing-form-5-date-1" class="col-form-label">Пристигане</label>
-                <input type="date" name="pricing-form-5-date-1" class="form-control" id="pricing-form-5-date-1">
+                <input type="date" name="pricing-form-5-date-1" class="form-control" id="pricing-form-5-date-1" required>
+                <div class="invalid-feedback">Моля въведете дата на настаняване.</div>
               </div>
               <div class="form-group row">
-                <label for="pricing-form-5-date-2" class="col-form-label">Заминаване</label>
-                <input type="date" name="pricing-form-5-date-2" class="form-control" id="pricing-form-5-date-2">
+                <label for="pricing-form-5-date-2" class="col-form-label">Напускане</label>
+                <input type="date" name="pricing-form-5-date-2" class="form-control" id="pricing-form-5-date-2" required>
+                <div class="invalid-feedback">Моля въведете дата на напускане.</div>
               </div>
               <div class="form-group row">
               <label for="dogs-count" class="col-form-label">Изберете брой кучета</label>
@@ -290,22 +300,24 @@ get_header();
   </div>
 </div>
 
-<!-- Modal 5 -->
+<!-- Modal 6   -->
 <div class="modal fade" id="pricing-6" tabindex="-1" aria-labelledby="pricing-label-5" aria-hidden="true">
   <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="pricing-label-6">Modal title</h5>
         </div>
-        <form id="pricing-form-6" class="hotel-pricing-form">
+        <form id="pricing-form-6" class="hotel-pricing-form needs-validation" novalidate>
           <div class="modal-body">
               <div class="form-group row">
                 <label for="pricing-form-6-date-1" class="col-form-label">Пристигане</label>
-                <input type="date" name="pricing-form-6-date-1" class="form-control" id="pricing-form-6-date-1">
+                <input type="date" name="pricing-form-6-date-1" class="form-control" id="pricing-form-6-date-1" required>
+                <div class="invalid-feedback">Моля въведете дата на настаняване.</div>
               </div>
               <div class="form-group row">
-                <label for="pricing-form-6-date-2" class="col-form-label">Заминаване</label>
-                <input type="date" name="pricing-form-6-date-2" class="form-control" id="pricing-form-6-date-2">
+                <label for="pricing-form-6-date-2" class="col-form-label">Напускане</label>
+                <input type="date" name="pricing-form-6-date-2" class="form-control" id="pricing-form-6-date-2" required>
+                <div class="invalid-feedback">Моля въведете дата на напускане.</div>
               </div>
               <div class="form-group row">
               <label for="dogs-count" class="col-form-label">Изберете брой кучета</label>

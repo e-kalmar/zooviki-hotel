@@ -5,10 +5,11 @@
     const FORMS       = [...document.querySelectorAll('.hotel-pricing-form')];
 
     const bookingHandler = (e) => {
+
+        if ($(e.target)[0].checkValidity()) {
         $(e.target).find('#loader').attr('hidden',false)
         e.preventDefault();
         const form = $(e.target).serialize();
-        
         return $.ajax({
             type: "post",
             url:   URL,
@@ -26,9 +27,21 @@
             }
         });
     }
+    }
 
     for ( let form of FORMS ) {
         form.addEventListener('submit', (e) => bookingHandler(e))
+
+        // Client side validation for the form
+        var validation = Array.prototype.filter.call(FORMS, function(form) {
+            form.addEventListener('submit', function(event) {
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add('was-validated');
+            }, false);
+          });
     }
 
     $('#close-btn').on('click', function(){
