@@ -39,5 +39,6 @@
 </header>
 <button id="back-to-top-btn"><i class="fas fa-angle-up"></i></button>
 
-<input type="hidden" name="url" value="<?php echo get_rest_url(null,'zoohotel-plugin/submit-booking-form') ?>">
+<input type="hidden" name="booking-url" value="<?php echo get_rest_url(null,'zoohotel-plugin/submit-booking-form') ?>">
+<input type="hidden" name="contact-url" value="<?php echo get_rest_url(null,'contact-form-plugin/submit-contact-form') ?>">
 <input type="hidden" name="nonce" value="<?php echo wp_create_nonce("wp_rest")?>">

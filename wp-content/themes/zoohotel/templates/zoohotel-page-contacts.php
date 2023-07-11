@@ -17,12 +17,12 @@ get_header();
       <!--Section description-->
       <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to contact us directly. Our team will come back to you within
           a matter of hours to help you.</p>
-
+    
       <div class="row">
 
           <!--Grid column-->
           <div class="col-md-9 mb-md-0 mb-5">
-              <form id="contact-form" name="contact-form" action="mail.php" method="POST">
+              <form id="contact-form" name="contact-form">
 
                   <!--Grid row-->
                   <div class="row">
@@ -31,7 +31,7 @@ get_header();
                       <div class="col-md-6">
                           <div class="md-form mb-0">
                               <input type="text" id="name" name="name" class="form-control">
-                              <label for="name" class="">Your name</label>
+                              <label for="name" class="form-label">Your name</label>
                           </div>
                       </div>
                       <!--Grid column-->
@@ -40,7 +40,7 @@ get_header();
                       <div class="col-md-6">
                           <div class="md-form mb-0">
                               <input type="text" id="email" name="email" class="form-control">
-                              <label for="email" class="">Your email</label>
+                              <label for="email" class="form-label">Your email</label>
                           </div>
                       </div>
                       <!--Grid column-->
@@ -53,7 +53,7 @@ get_header();
                       <div class="col-md-12">
                           <div class="md-form mb-0">
                               <input type="text" id="subject" name="subject" class="form-control">
-                              <label for="subject" class="">Subject</label>
+                              <label for="subject" class="form-label">Subject</label>
                           </div>
                       </div>
                   </div>
@@ -67,18 +67,18 @@ get_header();
 
                           <div class="md-form">
                               <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
-                              <label for="message">Your message</label>
+                              <label for="message" class="form-label">Your message</label>
                           </div>
 
                       </div>
                   </div>
                   <!--Grid row-->
-
+              <div class="text-center text-md-left">
+                  <button type="submit" id="submit-btn" class="btn btn-primary">Send <span id="loader" class="spinner-border spinner-border-sm" role="status" aria-hidden="true" hidden></span></button>
+              </div>
               </form>
 
-              <div class="text-center text-md-left">
-                  <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Send</a>
-              </div>
+
               <div class="status"></div>
           </div>
           <!--Grid column-->
@@ -102,7 +102,23 @@ get_header();
           <!--Grid column-->
 
       </div>
-
+<!-- Success Modal -->
+<div class="modal" aria-hidden="true" tabindex="-1" role="dialog" id="success-modal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Успешно изпращане !</h5>
+      </div>
+      <div class="modal-body">
+        <p>Вие успешно изпратихте вашето запитване.<br/>
+      Наш служител ще се свърже с вас за да отговори на въпросите ви.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="close-btn">Затвори</button>
+      </div>
+    </div>
+  </div>
+</div>
   </section>
 </div>
 <!--Section: Contact v.2-->

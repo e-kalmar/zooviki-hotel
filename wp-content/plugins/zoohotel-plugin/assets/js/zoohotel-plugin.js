@@ -1,6 +1,6 @@
 (() => {
     "use strict";
-    const URL         = document.getElementsByName('url')[0].value;
+    const URL         = document.getElementsByName('booking-url')[0].value;
     const NONCE       = document.getElementsByName('nonce')[0].value;
     const FORMS       = [...document.querySelectorAll('.hotel-pricing-form')];
 
