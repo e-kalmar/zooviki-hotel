@@ -37,6 +37,10 @@ function zoohotel_scripts() {
   if ( is_page('faq') ) {
 		wp_enqueue_style( 'contacts_styles', get_template_directory_uri() . '/assets/stylesheets/faq-page.css' );
   }
+  
+  if ( is_front_page()) {
+	wp_enqueue_style( 'home-styles', get_template_directory_uri() . '/assets/stylesheets/home-page.css' );
+  }
 
 }
 add_action( 'wp_enqueue_scripts', 'zoohotel_scripts', 10, 1 );

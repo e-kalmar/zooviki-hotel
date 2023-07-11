@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="/">
                 <div class="logo-text-container zoo-hotel-logo-container">
-                    <img src="https://zooviki.eu/wp-content/uploads/2020/05/logo-zoo.png" alt="Logo">
+                    <img src="<?php echo get_template_directory_uri() . '/assets/media/img/logo.png' ?>" alt="Logo">
                     <span class="logo-title">Зоохотел Вики</span>
                 </div>
             </a>
