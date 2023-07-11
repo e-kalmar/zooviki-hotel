@@ -77,12 +77,12 @@ class ContactFormPlugin {
         }
 
         if($post_id){
-            $subject = get_post_meta($post_id,'subject');
-            $from = get_post_meta($post_id,'email');
-            $name = get_post_meta($post_id,'name');
-            $content = get_post_meta($post_id,'message');
-            $headers = array('Content-Type: text/html; charset=UTF-8');
-            wp_mail('support@pethotelviki.eu',$subject,$content,$headers);
+            $subject = get_post_meta($post_id,'subject')[0];
+            $from = get_post_meta($post_id,'email')[0];
+            $name = get_post_meta($post_id,'name')[0];
+            $content = get_post_meta($post_id,'message')[0];
+            wp_mail('support@pethotelviki.eu',$subject,$content);
+            
             return new WP_REST_Response('SUCCESS', 200);
         }
     }
