@@ -81,7 +81,8 @@ class ContactFormPlugin {
             $from = get_post_meta($post_id,'email')[0];
             $name = get_post_meta($post_id,'name')[0];
             $content = get_post_meta($post_id,'message')[0];
-            wp_mail('support@pethotelviki.eu',$subject,$content);
+            $headers = 'From:' . $from; 
+            wp_mail('support@pethotelviki.eu',$subject,$content,$headers);
             
             return new WP_REST_Response('SUCCESS', 200);
         }

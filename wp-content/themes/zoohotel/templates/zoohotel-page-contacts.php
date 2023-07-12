@@ -12,17 +12,14 @@ get_header();
 <div class="container zoohotel-contacts-page">
   <img src="<?php echo get_template_directory_uri() . "/assets/media/img/contact-us.png"; ?>" class="img-fluid z-depth-1 header-image" alt="Contact us image">
   <section class="mb-4">
-      <!--Section heading-->
-      <h2 class="h1-responsive font-weight-bold text-center my-4">Контакти</h2>
       <!--Section description-->
-      <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to contact us directly. Our team will come back to you within
-          a matter of hours to help you.</p>
+      <p class="text-center w-responsive mx-auto mb-5">Имате въпрос ? Не се колебайте и веднага се свържете с нас. Нашият екип ще се свърже с вас за да ви помогне</p>
     
       <div class="row">
 
           <!--Grid column-->
           <div class="col-md-9 mb-md-0 mb-5">
-              <form id="contact-form" name="contact-form">
+              <form id="contact-form" name="contact-form needs-validation" novalidate>
 
                   <!--Grid row-->
                   <div class="row">
@@ -30,8 +27,9 @@ get_header();
                       <!--Grid column-->
                       <div class="col-md-6">
                           <div class="md-form mb-0">
-                              <input type="text" id="name" name="name" class="form-control">
-                              <label for="name" class="form-label">Your name</label>
+                              <label for="name" class="form-label">Име</label>
+                              <input type="text" id="name" name="name" class="form-control" required>
+                              <div class="invalid-feedback">Моля въведете вашето име.</div>
                           </div>
                       </div>
                       <!--Grid column-->
@@ -39,24 +37,30 @@ get_header();
                       <!--Grid column-->
                       <div class="col-md-6">
                           <div class="md-form mb-0">
-                              <input type="text" id="email" name="email" class="form-control">
-                              <label for="email" class="form-label">Your email</label>
+                              <label for="email" class="form-label">Имейл адрес</label>
+                              <input type="email" id="email" name="email" class="form-control" required>
+                              <div class="invalid-feedback">Моля въведете валиден имейл адрес.</div>
                           </div>
                       </div>
                       <!--Grid column-->
 
                   </div>
+                  <br/>
+
                   <!--Grid row-->
 
                   <!--Grid row-->
                   <div class="row">
                       <div class="col-md-12">
                           <div class="md-form mb-0">
-                              <input type="text" id="subject" name="subject" class="form-control">
-                              <label for="subject" class="form-label">Subject</label>
+                              <label for="subject" class="form-label">Тема</label>
+                              <input type="text" id="subject" name="subject" class="form-control" required>
+                              <div class="invalid-feedback">Моля напишете кратко описание на вашия въпрос.</div>
                           </div>
                       </div>
                   </div>
+                  <br/>
+
                   <!--Grid row-->
 
                   <!--Grid row-->
@@ -66,8 +70,9 @@ get_header();
                       <div class="col-md-12">
 
                           <div class="md-form">
-                              <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
-                              <label for="message" class="form-label">Your message</label>
+                              <label for="message" class="form-label">Съобщение</label>
+                              <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea" required></textarea>
+                              <div class="invalid-feedback">Моля задайте вашия въпрос.</div>
                           </div>
 
                       </div>
@@ -87,15 +92,15 @@ get_header();
           <div class="col-md-3 text-center">
               <ul class="list-unstyled mb-0">
                   <li><i class="fas fa-map-marker-alt fa-2x"></i>
-                      <p>San Francisco, CA 94126, USA</p>
+                      <p>Гр. Бургас Ж.К. Ветрен</p>
                   </li>
 
                   <li><i class="fas fa-phone mt-4 fa-2x"></i>
-                      <p>+ 01 234 567 89</p>
+                      <p>+359 887 654 321</p>
                   </li>
 
                   <li><i class="fas fa-envelope mt-4 fa-2x"></i>
-                      <p>contact@mdbootstrap.com</p>
+                      <p>support@pethotelviki.eu</p>
                   </li>
               </ul>
           </div>

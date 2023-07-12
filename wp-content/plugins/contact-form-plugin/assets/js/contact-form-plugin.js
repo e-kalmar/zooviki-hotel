@@ -6,7 +6,7 @@
 
     console.log(NONCE)
     const contactFormHandler = (e) => {
-        //if ($(e.target)[0].checkValidity()) {
+        if ($(e.target)[0].checkValidity()) {
         $(e.target).find('#loader').attr('hidden',false)
         e.preventDefault();
         const form = $(e.target).serialize();
@@ -25,22 +25,22 @@
                 $('#success-modal').toggle();
             }
         });
-    //}
+    }
     }
 
     for ( let form of FORMS ) {
         form.addEventListener('submit', (e) => contactFormHandler(e))
 
         // Client side validation for the form
-        // var validation = Array.prototype.filter.call(FORMS, function(form) {
-        //     form.addEventListener('submit', function(event) {
-        //       if (form.checkValidity() === false) {
-        //         event.preventDefault();
-        //         event.stopPropagation();
-        //       }
-        //       form.classList.add('was-validated');
-        //     }, false);
-        //   });
+        var validation = Array.prototype.filter.call(FORMS, function(form) {
+            form.addEventListener('submit', function(event) {
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add('was-validated');
+            }, false);
+          });
     }
 
     
