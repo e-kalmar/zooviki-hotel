@@ -74,12 +74,12 @@ get_header();
                               <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea" required></textarea>
                               <div class="invalid-feedback">Моля задайте вашия въпрос.</div>
                           </div>
-
                       </div>
                   </div>
                   <!--Grid row-->
+                          <br/>
               <div class="text-center text-md-left">
-                  <button type="submit" id="submit-btn" class="btn btn-primary">Send <span id="loader" class="spinner-border spinner-border-sm" role="status" aria-hidden="true" hidden></span></button>
+                  <button type="submit" id="submit-btn" class="btn btn-primary">Изпрати <span id="loader" class="spinner-border spinner-border-sm" role="status" aria-hidden="true" hidden></span></button>
               </div>
               </form>
 
