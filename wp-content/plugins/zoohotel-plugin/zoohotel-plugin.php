@@ -58,7 +58,8 @@ class ZooHotelPlugin {
     public function handle_booking_form($data){
         $headers = $data->get_headers();
         $params = $data->get_params();
-        $nonce = $headers['x_wp_nonce'][0];
+        $nonce = $headers['x_wp_nonce'][0];        
+        $uuid = uniqid("");
 
         if(!wp_verify_nonce($nonce, 'wp_rest')){
             return new WP_REST_Response("Message not sent", 422);
@@ -76,7 +77,7 @@ class ZooHotelPlugin {
         foreach ($params as $label => $value) {
             add_post_meta($post_id,$label,$value);
         }
-
+        add_post_meta($post_id,"uuid",$uuid,true);
         if($post_id){
             return new WP_REST_Response('SUCCESS', 200);
         }
