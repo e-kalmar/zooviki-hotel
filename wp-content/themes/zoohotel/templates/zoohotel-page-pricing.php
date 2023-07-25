@@ -21,7 +21,8 @@ get_header();
           <li class="list-group-item px-3">Площ: 3 m²</li>
           <li class="list-group-item px-3">Цена: <b>24 лв.</b></li>
         </ul>
-        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#pricing-1">Резервирай</button>
+        <button class="btn btn-primary">Резервирай</button>
+        <input type="hidden" name="room-type" value="1">
       </div>
     </div>
 
@@ -33,7 +34,8 @@ get_header();
           <li class="list-group-item px-3">Площ: 5 m²</li>
           <li class="list-group-item px-3">Цена: <b>36 лв.</b></li>
         </ul>
-        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#pricing-2">Резервирай</button>
+        <button class="btn btn-primary">Резервирай</button>
+        <input type="hidden" name="room-type" value="2">
       </div>
     </div>
 
@@ -45,7 +47,8 @@ get_header();
           <li class="list-group-item px-3">Площ: 9 m²</li>
           <li class="list-group-item px-3">Цена: <b>48 лв.</b></li>
         </ul>
-        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#pricing-3">Резервирай</button>
+        <button class="btn btn-primary">Резервирай</button>
+        <input type="hidden" name="room-type" value="3">
       </div>
     </div>
 
@@ -59,7 +62,8 @@ get_header();
           <li class="list-group-item px-3">Собствен двор: 5 m²</li>
           <li class="list-group-item px-3">Цена: <b>35 лв.</b></li>
         </ul>
-        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#pricing-4">Резервирай</button>
+        <button class="btn btn-primary">Резервирай</button>
+        <input type="hidden" name="room-type" value="4">
       </div>
     </div>
 
@@ -73,7 +77,8 @@ get_header();
           <li class="list-group-item px-3">Собствен двор: 5 m²</li>
           <li class="list-group-item px-3">Цена: <b>40 лв.</b></li>
         </ul>
-        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#pricing-5">Резервирай</button>
+        <button class="btn btn-primary">Резервирай</button>
+        <input type="hidden" name="room-type" value="5">
       </div>
     </div>
 
@@ -87,7 +92,8 @@ get_header();
           <li class="list-group-item px-3">Собствен двор: 5 m²</li>
           <li class="list-group-item px-3">Цена: <b>48 лв.</b></li>
         </ul>
-        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#pricing-6">Резервирай</button>
+        <button class="btn btn-primary">Резервирай</button>
+        <input type="hidden" name="room-type" value="6">
       </div>
     </div>
   </div> <!-- end of row -->
@@ -110,232 +116,117 @@ get_header();
     </div>
   </div>
 </div>
-<!-- Modal 1 -->
-<div class="modal fade" id="pricing-1" tabindex="-1" aria-labelledby="pricing-label-1" aria-hidden="true">
-  <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="pricing-label-1">Modal title</h5>
-        </div>
-        <form id="pricing-form-1" class="hotel-pricing-form needs-validation" novalidate>
-          <div class="modal-body">
-              <div class="form-group row">
-                <label for="pricing-form-1-date-1" class="col-form-label">Пристигане</label>
-                <input type="date" name="pricing-form-1-date-1" class="form-control" id="pricing-form-1-date-1" required >
-                <div class="invalid-feedback">Моля въведете дата на настаняване.</div>
 
-              </div>
-              <div class="form-group row">
-                <label for="pricing-form-1-date-2" class="col-form-label">Напускане</label>
-                <input required type="date" name="pricing-form-1-date-2" class="form-control" id="pricing-form-1-date-2">
-                <div class="invalid-feedback">Моля въведете дата напускане.</div>
-              </div>
-              <div class="form-group row">
-              <label for="dogs-count" class="col-form-label">Изберете брой кучета</label>
-              <select required class="form-control" aria-label="Default select example" name="dogs-count"> 
-                <option selected value="1">1</option>
-              </select>
-              <input type="number" name="room-type" value="1" hidden>
-              </div>
-          </div>
-          <div class="modal-footer">
+<!-- MultiStep Form -->
+<div class="row">
+    <div class="col-md-6 col-md-offset-3 modal-wrapper">
+        <form id="booking-handler-form" class="class-booking-handler-form">
+            <!-- progressbar -->
+            <ul id="progressbar">
+                <li class="active">Резервация</li>
+                <li>Информация за гостите</li>
+                <li>Преглед на вашата резервация</li>
+            </ul>
+            <!-- fieldsets -->
+            <fieldset>
+                <span class="close-modal"><ion-icon name="close-outline"></ion-icon></span>
+                <h2 class="fs-title">Генерална информация</h2>
+                <h3 class="fs-subtitle">Моля въведете нужните данни за вашата резервация</h3>
 
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Затвори</button>
-            <button type="submit" class="btn btn-primary" id="submit-btn">Submit <span id="loader" class="spinner-border spinner-border-sm" role="status" aria-hidden="true" hidden></span>
-            </button>
-          </div>
+                <div class="form-group row">
+                  <label for="pricing-form-date-1" class="col-form-label">Пристигане</label>
+                  <input type="date" name="reservation-date" class="form-control" id="reservation-date" >
+                  <div class="invalid-feedback">Моля въведете дата на настаняване.</div>
+                </div>
+
+                <div class="form-group row">
+                  <label for="pricing-form-date-2" class="col-form-label">Напускане</label>
+                  <input type="date" name="checkout-date" class="form-control" id="checkout-date">
+                  <div class="invalid-feedback">Моля въведете дата напускане.</div>
+                </div>
+
+                <div class="form-group row">
+                  <label for="dogs-count" class="col-form-label">Изберете брой кучета</label>
+                  <select class="form-control" aria-label="Default select example" name="dogs-count">
+                    <option selected value="1">1</option>
+                  </select>
+                  <input type="number" name="room-type" value="1" hidden>
+                </div>
+
+                <input type="button" name="next" class="next-btn action-button" value="Напред"/>
+            </fieldset>
+            <fieldset>
+                <span class="close-modal"><ion-icon name="close-outline"></ion-icon></span>
+                <h2 class="fs-title">Информация за гостите</h2>
+                <h3 class="fs-subtitle">Моля добавете допълнителна информация за гостите на нашият хотел</h3>
+                <input type="text" id="client-name" name="client-name" placeholder="Име"/>
+                <input type="text" id="client-family-name" name="family-name" placeholder="Фамилия"/>
+                <input type="tel" id="client-phone" name="client-phone" placeholder="Телефон"/>
+                <input type="text" id="client-address" name="client-address" placeholder="Адрес"/>
+                <input type="text" id="pet-name" name="pet-name" placeholder="Име на вашият домашен любимец"/>
+                <input type="text" id="pet-type" name="pet-type" placeholder="Порода"/>
+                <input type="text" id="pet-age" name="pet-age" placeholder="Възраст"/>
+
+                <input type="button" name="previous" class="previous-btn action-button-previous" value="Назад"/>
+                <input type="button" name="next" class="next-btn action-button" value="Напред"/>
+            </fieldset>
+            <fieldset>
+                <span class="close-modal"><ion-icon name="close-outline"></ion-icon></span>
+                <h2 class="fs-title">Обобщителна информация за вашата резервация</h2>
+                <!-- <section id="reservation-summary">
+                  <h3 class="fs-subtitle">Вашата информация</h4>
+                  <p>Имe: <span class="client-name"></span></p>
+                  <p>Фамилия: <span class="client-family-name"></span></p>
+                  <p>Телефон: <span class="client-phone"></span></p>
+                  <h3 class="fs-subtitle">Информация за вашият домашен любимец</h4>
+                  <p>Име на домашен любимец: <span class="pet-name"></span></p>
+                  <p>Порода: <span class="pet-type"></span></p>
+                  <p>Години: <span class="pet-age"></span></p>
+                </section> -->
+                <h2 class="fs-title">Вашата информация</h2>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Име</th>
+                      <th scope="col">Фамилия</th>
+                      <th scope="col">Телефон</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><span class="client-name">1</span></td>
+                      <td><span class="client-family-name">1</span></td>
+                      <td><span class="client-phone">1</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <h2 class="fs-title">Информация за вашият домашен любимец</h2>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Име на домашен любимец:</th>
+                      <th scope="col">Порода:</th>
+                      <th scope="col">Години:</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><span class="pet-name">1</span></td>
+                      <td><span class="pet-type">1</span></td>
+                      <td><span class="pet-age">1</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <input type="button" name="previous" class="previous-btn action-button-previous" value="Назад"/>
+                <input type="submit" class="action-button" value="Резервирай"><span id="loader" class="spinner-border spinner-border-sm" role="status" aria-hidden="true" hidden></span></input>
+            </fieldset>
+            <input type="hidden" name="modal-room-type">
         </form>
-      </div>
-  </div>
+    </div>
 </div>
+<!-- /.MultiStep Form -->
 
-<!-- Modal 2 -->
-<div class="modal fade" id="pricing-2" tabindex="-1" aria-labelledby="pricing-label-2" aria-hidden="true">
-  <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="pricing-label-2">Modal title</h5>
-        </div>
-        <form id="pricing-form-2" class="hotel-pricing-form" needs-validation" novalidate>
-          <div class="modal-body">
-              <div class="form-group row">
-                <label for="pricing-form-2-date-1" class="col-form-label">Пристигане</label>
-                <input type="date" name="pricing-form-2-date-1" class="form-control" id="pricing-form-2-date-1" required>
-                <div class="invalid-feedback">Моля въведете дата на настаняване.</div>
-
-              </div>
-              <div class="form-group row">
-                <label for="pricing-form-2-date-2" class="col-form-label">Напускане</label>
-                <input type="date" name="pricing-form-2-date-2" class="form-control" id="pricing-form-2-date-2" required>
-                <div class="invalid-feedback">Моля въведете дата на напускане.</div>
-
-              </div>
-              <div class="form-group row">
-              <label for="dogs-count" class="col-form-label">Изберете брой кучета</label>
-              <select class="form-control" aria-label="Default select example" name="dogs-count"> 
-                <option selected value="1">1</option>
-              </select>
-              <input type="number" name="room-type" value="2" hidden>
-              </div>
-          </div>
-
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Затвори</button>
-            <button type="submit" class="btn btn-primary">Submit <span id="loader" class="spinner-border spinner-border-sm" role="status" aria-hidden="true" hidden></span></button>
-          </div>
-        </form>
-      </div>
-  </div>
-</div>
-
-<!-- Modal 3 -->
-<div class="modal fade" id="pricing-3" tabindex="-1" aria-labelledby="pricing-label-3" aria-hidden="true">
-  <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="pricing-label-3">Modal title</h5>
-        </div>
-        <form id="pricing-form-3" class="hotel-pricing-form needs-validation" novalidate>
-          <div class="modal-body">
-              <div class="form-group row">
-                <label for="pricing-form-3-date-1" class="col-form-label">Пристигане</label>
-                <input type="date" name="pricing-form-3-date-1" class="form-control" id="pricing-form-3-date-1" required>
-                <div class="invalid-feedback">Моля въведете дата на настаняване.</div>
-              </div>
-              <div class="form-group row">
-                <label for="pricing-form-3-date-2" class="col-form-label">Напускане</label>
-                <input type="date" name="pricing-form-3-date-2" class="form-control" id="pricing-form-3-date-2" required>
-                <div class="invalid-feedback">Моля въведете дата на напускане.</div>
-              </div>
-              <div class="form-group row">
-              <label for="dogs-count" class="col-form-label">Изберете брой кучета</label>
-              <select class="form-control" aria-label="Default select example" name="dogs-count"> 
-                <option selected value="1">1</option>
-                <option value="2">2</option>
-              </select>
-              <input type="number" name="room-type" value="3" hidden>
-              </div>
-          </div>
-
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Затвори</button>
-            <button type="submit" class="btn btn-primary">Submit <span id="loader" class="spinner-border spinner-border-sm" role="status" aria-hidden="true" hidden></span></button>
-          </div>
-        </form>
-      </div>
-  </div>
-</div>
-
-<!-- Modal 4 -->
-<div class="modal fade" id="pricing-4" tabindex="-1" aria-labelledby="pricing-label-4" aria-hidden="true">
-  <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="pricing-label-4">Modal title</h5>
-        </div>
-        <form id="pricing-form-4" class="hotel-pricing-form needs-validation" novalidate>
-          <div class="modal-body">
-              <div class="form-group row">
-                <label for="pricing-form-4-date-1" class="col-form-label">Пристигане</label>
-                <input type="date" name="pricing-form-4-date-1" class="form-control" id="pricing-form-4-date-1" required>
-                <div class="invalid-feedback">Моля въведете дата на настаняване.</div>
-              </div>
-              <div class="form-group row">
-                <label for="pricing-form-4-date-2" class="col-form-label">Напускане</label>
-                <input type="date" name="pricing-form-4-date-2" class="form-control" id="pricing-form-4-date-2" required>
-                <div class="invalid-feedback">Моля въведете дата на напускане.</div>
-              </div>
-              <div class="form-group row">
-              <label for="dogs-count" class="col-form-label">Изберете брой кучета</label>
-              <select class="form-control" aria-label="Default select example" name="dogs-count"> 
-                <option selected value="1">1</option>
-              </select>
-              <input type="number" name="room-type" value="4" hidden>
-              </div>
-          </div>
-
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Затвори</button>
-            <button type="submit" class="btn btn-primary">Submit <span id="loader" class="spinner-border spinner-border-sm" role="status" aria-hidden="true" hidden></span></button>
-          </div>
-        </form>
-      </div>
-  </div>
-</div>
-
-<!-- Modal 5 -->
-<div class="modal fade" id="pricing-5" tabindex="-1" aria-labelledby="pricing-label-5" aria-hidden="true">
-  <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="pricing-label-5">Modal title</h5>
-        </div>
-        <form id="pricing-form-5" class="hotel-pricing-form needs-validation" novalidate>
-          <div class="modal-body">
-              <div class="form-group row">
-                <label for="pricing-form-5-date-1" class="col-form-label">Пристигане</label>
-                <input type="date" name="pricing-form-5-date-1" class="form-control" id="pricing-form-5-date-1" required>
-                <div class="invalid-feedback">Моля въведете дата на настаняване.</div>
-              </div>
-              <div class="form-group row">
-                <label for="pricing-form-5-date-2" class="col-form-label">Напускане</label>
-                <input type="date" name="pricing-form-5-date-2" class="form-control" id="pricing-form-5-date-2" required>
-                <div class="invalid-feedback">Моля въведете дата на напускане.</div>
-              </div>
-              <div class="form-group row">
-              <label for="dogs-count" class="col-form-label">Изберете брой кучета</label>
-              <select class="form-control" aria-label="Default select example" name="dogs-count"> 
-                <option selected value="1">1</option>
-              </select>
-              <input type="number" name="room-type" value="5" hidden>
-              </div>
-          </div>
-
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Затвори</button>
-            <button type="submit" class="btn btn-primary">Submit <span id="loader" class="spinner-border spinner-border-sm" role="status" aria-hidden="true" hidden></span></button>
-          </div>
-        </form>
-      </div>
-  </div>
-</div>
-
-<!-- Modal 6   -->
-<div class="modal fade" id="pricing-6" tabindex="-1" aria-labelledby="pricing-label-5" aria-hidden="true">
-  <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="pricing-label-6">Modal title</h5>
-        </div>
-        <form id="pricing-form-6" class="hotel-pricing-form needs-validation" novalidate>
-          <div class="modal-body">
-              <div class="form-group row">
-                <label for="pricing-form-6-date-1" class="col-form-label">Пристигане</label>
-                <input type="date" name="pricing-form-6-date-1" class="form-control" id="pricing-form-6-date-1" required>
-                <div class="invalid-feedback">Моля въведете дата на настаняване.</div>
-              </div>
-              <div class="form-group row">
-                <label for="pricing-form-6-date-2" class="col-form-label">Напускане</label>
-                <input type="date" name="pricing-form-6-date-2" class="form-control" id="pricing-form-6-date-2" required>
-                <div class="invalid-feedback">Моля въведете дата на напускане.</div>
-              </div>
-              <div class="form-group row">
-              <label for="dogs-count" class="col-form-label">Изберете брой кучета</label>
-              <select class="form-control" aria-label="Default select example" name="dogs-count"> 
-                <option selected value="1">1</option>
-                <option value="2">2</option>
-              </select>
-              <input type="number" name="room-type" value="6" hidden>
-              </div>
-          </div>
-
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Затвори</button>
-            <button type="submit" class="btn btn-primary">Submit <span id="loader" class="spinner-border spinner-border-sm" role="status" aria-hidden="true" hidden></span></button>
-          </div>
-        </form>
-      </div>
-  </div>
-</div>
 
 <?php get_footer();

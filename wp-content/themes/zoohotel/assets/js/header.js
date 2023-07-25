@@ -2,8 +2,8 @@
     "use strict";
 
     // ADD ACTIVE CLASS TO THE RESPECTIVE NAV ITEM CONSIDERING THE LOADED PAGE
-    $('.nav-item a[href="' + location.href + '"]').parent().addClass('active');
-    $('.nav-item a[href="' + location.href + '"]').addClass('active');
+    $('.nav-item a[href="' + location.origin + location.pathname + '"]').parent().addClass('active');
+    $('.nav-item a[href="' + location.origin + location.pathname + '"]').addClass('active');
 
     // NAV ITEMS 'ACTIVE' CLASS HANDLER
     const navItems = [...document.querySelectorAll('.nav-item')];
