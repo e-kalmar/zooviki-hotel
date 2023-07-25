@@ -119,7 +119,7 @@ get_header();
 
 <!-- MultiStep Form -->
 <div class="row">
-    <div class="col-md-6 col-md-offset-3 modal-wrapper">
+    <div class="col-md-6 col-md-offset-3 modal-wrapper container-fluid">
         <form id="booking-handler-form" class="class-booking-handler-form">
             <!-- progressbar -->
             <ul id="progressbar">
@@ -173,16 +173,6 @@ get_header();
             <fieldset>
                 <span class="close-modal"><ion-icon name="close-outline"></ion-icon></span>
                 <h2 class="fs-title">Обобщителна информация за вашата резервация</h2>
-                <!-- <section id="reservation-summary">
-                  <h3 class="fs-subtitle">Вашата информация</h4>
-                  <p>Имe: <span class="client-name"></span></p>
-                  <p>Фамилия: <span class="client-family-name"></span></p>
-                  <p>Телефон: <span class="client-phone"></span></p>
-                  <h3 class="fs-subtitle">Информация за вашият домашен любимец</h4>
-                  <p>Име на домашен любимец: <span class="pet-name"></span></p>
-                  <p>Порода: <span class="pet-type"></span></p>
-                  <p>Години: <span class="pet-age"></span></p>
-                </section> -->
                 <h2 class="fs-title">Вашата информация</h2>
                 <table class="table">
                   <thead>
