@@ -23,6 +23,8 @@
             complete: function(){
                 $(e.target).find('#loader').hide();
                 $('#success-modal').toggle();
+                e.target.reset();
+                $(e.target).removeClass('was-validated');
             }
         });
     }

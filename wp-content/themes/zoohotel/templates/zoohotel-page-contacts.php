@@ -16,7 +16,7 @@ get_header();
       <p class="text-center w-responsive mx-auto mb-5">Имате въпрос ? Не се колебайте и веднага се свържете с нас. Нашият екип ще се свърже с вас за да ви помогне</p>
     
       <div class="row">
-
+    
           <!--Grid column-->
           <div class="col-md-9 mb-md-0 mb-5">
               <form id="contact-form" name="contact-form needs-validation" novalidate>
