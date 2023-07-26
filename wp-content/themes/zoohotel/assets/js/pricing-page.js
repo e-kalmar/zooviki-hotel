@@ -1,11 +1,177 @@
 (() => {
 	"use strict";
 
+	// INITIALIZE DATEPICKERS
+	let dateToday = new Date();
+	let dates = $(".date").datepicker({
+		changeMonth: true,
+		minDate: dateToday,
+	});
+
 	var current_fs, next_fs, previous_fs; //fieldsets
 	var left, opacity, scale; //fieldset properties which we will animate
 	var animating; //flag to prevent quick multi-click glitches
 
-	$(".next-btn").click(function () {
+	// HELPER FUNCTIONS
+	// Where node is the DOM element you'd like to test for visibility
+	const isHidden = (node) => {
+		return (node.offsetParent === null)
+	}
+
+	const nodeCheck = (node) => {
+		return node instanceof Element;
+	}
+
+	const checkTrue = (bool) => {
+		return typeof bool === 'function' ? bool() == true : new Error('Argument bool is not a function');
+	}
+
+	const scrollToTopIfScrollable = (node) => {
+		// Check if the modal content height is greater than the modal container height
+		if (node.scrollHeight > node.clientHeight) {
+			// Scroll to the top of the modal
+			node.scrollTo({ top: 0, behavior: 'smooth' });
+		}
+	}
+
+	const isValidPhoneNumber = (phoneNumber) => {
+		const phoneRegex = /^(?:(?:\+|00)359[-.\s]?)?(?:\(\d{1,4}\)|\d{1,4}|0)?[-.\s]?\d{3}[-.\s]?\d{3}$/;
+		return phoneRegex.test(phoneNumber);
+	}
+
+	// VALIDATIONS
+	const reservationDateValidate = (boolCheck = true) => {
+		const checkinDate = new Date(document.getElementsByName('checkin-date')[0].value);
+		const checkoutDate = new Date(document.getElementsByName('checkout-date')[0].value);
+		$(".validate-text").hide();
+
+		if (document.getElementsByName('checkin-date')[0].value == '' || document.getElementsByName('checkout-date')[0].value == '') {
+			$('.validate-dates-empty').fadeIn();
+			boolCheck = false;
+		} else $('.validate-dates-empty').fadeOut();
+
+		if (checkoutDate < checkinDate) {
+			$('.validate-dates-discrepancy').fadeIn();
+			boolCheck = false;
+		} else $('.validate-dates-discrepancy').fadeOut();
+
+		if (checkinDate.toISOString() === checkoutDate.toISOString()) {
+			$('.validate-dates-equal').fadeIn();
+			boolCheck = false;
+		} else $('.validate-dates-equal').fadeOut();
+
+		return boolCheck;
+	}
+
+	const validateUserNames = (boolCheck = true) => {
+		let userName = document.getElementById('first-name').value;
+		let userFamilyName = document.getElementById('last-name').value;
+		$(".validate-text").hide();
+
+		if (userName == '') {
+			$('.validate-first-name').fadeIn();
+			boolCheck = false;
+		} else $('.validate-first-name').fadeOut();
+
+		if (userFamilyName == '') {
+			$('.validate-last-name').fadeIn();
+			boolCheck = false;
+		} else $('.validate-last-name').fadeOut();
+
+		return boolCheck;
+	}
+
+	const validatePhone = (boolCheck = true) => {
+		const phoneNum = document.getElementById('client-phone').value;
+		$(".validate-text").hide();
+
+		if ( phoneNum.toString() == '' ) {
+			$('.validate-phone-empty').fadeIn();
+			boolCheck = false
+		} else $('.validate-phone-empty').fadeOut();
+
+		if ( !isValidPhoneNumber( phoneNum.toString() ) ) {
+			$('.validate-phone-regex').fadeIn();
+			boolCheck = false;
+		} else $('.validate-phone-regex').fadeOut();
+
+		return boolCheck;
+	}
+
+	const validatePetAge = (boolCheck = true) => {
+		const petAge = document.getElementById('pet-age').value;
+		$(".validate-text").hide();
+
+		if ( !(/^\d{1,2}$/).test(petAge) ) {
+			$('.validate-pet-age-regex').fadeIn();
+			boolCheck = false
+		} else $('.validate-pet-age-regex').fadeOut();
+
+		if ( petAge == '' ) {
+			$('.validate-pet-age-empty').fadeIn();
+			boolCheck = false
+		} else $('.validate-pet-age-empty').fadeOut();
+
+		return boolCheck
+	}
+
+	const validatePetName = (boolCheck = true) => {
+		const petName = document.getElementById('pet-name').value;
+		$(".validate-text").hide();
+
+		if ( petName == '' ) {
+			$('.validate-pet-name-empty').fadeIn();
+			boolCheck = false
+		} else $('.validate-pet-name-empty').fadeOut();
+
+		return boolCheck
+	}
+
+	const validatePetType = (boolCheck = true) => {
+		const petType = document.getElementById('pet-type').value;
+		$(".validate-text").hide();
+
+		if ( petType == '' ) {
+			$('.validate-pet-type-empty').fadeIn();
+			boolCheck = false
+		} else $('.validate-pet-type-empty').fadeOut();
+
+		return boolCheck
+	}
+
+	const validateAddress = (boolCheck = true) => {
+		const address = document.getElementById('client-address').value;
+		$(".validate-text").hide();
+
+		if ( address == '' ) {
+			$('.validate-address-empty').fadeIn();
+			boolCheck = false
+		} else $('.validate-address-empty').fadeOut();
+
+		return boolCheck
+	}
+
+	// global validations object
+	var validationsObj = {
+		// PAGE 1
+		0: [reservationDateValidate],
+
+		// PAGE 2
+		1: [validateUserNames, validatePhone, validateAddress, validatePetName, validatePetType, validatePetAge],
+
+		// PAGE 3
+		2: [],
+	}
+
+	$(".next-btn").click(function (event) {
+		let activePageIndex = $($('#progressbar li.active')[$('#progressbar li.active').length - 1]).index();
+		var isPageValid = validationsObj[activePageIndex].every(checkTrue);
+
+		if (!isPageValid) {
+			scrollToTopIfScrollable($(event.target).parent('fieldset'));
+			return false;
+		}
+
 		if (animating) return false;
 		animating = true;
 		current_fs = $(this).parent();
@@ -77,31 +243,33 @@
 		});
 	});
 
-	const closeModalBtn = document.querySelectorAll("fieldset .close-modal ion-icon");
-	const modalWrapper 	= document.querySelector("div .modal-wrapper");
-	const cardBtn 	   	= document.querySelectorAll(".card  .card-body .btn");
 
-	for ( let INDEX in [...cardBtn] ) {
-		cardBtn[INDEX].addEventListener('click', (e) => {
-			modalWrapper.style.display = "block"
+	const closeModalBtn = document.querySelectorAll("fieldset .close-modal ion-icon");
+	const modalWrapper = document.querySelector("div .modal-wrapper");
+	const cardBtn = document.querySelectorAll(".card  .card-body .btn");
+	const backToTopBtn = document.getElementById("back-to-top-btn");
+
+	for (let i in [...cardBtn]) {
+		cardBtn[i].addEventListener('click', (e) => {
+			$(modalWrapper).fadeIn();
 			document.getElementsByTagName('html')[0].style.overflow = 'hidden';
-			document.getElementById("back-to-top-btn").style.display = 'none';
+			$(backToTopBtn).fadeOut();
 
 			let roomType = e.target.nextElementSibling.value;
-			document.getElementsByName('modal-room-type').defaultValue = roomType;
+			document.getElementsByName('room-type')[0].value = roomType;
+
+			// Добави тип стая към заглавието на модалният прозорец.
+			[...document.querySelectorAll('.roomtype-placeholder')].filter(element => element.innerHTML = e.target.parentElement.firstElementChild.innerText.toUpperCase());
 		});
 	}
 
-	for ( let INDEX in [...closeModalBtn] ) {
-		closeModalBtn[INDEX].addEventListener('click', (e) => {
-			modalWrapper.style.display = "none"
+	for (let i in [...closeModalBtn]) {
+		closeModalBtn[i].addEventListener('click', (e) => {
+			$(modalWrapper).fadeOut();
 			document.getElementsByTagName('html')[0].style.overflow = 'auto';
 
-			if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-				document.getElementById("back-to-top-btn").style.display = "block";
-			} else {
-				document.getElementById("back-to-top-btn").style.display = "none";
-			}
+			if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) $(backToTopBtn).fadeIn();
+			else $(backToTopBtn).fadeOut();
 		});
 	}
 

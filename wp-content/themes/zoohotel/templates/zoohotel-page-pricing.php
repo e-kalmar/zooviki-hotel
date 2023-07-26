@@ -22,7 +22,7 @@ get_header();
           <li class="list-group-item px-3">Цена: <b>24 лв.</b></li>
         </ul>
         <button class="btn btn-primary">Резервирай</button>
-        <input type="hidden" name="room-type" value="1">
+        <input type="hidden" name="card-room-type" value="1">
       </div>
     </div>
 
@@ -35,7 +35,7 @@ get_header();
           <li class="list-group-item px-3">Цена: <b>36 лв.</b></li>
         </ul>
         <button class="btn btn-primary">Резервирай</button>
-        <input type="hidden" name="room-type" value="2">
+        <input type="hidden" name="card-room-type" value="2">
       </div>
     </div>
 
@@ -48,7 +48,7 @@ get_header();
           <li class="list-group-item px-3">Цена: <b>48 лв.</b></li>
         </ul>
         <button class="btn btn-primary">Резервирай</button>
-        <input type="hidden" name="room-type" value="3">
+        <input type="hidden" name="card-room-type" value="3">
       </div>
     </div>
 
@@ -63,7 +63,7 @@ get_header();
           <li class="list-group-item px-3">Цена: <b>35 лв.</b></li>
         </ul>
         <button class="btn btn-primary">Резервирай</button>
-        <input type="hidden" name="room-type" value="4">
+        <input type="hidden" name="card-room-type" value="4">
       </div>
     </div>
 
@@ -78,7 +78,7 @@ get_header();
           <li class="list-group-item px-3">Цена: <b>40 лв.</b></li>
         </ul>
         <button class="btn btn-primary">Резервирай</button>
-        <input type="hidden" name="room-type" value="5">
+        <input type="hidden" name="card-room-type" value="5">
       </div>
     </div>
 
@@ -93,7 +93,7 @@ get_header();
           <li class="list-group-item px-3">Цена: <b>48 лв.</b></li>
         </ul>
         <button class="btn btn-primary">Резервирай</button>
-        <input type="hidden" name="room-type" value="6">
+        <input type="hidden" name="card-room-type" value="6">
       </div>
     </div>
   </div> <!-- end of row -->
@@ -104,14 +104,14 @@ get_header();
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Успешна резервация !</h5>
+        <h5 class="modal-title text-success">Успешна резервация !</h5>
       </div>
       <div class="modal-body">
         <p>Вие успешно резервирахте стая за вашето куче за избрания период.<br/>
       Наш служител ще се свърже с вас за потвърждние.</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="close-btn">Затвори</button>
+        <button type="button" class="btn btn-dark" data-bs-dismiss="modal" id="close-btn">Затвори</button>
       </div>
     </div>
   </div>
@@ -119,7 +119,7 @@ get_header();
 
 <!-- MultiStep Form -->
 <div class="row">
-    <div class="col-md-6 col-md-offset-3 modal-wrapper container-fluid">
+    <div class="col-md-6 col-md-offset-3 modal-wrapper reservation-modal container-fluid">
         <form id="booking-handler-form" class="class-booking-handler-form">
             <!-- progressbar -->
             <ul id="progressbar">
@@ -130,52 +130,63 @@ get_header();
             <!-- fieldsets -->
             <fieldset>
                 <span class="close-modal"><ion-icon name="close-outline"></ion-icon></span>
-                <h2 class="fs-title">Генерална информация</h2>
+                <h2 class="fs-title"><span class="roomtype-placeholder text-success"></span> Генерална информация</h2>
                 <h3 class="fs-subtitle">Моля въведете нужните данни за вашата резервация</h3>
+                <p class="validate-text text-danger validate-dates-discrepancy">Датата ви на напускане не може да бъде по-малка от дата на пристигане.</p>
+                <p class="validate-text text-danger validate-dates-equal">Датата ви на напускане не може да бъде същата като датата на пристигане.</p>
+                <p class="validate-text text-danger validate-dates-empty">Моля въведете дата и в двете полета.</p>
 
                 <div class="form-group row">
-                  <label for="pricing-form-date-1" class="col-form-label">Пристигане</label>
-                  <input type="date" name="reservation-date" class="form-control" id="reservation-date" >
+                  <label for="pricing-form-date-1" class="col-form-label">Дата на пристигане</label>
+                  <input type="text" name="checkin-date" class="date" id="pricing-form-date-1" >
                   <div class="invalid-feedback">Моля въведете дата на настаняване.</div>
                 </div>
 
                 <div class="form-group row">
-                  <label for="pricing-form-date-2" class="col-form-label">Напускане</label>
-                  <input type="date" name="checkout-date" class="form-control" id="checkout-date">
+                  <label for="pricing-form-date-2" class="col-form-label">Дата на напускане</label>
+                  <input type="text" name="checkout-date" class="date" id="pricing-form-date-2">
                   <div class="invalid-feedback">Моля въведете дата напускане.</div>
-                </div>
-
-                <div class="form-group row">
-                  <label for="dogs-count" class="col-form-label">Изберете брой кучета</label>
-                  <select class="form-control" aria-label="Default select example" name="dogs-count">
-                    <option selected value="1">1</option>
-                  </select>
-                  <input type="number" name="room-type" value="1" hidden>
                 </div>
 
                 <input type="button" name="next" class="next-btn action-button" value="Напред"/>
             </fieldset>
             <fieldset>
                 <span class="close-modal"><ion-icon name="close-outline"></ion-icon></span>
-                <h2 class="fs-title">Информация за гостите</h2>
+                <h2 class="fs-title"><span class="roomtype-placeholder text-success"></span> Информация за гостите</h2>
                 <h3 class="fs-subtitle">Моля добавете допълнителна информация за гостите на нашият хотел</h3>
-                <input type="text" id="client-name" name="client-name" placeholder="Име"/>
-                <input type="text" id="client-family-name" name="family-name" placeholder="Фамилия"/>
+                <p class="validate-text text-danger validate-regex">Информацията въведена в някое от полетеата може би е невярна, моля прегледайте.</p>
+                <p class="validate-text text-danger validate-first-name">Моля въведете вашето име.</p>
+                <input type="text" id="first-name" name="first-name" placeholder="Име"/>
+
+                <p class="validate-text text-danger validate-last-name">Моля въведете вашата фамилия.</p>
+                <input type="text" id="last-name" name="last-name" placeholder="Фамилия"/>
+
+                <p class="validate-text text-danger validate-phone-regex">Моля въведете валидент телефонен номер.</p>
+                <p class="validate-text text-danger validate-phone-empty">Моля въведете телефонен номер.</p>
                 <input type="tel" id="client-phone" name="client-phone" placeholder="Телефон"/>
+
+                <p class="validate-text text-danger validate-address-empty">Моля въведете вашият адрес.</p>
                 <input type="text" id="client-address" name="client-address" placeholder="Адрес"/>
+
+                <p class="validate-text text-danger validate-pet-name-empty">Моля въведете име на вашият домашен любимец.</p>
                 <input type="text" id="pet-name" name="pet-name" placeholder="Име на вашият домашен любимец"/>
+
+                <p class="validate-text text-danger validate-pet-type-empty">Моля въведете порода на вашият домашен любимец.</p>
                 <input type="text" id="pet-type" name="pet-type" placeholder="Порода"/>
-                <input type="text" id="pet-age" name="pet-age" placeholder="Възраст"/>
+
+                <p class="validate-text text-danger validate-pet-age-empty">Моля въведете годините на вашият домашен любимец.</p>
+                <p class="validate-text text-danger validate-pet-age-regex">Въведеното число не следва да бъде с дължина повече от 2 символа.</p>
+                <input type="number" id="pet-age" name="pet-age" placeholder="Възраст"/>
 
                 <input type="button" name="previous" class="previous-btn action-button-previous" value="Назад"/>
                 <input type="button" name="next" class="next-btn action-button" value="Напред"/>
             </fieldset>
             <fieldset>
                 <span class="close-modal"><ion-icon name="close-outline"></ion-icon></span>
-                <h2 class="fs-title">Обобщителна информация за вашата резервация</h2>
-                <h2 class="fs-title">Вашата информация</h2>
+                <h2 class="fs-title"><span class="roomtype-placeholder text-success"></span> Детайли</h2>
+                <p class="text-fluid text-center pt-5">Вашата информация</p>
                 <table class="table">
-                  <thead>
+                  <thead class="table-dark">
                     <tr>
                       <th scope="col">Име</th>
                       <th scope="col">Фамилия</th>
@@ -184,27 +195,27 @@ get_header();
                   </thead>
                   <tbody>
                     <tr>
-                      <td><span class="client-name">1</span></td>
-                      <td><span class="client-family-name">1</span></td>
-                      <td><span class="client-phone">1</span></td>
+                      <td><span class="client-name"></span></td>
+                      <td><span class="client-family-name"></span></td>
+                      <td><span class="client-phone"></span></td>
                     </tr>
                   </tbody>
                 </table>
 
-                <h2 class="fs-title">Информация за вашият домашен любимец</h2>
+                <p class="text-fluid text-center pt-5">Информация за вашият домашен любимец</p>
                 <table class="table">
-                  <thead>
+                  <thead class="table-dark">
                     <tr>
-                      <th scope="col">Име на домашен любимец:</th>
-                      <th scope="col">Порода:</th>
-                      <th scope="col">Години:</th>
+                      <th scope="col">Име</th>
+                      <th scope="col">Порода</th>
+                      <th scope="col">Години</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td><span class="pet-name">1</span></td>
-                      <td><span class="pet-type">1</span></td>
-                      <td><span class="pet-age">1</span></td>
+                      <td><span class="pet-name"></span></td>
+                      <td><span class="pet-type"></span></td>
+                      <td><span class="pet-age"></span></td>
                     </tr>
                   </tbody>
                 </table>
@@ -212,7 +223,7 @@ get_header();
                 <input type="button" name="previous" class="previous-btn action-button-previous" value="Назад"/>
                 <input type="submit" class="action-button" value="Резервирай"><span id="loader" class="spinner-border spinner-border-sm" role="status" aria-hidden="true" hidden></span></input>
             </fieldset>
-            <input type="hidden" name="modal-room-type">
+            <input type="hidden" name="room-type">
         </form>
     </div>
 </div>

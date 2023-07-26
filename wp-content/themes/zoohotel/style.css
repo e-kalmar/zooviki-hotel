@@ -14,6 +14,19 @@ html, body {
   --bs-btn-border-color: none !important;
 }
 
+.validate-text {
+  display: none;
+}
+
+/* #success-modal button {
+  background-color: #4dc45c!important;
+  color: white!important;
+}
+
+#success-modal button:hover {
+  background-color: #56c26496!important;
+} */
+
 #back-to-top-btn {
   display: none;
   position: fixed;
@@ -68,4 +81,26 @@ html, body {
     margin: 0;
     line-height: 1.4;
   }
+}
+
+.loading-dots {
+  text-align: center;
+  width: 100%;
+}
+
+.loading-dots &--dot {
+  animation: dot-keyframes 1.5s infinite ease-in-out;
+  background-color: #BD9B08 !important;
+  border-radius: 10px;
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+}
+
+.loading-dots &--dot &:nth-child(2) {
+  animation-delay: .5s;
+}
+
+.loading-dots &--dot &:nth-child(3) {
+  animation-delay: 1s;
 }

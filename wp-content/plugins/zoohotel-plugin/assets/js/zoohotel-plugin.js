@@ -4,10 +4,20 @@
     const NONCE = document.getElementsByName('nonce')[0].value;
     const FORMS = [...document.querySelectorAll('.class-booking-handler-form')];
 
-    const bookingHandler = (e) => {
+    const dynamic_loader = (node) => {
+        let loader = document.createElement('li');
+            loader.classList = "loading-dots";
+        for ( let i = 0; i < 3; i++ ) {
+            let loderChild = document.createElement('span');
+            loderChild.classList.add('loading-dots--dot');
+            loader.append(loderChild);
+        }
+        return node.append(loader);
+    };
 
+    const bookingHandler = (e) => {
         if ($(e.target)[0].checkValidity()) {
-            $(e.target).find('#loader').attr('hidden', false)
+            dynamic_loader($(e.target));
             e.preventDefault();
             const form = $(e.target).serialize();
             return $.ajax({
@@ -21,7 +31,6 @@
                 success: (response) => {
                 },
                 complete: function () {
-                    $(e.target).find('#loader').hide();
                     document.querySelector("div .modal-wrapper").style.display = 'none';
         			document.getElementsByTagName('html')[0].style.overflow = 'auto';
                     $('#success-modal').toggle();

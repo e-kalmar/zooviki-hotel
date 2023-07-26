@@ -41,6 +41,8 @@
     z-index: 1;
     /*stacking fieldsets above each other*/
     position: relative;
+    max-height: 80vh;
+    overflow: auto;
 }
 
 /*Hide all except first fieldset*/

@@ -18,9 +18,10 @@ function zoohotel_scripts()
 	wp_enqueue_style('google-fonts', "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
 	wp_enqueue_style('mdbootstrap-css', "https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.css");
 	wp_enqueue_style('pricing-page-css', "https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.css");
+	wp_enqueue_style('jquery-ui-css', "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css");
 
 	// SCRIPTS
-	wp_enqueue_script('jq', 'https://code.jquery.com/jquery-3.7.0.min.js');
+	wp_enqueue_script('jq', 'https://code.jquery.com/jquery-3.6.0.js');
 	wp_enqueue_script('jq-ui', 'https://code.jquery.com/ui/1.13.2/jquery-ui.min.js');
 	wp_enqueue_script('bootstrap-js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js');
 	wp_enqueue_script('ion-icons', 'https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js');
