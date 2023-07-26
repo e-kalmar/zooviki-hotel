@@ -9,7 +9,53 @@
  */
 
 class ZooHotelPlugin {
+    private $ROOM_TYPES;
+    private $all_guests;
+
     public function __construct(){
+    $this->all_guests = array();
+    $this->ROOM_TYPES = array();
+
+    for ($i=0; $i <1; $i++) { 
+        foreach ($this->get_bookings_by_room_type($i+1) as $value) {
+            array_push($this->all_guests,array(
+                get_post_meta($value,'checkin-date')[0],
+                get_post_meta($value,'checkout-date')[0],
+                get_post_meta($value,'first-name')[0] . ' ' . get_post_meta($value,'last-name')[0],
+                get_post_meta($value,'client-phone')[0],
+                get_post_meta($value,'client-address')[0],
+                get_post_meta($value,'pet-name')[0],
+                get_post_meta($value,'pet-name')[0],
+                get_post_meta($value,'pet-age')[0],
+                get_post_meta($value,'uuid')[0],
+            ));            
+        }
+    }
+    
+        array_push($this->ROOM_TYPES,        
+            array(
+                "Room Type 1",                
+                $this->all_guests
+                
+        ));
+
+    
+        // $this->ROOM_TYPES =array(
+        // //     array(
+        // //         "Room Type 1",
+        // //         $this->room_type1_guests
+
+        // //     ),
+        // //     array(
+        // //         "Room Type 2",
+        // //         array(
+        // //             array("2023-07-28", "Alice Johnson", "111-222-3333", "789 Elm St", "Luna", "Poodle", "4", "1"),
+        // //         )
+        // //     ),
+        // //     // Add more headers and data as needed
+        // // );
+
+
         // Set default timezone
         date_default_timezone_set('Europe/Sofia');
 
@@ -21,10 +67,34 @@ class ZooHotelPlugin {
 
         // Register REST API
         add_action('rest_api_init', array($this, 'register_rest_api'));
+
+        // Add sub menu page to the plugin
+        add_action('admin_menu', array($this, 'add_rooms_sub_menu'));
+
     }
 
-    public function create_custom_post_type(){
 
+    public function get_bookings_by_room_type($room_type){
+        $args = array(
+            'post_type'  => 'zoohotel_plugin',
+            'meta_query' => array(
+                array(
+                    'key'   => 'room-type',
+                    'value' => $room_type,
+                )
+            )
+        );
+        $result = get_posts($args);
+        $IDs = array();
+
+         foreach ($result as $key => $value) {
+            array_push($IDs,$value->ID);
+        }
+         return $IDs;
+    }
+
+
+    public function create_custom_post_type(){
         $args = array(
             'public' => true,
             'has_archive' => true,
@@ -41,6 +111,112 @@ class ZooHotelPlugin {
 
         register_post_type('zoohotel_plugin', $args);
     }
+    
+    public function add_rooms_sub_menu()
+    {
+        add_submenu_page(
+        'edit.php?post_type=zoohotel_plugin',
+        'Manage Rooms',
+        'Rooms',
+        'manage_options',
+        'manage_rooms',
+        array($this,'view_rooms'),
+        '0'); 
+    }
+    public function view_rooms(){
+        
+        ?>
+        <style>
+         /* Style for the dropdown button */
+         .collapsible-btn {
+            background-color: #f2f2f2;
+            color: black;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 16px;
+        }
+
+        /* Style for the active dropdown button */
+        .active {
+            background-color: #ccc;
+        }
+
+        /* Style for the collapsible content (hidden by default) */
+        .collapsible-content {
+            display: none;
+            overflow: hidden;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        /* Add some space for the button */
+        td:last-child {
+            padding-right: 20px;
+        }
+    </style>
+
+
+        <?php
+
+
+
+foreach ($this->ROOM_TYPES as $table) {
+    $header = $table[0];
+    $data = $table[1];
+    echo '<button class="collapsible-btn">' . $header . '</button>';
+    echo '<div class="collapsible-content">';
+    echo '<table>';
+    echo '<tr>';
+    echo '<th>Check-in Date</th>';
+    echo '<th>Check-out Date</th>';
+    echo '<th>Name</th>';
+    echo '<th>Phone</th>';
+    echo '<th>Address</th>';
+    echo '<th>Pet Name</th>';
+    echo '<th>Breed</th>';
+    echo '<th>Age</th>';
+    echo '<th>ID</th>';
+    echo '<th>Confirm</th>';
+    echo '</tr>';
+
+    foreach ($data as $row) {
+        echo '<pre>';
+        echo '<tr>';
+        foreach ($row as $key=>$value) {
+            
+            echo '<td>' . $value . '</td>';
+        }
+        echo '<td><button onclick="confirmData()">Confirm</button></td>';
+        echo '</tr>';
+    }
+
+    echo '</table>';
+    echo '</div>';
+}
+
+    }
+    
 
     public function load_assets(){
         wp_enqueue_style('zoohotel-plugin', plugin_dir_url(__FILE__) . 'assets/css/zoohotel-plugin.css', array(), 1, 'all');
@@ -90,3 +266,33 @@ class ZooHotelPlugin {
 *   File system objects can become orphaned when the directories that referenced them are damaged.
 */
 $GLOBALS['zoohotel-plugin'] = new ZooHotelPlugin();
+
+?>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    let collapsibleBtns = document.querySelectorAll('.collapsible-btn');
+for (let i = 0; i < collapsibleBtns.length; i++) {
+    console.log(collapsibleBtns[i]);
+    collapsibleBtns[i].addEventListener('click', function() {
+        this.classList.toggle('active');
+        const content = this.nextElementSibling;
+        if (content.style.display === 'block') {
+            content.style.display = 'none';
+        } else {
+            content.style.display = 'block';
+        }
+    });
+}
+});
+    
+
+
+
+function confirmData() {
+    // Add your code here to handle the confirm button click
+    // For example, you can submit the form or perform some other action
+    // This function will be called when the "Confirm" button is clicked
+    // You can access the relevant row data here if needed
+}
+</script>
+<?php
