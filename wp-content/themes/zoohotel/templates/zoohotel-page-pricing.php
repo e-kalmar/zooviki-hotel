@@ -132,9 +132,9 @@ get_header();
                 <span class="close-modal"><ion-icon name="close-outline"></ion-icon></span>
                 <h2 class="fs-title"><span class="roomtype-placeholder text-success"></span> Генерална информация</h2>
                 <h3 class="fs-subtitle">Моля въведете нужните данни за вашата резервация</h3>
-                <p class="validate-text text-danger validate-dates-discrepancy">Датата ви на напускане не може да бъде по-малка от дата на пристигане.</p>
+                <p class="validate-text text-danger validate-dates-discrepancy">Датата ви на напускане не може да бъде преди датата на пристигане.</p>
                 <p class="validate-text text-danger validate-dates-equal">Датата ви на напускане не може да бъде същата като датата на пристигане.</p>
-                <p class="validate-text text-danger validate-dates-empty">Моля въведете дата и в двете полета.</p>
+                <p class="validate-text text-danger validate-dates-empty">Моля въведете дати и в двете полета.</p>
 
                 <div class="form-group row">
                   <label for="pricing-form-date-1" class="col-form-label">Дата на пристигане</label>
@@ -153,7 +153,7 @@ get_header();
             <fieldset>
                 <span class="close-modal"><ion-icon name="close-outline"></ion-icon></span>
                 <h2 class="fs-title"><span class="roomtype-placeholder text-success"></span> Информация за гостите</h2>
-                <h3 class="fs-subtitle">Моля добавете допълнителна информация за гостите на нашият хотел</h3>
+                <h3 class="fs-subtitle">Моля попълнете вашите данни.</h3>
                 <p class="validate-text text-danger validate-regex">Информацията въведена в някое от полетеата може би е невярна, моля прегледайте.</p>
                 <p class="validate-text text-danger validate-first-name">Моля въведете вашето име.</p>
                 <input type="text" id="first-name" name="first-name" placeholder="Име"/>
@@ -161,7 +161,7 @@ get_header();
                 <p class="validate-text text-danger validate-last-name">Моля въведете вашата фамилия.</p>
                 <input type="text" id="last-name" name="last-name" placeholder="Фамилия"/>
 
-                <p class="validate-text text-danger validate-phone-regex">Моля въведете валидент телефонен номер.</p>
+                <p class="validate-text text-danger validate-phone-regex">Моля въведете валиден телефонен номер.</p>
                 <p class="validate-text text-danger validate-phone-empty">Моля въведете телефонен номер.</p>
                 <input type="tel" id="client-phone" name="client-phone" placeholder="Телефон"/>
 
@@ -174,8 +174,8 @@ get_header();
                 <p class="validate-text text-danger validate-pet-type-empty">Моля въведете порода на вашият домашен любимец.</p>
                 <input type="text" id="pet-type" name="pet-type" placeholder="Порода"/>
 
-                <p class="validate-text text-danger validate-pet-age-empty">Моля въведете годините на вашият домашен любимец.</p>
-                <p class="validate-text text-danger validate-pet-age-regex">Въведеното число не следва да бъде с дължина повече от 2 символа.</p>
+                <p class="validate-text text-danger validate-pet-age-empty">Моля въведете възраста на вашият домашен любимец.</p>
+                <p class="validate-text text-danger validate-pet-age-regex">Моля въведете валидна възраст на вашия домашел любимец.</p>
                 <input type="number" id="pet-age" name="pet-age" placeholder="Възраст"/>
 
                 <input type="button" name="previous" class="previous-btn action-button-previous" value="Назад"/>
