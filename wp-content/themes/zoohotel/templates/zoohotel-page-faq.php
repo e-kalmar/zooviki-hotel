@@ -10,15 +10,15 @@ get_header();
 <!-- PAGE TEMPLATE STARTS HERE -->
 
 <div class="container zoohotel-faq-page">
+  <div class="content-wrap shadow p-3 mb-5 rounded">
+    <div class="row justify-content-center">
+      <img src="<?php echo get_template_directory_uri() . "/assets/media/img/FAQ.png"; ?>"
+        class="img-fluid z-depth-1 header-image" alt="FAQ image">
+      <section class="p-4">
+        <p class="text-center mb-5">
+          Find the answers for the most frequently asked questions below
+        </p>
 
-  <div class="row justify-content-center">
-    <img src="<?php echo get_template_directory_uri() . "/assets/media/img/FAQ.png"; ?>" class="img-fluid z-depth-1 header-image" alt="FAQ image">
-    <section>
-      <p class="text-center mb-5">
-        Find the answers for the most frequently asked questions below
-      </p>
-
-      <div class="row">
         <div class="col-md-6 col-lg-4 mb-4">
           <h6 class="mb-3 text-primary"><i class="far fa-paper-plane text-primary pe-2"></i> A simple
             question?</h6>
@@ -76,8 +76,8 @@ get_header();
             Of course! We’re happy to offer a free plan to anyone who wants to try our service.
           </p>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   </div>
 </div>
 

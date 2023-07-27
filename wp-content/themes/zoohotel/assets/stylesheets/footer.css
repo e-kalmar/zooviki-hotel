@@ -1,24 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
 
-.footer {
-/*  position: relative;*/
-/*  left: 0;
-  bottom: 0;
-  height: 2em;
-  text-align: center;*/
 
-  position: relative;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  height: 2em;
-  width: 100%;
-  text-align: center;
-}
 
 footer {
   width: 100%;
-  background: #4dc45c1f;
+  background: #94e69f;
   min-height: 100px;
   padding: 20px 50px;
   display: flex;

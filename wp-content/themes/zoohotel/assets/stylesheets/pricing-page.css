@@ -12,6 +12,20 @@
 /*custom font*/
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 
+.zoo-hotel-pricing-page .content-wrap .card-body,
+.zoo-hotel-pricing-page .content-wrap .card {
+    border-radius: 25px;
+    background-color:rgba(251, 247, 242) ;
+}
+
+.zoo-hotel-pricing-page .content-wrap .card-body .list-group li {
+    background-color:rgba(251, 247, 242, 0.87) ;
+}
+
+.zoo-hotel-pricing-page .content-wrap {
+    background-color:rgba(251, 247, 242, .98) ;
+}
+
 .modal-wrapper {
     /* display: none; Hidden by default */
     position: fixed; /* Stay in place */
@@ -30,7 +44,7 @@
 
 #booking-handler-form fieldset {
     z-index: 1;
-    background: white;
+    background-color: rgba(251, 247, 242);
     border: 0 none;
     border-radius: 25px;
     box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);

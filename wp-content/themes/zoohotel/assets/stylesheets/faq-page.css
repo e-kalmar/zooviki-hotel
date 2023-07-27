@@ -4,3 +4,7 @@
   margin-right: auto;
   width: 50%;
 }
+
+div.zoohotel-faq-page .content-wrap {
+  background-color: rgba(251, 247, 242, .98);
+}
