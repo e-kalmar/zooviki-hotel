@@ -28,6 +28,7 @@ class ZooHotelPlugin {
                 get_post_meta($value,'pet-name')[0],
                 get_post_meta($value,'pet-age')[0],
                 get_post_meta($value,'uuid')[0],
+                get_post_meta($value,'status')[0],
             ));            
         }
     }
@@ -92,8 +93,25 @@ class ZooHotelPlugin {
         }
          return $IDs;
     }
+    
+    public function get_booking_by_uuid($uuid){
+        $args = array(
+            'post_type'  => 'zoohotel_plugin',
+            'meta_query' => array(
+                array(
+                    'key'   => 'uuid',
+                    'value' => $uuid,
+                )
+            )
+        );
+        $result = get_posts($args);
+        $IDs = array();
 
-
+         foreach ($result as $key => $value) {
+            array_push($IDs,$value->ID);
+        }
+         return $IDs;
+    }
     public function create_custom_post_type(){
         $args = array(
             'public' => true,
@@ -174,6 +192,12 @@ class ZooHotelPlugin {
         td:last-child {
             padding-right: 20px;
         }
+
+        .actions{
+            display:flex;
+            flex-direction: column;
+            gap:10px;
+        }
     </style>
 
 
@@ -188,16 +212,17 @@ foreach ($this->ROOM_TYPES as $table) {
     echo '<div class="collapsible-content">';
     echo '<table>';
     echo '<tr>';
-    echo '<th>Check-in Date</th>';
-    echo '<th>Check-out Date</th>';
-    echo '<th>Name</th>';
-    echo '<th>Phone</th>';
-    echo '<th>Address</th>';
-    echo '<th>Pet Name</th>';
-    echo '<th>Breed</th>';
-    echo '<th>Age</th>';
+    echo '<th>Пристигане</th>';
+    echo '<th>Заминаване</th>';
+    echo '<th>Име</th>';
+    echo '<th>Телефон</th>';
+    echo '<th>Адрес</th>';
+    echo '<th>Име на любмец</th>';
+    echo '<th>Порода</th>';
+    echo '<th>Възраст</th>';
     echo '<th>ID</th>';
-    echo '<th>Confirm</th>';
+    echo '<th>Статус</th>';
+    echo '<th>Действия</th>';
     echo '</tr>';
 
     foreach ($data as $row) {
@@ -207,16 +232,40 @@ foreach ($this->ROOM_TYPES as $table) {
             
             echo '<td>' . $value . '</td>';
         }
-        echo '<td><button onclick="confirmData()">Confirm</button></td>';
+
+
+
+        echo '<td><form method="post">';
+        echo '<input name="uuid" hidden value="'. $row[8] . '"></input>';
+        echo '<div class="actions">';
+        echo '<button  class="btn btn-success" type="submit" name="confirm-btn">Потвърди</button>';
+        echo '<button  class="btn btn-warning" type="submit" name="edit-btn">Промени</button>';
+        echo '<button  class="btn btn-primary" type="submit" name="checkout--btn">Check-out</button>';
+        echo '<button  class="btn btn-danger" type="submit" name="delete-btn" >Изтрий</button>';
+        echo '</div>';
+        echo '</form></td>';
         echo '</tr>';
     }
+        if(isset($_POST['confirm-btn'])){
+            $this->confirmBooking($_POST['uuid']);
+        };
 
-    echo '</table>';
-    echo '</div>';
-}
+        echo '</table>';
+        echo '</div>';
+    }
 
     }
     
+
+    public function confirmBooking($uuid){
+        $post = $this->get_booking_by_uuid($uuid)[0];
+        update_post_meta($post,'status','Confimred');
+        echo '<META HTTP-EQUIV=Refresh CONTENT="0; URL='. get_site_url() .'/wp-admin/edit.php?post_type=zoohotel_plugin&page=manage_rooms">';
+
+
+    }
+   
+
 
     public function load_assets(){
         wp_enqueue_style('zoohotel-plugin', plugin_dir_url(__FILE__) . 'assets/css/zoohotel-plugin.css', array(), 1, 'all');
@@ -243,7 +292,7 @@ foreach ($this->ROOM_TYPES as $table) {
 
         $postarr = array(
             'post_type'   => 'zoohotel_plugin',
-            'post_title'  => 'Booking form - ' . ' ' . date("Y/m/d") . ' - ' . date("h:i:sa"),
+            'post_title'  => 'Booking form - ' . ' ' . date("Y/m/d") . ' - ' . date("h:i:sa") . ' - ' . $uuid,
             'post_status' => 'publish',
             'post_id'     => 'id',
         );
@@ -254,6 +303,7 @@ foreach ($this->ROOM_TYPES as $table) {
             add_post_meta($post_id,$label,$value);
         }
         add_post_meta($post_id,"uuid",$uuid,true);
+        add_post_meta($post_id,"status","Pending");
         if($post_id){
             return new WP_REST_Response('SUCCESS', 200);
         }
@@ -283,6 +333,7 @@ for (let i = 0; i < collapsibleBtns.length; i++) {
         }
     });
 }
+
 });
     
 

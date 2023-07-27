@@ -8,6 +8,12 @@
  * @link
  */
 
+ function admin_load_bootstrap() {
+    wp_enqueue_style('mdbootstrap-css', "https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.css");
+
+}
+add_action('admin_enqueue_scripts', 'admin_load_bootstrap', 10, 1);
+
 function zoohotel_scripts()
 {
 	// STYLES
