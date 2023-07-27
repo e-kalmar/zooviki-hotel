@@ -9,11 +9,9 @@ get_header();
 
 <!-- PAGE TEMPLATE STARTS HERE -->
 
-<div class="container zoohotel-faq-page">
-
-  <div class="row justify-content-center">
-    <img src="<?php echo get_template_directory_uri() . "/assets/media/img/FAQ.png"; ?>" class="img-fluid z-depth-1 header-image" alt="FAQ image">
-    <section>
+<div class="container zoohotel-faq-page shadow p-3 mb-5 rounded justify-content-center">
+  <img src="<?php echo get_template_directory_uri() . "/assets/media/img/FAQ.png"; ?>" class="img-fluid z-depth-1 header-image" alt="FAQ image">
+  <section class="p-4">
       <p class="text-center mb-5">
         Find the answers for the most frequently asked questions below
       </p>
@@ -78,7 +76,6 @@ get_header();
         </div>
       </div>
     </section>
-  </div>
 </div>
 
 <?php get_footer();

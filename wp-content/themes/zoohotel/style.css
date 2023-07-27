@@ -3,6 +3,7 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+  background-image: url("./assets/media/img/background.jpg");
 }
 
 .navbar-collapse {
@@ -103,4 +104,9 @@ html, body {
 
 .loading-dots &--dot &:nth-child(3) {
   animation-delay: 1s;
+}
+
+.zoohotel-home-page .card,
+.zoohotel-home-page .card .card-body {
+  background-color: rgba(251, 247, 242, 0.87);
 }

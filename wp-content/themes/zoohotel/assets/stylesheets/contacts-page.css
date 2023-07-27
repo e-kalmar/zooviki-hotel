@@ -7,5 +7,9 @@
 .zoohotel-contacts-page button{
   background: #fb921f !important;
   color: white;
-  
+
+}
+
+div.zoohotel-contacts-page{
+  background-color: rgba(251, 247, 242, 0.95);
 }

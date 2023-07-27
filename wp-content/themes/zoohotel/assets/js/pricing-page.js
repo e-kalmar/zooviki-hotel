@@ -55,10 +55,12 @@
 			boolCheck = false;
 		} else $('.validate-dates-discrepancy').fadeOut();
 
-		if (checkinDate.toISOString() === checkoutDate.toISOString()) {
-			$('.validate-dates-equal').fadeIn();
-			boolCheck = false;
-		} else $('.validate-dates-equal').fadeOut();
+		if ( document.getElementsByName('checkin-date')[0].value != '' && document.getElementsByName('checkout-date')[0].value != '' ) {
+			if (checkinDate.toISOString() === checkoutDate.toISOString()) {
+				$('.validate-dates-equal').fadeIn();
+				boolCheck = false;
+			} else $('.validate-dates-equal').fadeOut();
+		}
 
 		return boolCheck;
 	}
@@ -165,7 +167,7 @@
 
 	$(".next-btn").click(function (event) {
 		let activePageIndex = $($('#progressbar li.active')[$('#progressbar li.active').length - 1]).index();
-		var isPageValid = validationsObj[activePageIndex].every(checkTrue);
+		let isPageValid = validationsObj[activePageIndex].every(checkTrue);
 
 		if (!isPageValid) {
 			scrollToTopIfScrollable($(event.target).parent('fieldset'));

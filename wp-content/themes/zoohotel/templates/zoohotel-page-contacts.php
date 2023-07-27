@@ -9,14 +9,14 @@ get_header();
 
 <!-- PAGE TEMPLATE STARTS HERE -->
 <!--Section: Contact v.2-->
-<div class="container zoohotel-contacts-page">
+<div class="container zoohotel-contacts-page shadow p-3 mb-5 rounded">
   <img src="<?php echo get_template_directory_uri() . "/assets/media/img/contact-us.png"; ?>" class="img-fluid z-depth-1 header-image" alt="Contact us image">
   <section class="mb-4">
       <!--Section description-->
-      <p class="text-center w-responsive mx-auto mb-5">Имате въпрос ? Не се колебайте и веднага се свържете с нас. Нашият екип ще се свърже с вас за да ви помогне</p>
-    
+      <h3 class="text-center w-responsive mx-auto mb-5 text-fluid">Имате въпрос?<br>Не се колебайте и веднага се свържете с нас.<br>Нашият екип ще се свърже с вас за да ви помогне.</h3>
+
       <div class="row">
-    
+
           <!--Grid column-->
           <div class="col-md-9 mb-md-0 mb-5">
               <form id="contact-form" name="contact-form needs-validation" novalidate>
