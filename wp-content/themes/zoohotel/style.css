@@ -6,6 +6,14 @@ html, body {
   background-image: url("./assets/media/img/background.jpg");
 }
 
+html,
+header,
+#navbarNav > ul > li > a,
+body,
+.container {
+  font-size: 1vw;
+}
+
 .container {
   min-height: 100vh;
 }
@@ -117,4 +125,47 @@ html, body {
 .zoohotel-home-page .card,
 .zoohotel-home-page .card .card-body {
   background-color: rgba(251, 247, 242, 0.87);
+}
+
+/* Responsive font size for different screen sizes */
+@media screen and (max-width: 1200px) {
+  html,
+  header,
+  #navbarNav > ul > li > a,
+  body,
+  .container {
+    font-size: 1vw;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  html,
+  header,
+  #navbarNav > ul > li > a,
+  body,
+  .container {
+    font-size: 3.5vw;
+  }
+
+  #back-to-top-btn i {
+    min-height: 3vh;
+    min-width: 8vw;
+    font-size: 4vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  html,
+  header,
+  #navbarNav > ul > li > a,
+  body,
+  .container {
+    font-size: 4vw;
+  }
+
+  #back-to-top-btn i {
+    min-height: 3vh;
+    min-width: 8vw;
+    font-size: 4vw;
+  }
 }

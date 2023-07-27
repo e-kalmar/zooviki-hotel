@@ -96,18 +96,19 @@ get_header();
 
                 <!--Grid column-->
                 <div class="col-md-3 text-center">
-                    <ul class="list-unstyled mb-0">
+                    <ul class="list-unstyled mb-0 text-wrap">
                         <li><i class="fas fa-map-marker-alt fa-2x"></i>
                             <p>Гр. Бургас Ж.К. Ветрен</p>
                         </li>
 
-                        <li><i class="fas fa-phone mt-4 fa-2x"></i>
+                        <li><i class="fas fa-envelope fa-2x"></i>
+                            <p class="fw-lighter">support@pethotelviki.eu</p>
+                        </li>
+
+                        <li><i class="fas fa-phone fa-2x"></i>
                             <p>+359 887 654 321</p>
                         </li>
 
-                        <li><i class="fas fa-envelope mt-4 fa-2x"></i>
-                            <p>support@pethotelviki.eu</p>
-                        </li>
                     </ul>
                 </div>
                 <!--Grid column-->
