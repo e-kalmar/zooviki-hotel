@@ -3,10 +3,6 @@
 
 	// INITIALIZE DATEPICKERS
 	let dateToday = new Date();
-	let dates = $(".date").datepicker({
-		changeMonth: true,
-		minDate: dateToday,
-	});
 
 	var current_fs, next_fs, previous_fs; //fieldsets
 	var left, opacity, scale; //fieldset properties which we will animate
@@ -38,6 +34,7 @@
 		const phoneRegex = /^(?:(?:\+|00)359[-.\s]?)?(?:\(\d{1,4}\)|\d{1,4}|0)?[-.\s]?\d{3}[-.\s]?\d{3}$/;
 		return phoneRegex.test(phoneNumber);
 	}
+
 
 	// VALIDATIONS
 	const reservationDateValidate = (boolCheck = true) => {
@@ -152,6 +149,33 @@
 
 		return boolCheck
 	}
+
+
+	// Resrvation start date
+	let startDate = datepicker('.start', {
+		id: 1,
+		position: 'bl',
+		customDays: ['Н', 'П', 'В', 'С', 'Ч', 'П', 'С'],
+		customMonths: ['Януари', 'Февруари', 'Март', 'Април', 'Май', 'Юни', 'Юли', 'Август', 'Септември', 'Октомври', 'Ноември', 'Декември'],
+		minDate: dateToday,
+		formatter: (input, date, instance) => {
+			const value = date.toLocaleDateString()
+			input.value = value
+		},
+	})
+
+	let endDate = datepicker('.end', {
+		id: 1,
+		position: 'bl',
+		minDate: dateToday,
+		customDays: ['Н', 'П', 'В', 'С', 'Ч', 'П', 'С'],
+		customMonths: ['Януари', 'Февруари', 'Март', 'Април', 'Май', 'Юни', 'Юли', 'Август', 'Септември', 'Октомври', 'Ноември', 'Декември'],
+		formatter: (input, date, instance) => {
+			const value = date.toLocaleDateString()
+			input.value = value
+		},
+	})
+
 
 	// global validations object
 	var validationsObj = {

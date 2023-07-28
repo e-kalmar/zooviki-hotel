@@ -5,8 +5,7 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="/">
                 <div class="logo-text-container zoo-hotel-logo-container">
-                    <img src="<?php echo get_template_directory_uri() . '/assets/media/img/logo.png' ?>" alt="Logo">
-                    <span class="logo-title">Зоохотел Вики</span>
+                    <img class="img-fluid" src="<?php echo get_template_directory_uri() . '/assets/media/img/logo.png' ?>" alt="Logo">
                 </div>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"

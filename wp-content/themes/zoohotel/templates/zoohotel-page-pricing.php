@@ -11,7 +11,7 @@ get_header();
 
 
 <div class="container zoo-hotel-pricing-page">
-  <div class="content-wrap shadow p-3 mb-5 rounded p-4">
+  <div class="content-wrap">
     <div class="row justify-content-center">
       <h3 class="shadow-lg p-3 mb-5 bg-transperent rounded text-center text-success">Изберете стая за вашето куче!</h3>
       <div class="col-lg-6 col-xxl-4 mb-5">
@@ -151,18 +151,11 @@ get_header();
           <p class="validate-text text-danger validate-dates-equal">Датата ви на напускане не може да бъде същата като
             датата на пристигане.</p>
           <p class="validate-text text-danger validate-dates-empty">Моля въведете дати и в двете полета.</p>
+          <input type="text" name="checkin-date" class="start" readonly placeholder="Дата на настаняване" id="pricing-form-date-1">
+          <div class="invalid-feedback">Моля въведете дата на настаняване.</div>
 
-          <div class="form-group row">
-            <label for="pricing-form-date-1" class="col-form-label">Дата на пристигане</label>
-            <input type="text" name="checkin-date" class="date" id="pricing-form-date-1">
-            <div class="invalid-feedback">Моля въведете дата на настаняване.</div>
-          </div>
-
-          <div class="form-group row">
-            <label for="pricing-form-date-2" class="col-form-label">Дата на напускане</label>
-            <input type="text" name="checkout-date" class="date" id="pricing-form-date-2">
-            <div class="invalid-feedback">Моля въведете дата напускане.</div>
-          </div>
+          <input type="text" name="checkout-date" class="end" placeholder="Дата на напускане" readonly id="pricing-form-date-2">
+          <div class="invalid-feedback">Моля въведете дата напускане.</div>
 
           <input type="button" name="next" class="next-btn action-button" value="Напред" />
         </fieldset>
@@ -206,7 +199,7 @@ get_header();
           <h2 class="fs-title"><span class="roomtype-placeholder text-success"></span> Детайли</h2>
           <p class="text-fluid text-center pt-5">Вашата информация</p>
           <table class="table">
-            <thead class="table-dark">
+            <thead class="table">
               <tr>
                 <th scope="col">Име</th>
                 <th scope="col">Фамилия</th>
@@ -224,7 +217,7 @@ get_header();
 
           <p class="text-fluid text-center pt-5">Информация за вашият домашен любимец</p>
           <table class="table">
-            <thead class="table-dark">
+            <thead class="table">
               <tr>
                 <th scope="col">Име</th>
                 <th scope="col">Порода</th>

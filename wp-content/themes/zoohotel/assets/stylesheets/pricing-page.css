@@ -18,12 +18,13 @@
     background-color:rgba(251, 247, 242) ;
 }
 
-.zoo-hotel-pricing-page .content-wrap .card-body .list-group li {
-    background-color:rgba(251, 247, 242, 0.87) ;
+.zoo-hotel-pricing-page .content-wrap .card-body .list-group li,
+.zoo-hotel-pricing-page .content-wrap h3 {
+    background-color:rgba(251, 247, 242, 0.95) ;
 }
 
 .zoo-hotel-pricing-page .content-wrap {
-    background-color:rgba(251, 247, 242, .98) ;
+    /* background-color:rgba(251, 247, 242, .98) ; */
 }
 
 .modal-wrapper {
@@ -56,7 +57,7 @@
     /*stacking fieldsets above each other*/
     position: relative;
     max-height: 80vh;
-    overflow: auto;
+    /* overflow: auto; */
 }
 
 /*Hide all except first fieldset*/
@@ -157,6 +158,17 @@
     padding: 10px;
 }
 
+.start:hover {
+    opacity: .75;
+    cursor: pointer;
+}
+
+.end:hover {
+    opacity: .75;
+    cursor: pointer;
+}
+
+
 .close-modal ion-icon:hover {
     cursor: pointer;
     color: black;
@@ -183,8 +195,8 @@
     justify-content: center;
     content: counter(step);
     counter-increment: step;
-    width: 24px;
-    height: 24px;
+    width: 35px;
+    height: 35px;
     line-height: 26px;
     color: #333;
     background: white;

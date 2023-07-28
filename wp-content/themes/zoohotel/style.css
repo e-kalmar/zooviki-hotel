@@ -10,7 +10,8 @@ html,
 header,
 #navbarNav > ul > li > a,
 body,
-.container {
+.container,
+.container-fluid {
   font-size: 1vw;
 }
 
@@ -34,15 +35,6 @@ body,
 .validate-text {
   display: none;
 }
-
-/* #success-modal button {
-  background-color: #4dc45c!important;
-  color: white!important;
-}
-
-#success-modal button:hover {
-  background-color: #56c26496!important;
-} */
 
 #back-to-top-btn {
   display: none;
@@ -100,31 +92,13 @@ body,
   }
 }
 
-.loading-dots {
-  text-align: center;
-  width: 100%;
-}
-
-.loading-dots &--dot {
-  animation: dot-keyframes 1.5s infinite ease-in-out;
-  background-color: #BD9B08 !important;
-  border-radius: 10px;
-  display: inline-block;
-  height: 10px;
-  width: 10px;
-}
-
-.loading-dots &--dot &:nth-child(2) {
-  animation-delay: .5s;
-}
-
-.loading-dots &--dot &:nth-child(3) {
-  animation-delay: 1s;
-}
-
 .zoohotel-home-page .card,
 .zoohotel-home-page .card .card-body {
   background-color: rgba(251, 247, 242, 0.87);
+}
+input[type=button],
+input[type=submit] {
+  width: fit-content!important;
 }
 
 /* Responsive font size for different screen sizes */
@@ -133,7 +107,16 @@ body,
   header,
   #navbarNav > ul > li > a,
   body,
-  .container {
+  .container,
+  form fieldset {
+    font-size: 1vw;
+  }
+
+  .fs-title {
+    font-size: 1.2vw;
+  }
+
+  .fs-subtitle {
     font-size: 1vw;
   }
 }
@@ -143,7 +126,9 @@ body,
   header,
   #navbarNav > ul > li > a,
   body,
-  .container {
+  .container,
+  .container-fluid,
+  form fieldset {
     font-size: 3.5vw;
   }
 
@@ -152,6 +137,14 @@ body,
     min-width: 8vw;
     font-size: 4vw;
   }
+
+  .fs-title {
+    font-size: 2vw;
+  }
+
+  .fs-subtitle {
+    font-size: 1.75vw;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -159,7 +152,9 @@ body,
   header,
   #navbarNav > ul > li > a,
   body,
-  .container {
+  .container,
+  .container-fluid,
+  form fieldset {
     font-size: 4vw;
   }
 
@@ -167,5 +162,13 @@ body,
     min-height: 3vh;
     min-width: 8vw;
     font-size: 4vw;
+  }
+
+  .fs-title {
+    font-size: 3vw;
+  }
+
+  .fs-subtitle {
+    font-size: 2.75vw;
   }
 }
