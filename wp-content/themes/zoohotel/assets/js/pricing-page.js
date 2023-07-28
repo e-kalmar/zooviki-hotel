@@ -79,6 +79,15 @@
 
 		return boolCheck;
 	}
+	$('input[name="first-name"]').on("change", (e) => {
+		validateUserNames();
+		$('.first-name').text(e.target.value);
+	})
+
+	$('input[name="last-name"]').on("change", (e) => {
+		validateUserNames();
+		$('.last-name').text(e.target.value);
+	})
 
 	const validatePhone = (boolCheck = true) => {
 		const phoneNum = document.getElementById('client-phone').value;
@@ -96,6 +105,10 @@
 
 		return boolCheck;
 	}
+	$('input[name="client-phone"]').on("change", (e) => {
+		validatePhone();
+		$('.client-phone').text(e.target.value);
+	})
 
 	const validatePetAge = (boolCheck = true) => {
 		const petAge = document.getElementById('pet-age').value;
@@ -113,6 +126,10 @@
 
 		return boolCheck
 	}
+	$('input[name="pet-age"]').on("change", (e) => {
+		validatePetAge();
+		$('.pet-age').text(e.target.value);
+	})
 
 	const validatePetName = (boolCheck = true) => {
 		const petName = document.getElementById('pet-name').value;
@@ -125,6 +142,10 @@
 
 		return boolCheck
 	}
+	$('input[name="pet-name"]').on("change", (e) => {
+		validatePetName();
+		$('.pet-name').text(e.target.value);
+	})
 
 	const validatePetType = (boolCheck = true) => {
 		const petType = document.getElementById('pet-type').value;
@@ -137,6 +158,10 @@
 
 		return boolCheck
 	}
+	$('input[name="pet-type"]').on("change", (e) => {
+		validatePetType();
+		$('.pet-type').text(e.target.value);
+	})
 
 	const validateAddress = (boolCheck = true) => {
 		const address = document.getElementById('client-address').value;
@@ -149,6 +174,10 @@
 
 		return boolCheck
 	}
+	$('input[name="client-address"]').on("change", (e) => {
+		validateAddress();
+		$('.client-address').text(e.target.value);
+	})
 
 
 	// Resrvation start date
@@ -174,6 +203,14 @@
 			const value = date.toLocaleDateString()
 			input.value = value
 		},
+	})
+	$(startDate.calendarContainer).css({
+		'position':'absolute',
+		'top':'0',
+	})
+	$(endDate.calendarContainer).css({
+		'position':'absolute',
+		'top':'0',
 	})
 
 

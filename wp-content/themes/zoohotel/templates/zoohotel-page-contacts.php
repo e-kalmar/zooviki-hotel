@@ -14,7 +14,7 @@ get_header();
         <img src="<?php echo get_template_directory_uri() . "/assets/media/img/contact-us.png"; ?>"
             class="img-fluid z-depth-1 header-image" alt="Contact us image">
 
-        <h3 class="text-center w-responsive mx-auto mb-5 text-fluid">Имате въпрос?<br>Не се колебайте и веднага се
+        <h3 class="text-center w-responsive mx-auto mb-5 text-fluid" style="font-family: cursive;">Имате въпрос?<br>Не се колебайте и веднага се
             свържете с нас.<br>Нашият екип ще се свърже с вас за да ви помогне.</h3>
 
         <form id="contact-form" name="contact-form needs-validation">

@@ -14,17 +14,12 @@
 
 .zoo-hotel-pricing-page .content-wrap .card-body,
 .zoo-hotel-pricing-page .content-wrap .card {
-    border-radius: 25px;
     background-color:rgba(251, 247, 242) ;
 }
 
 .zoo-hotel-pricing-page .content-wrap .card-body .list-group li,
-.zoo-hotel-pricing-page .content-wrap h3 {
+.header-text {
     background-color:rgba(251, 247, 242, 0.95) ;
-}
-
-.zoo-hotel-pricing-page .content-wrap {
-    /* background-color:rgba(251, 247, 242, .98) ; */
 }
 
 .modal-wrapper {
@@ -47,7 +42,6 @@
     z-index: 1;
     background-color: rgba(251, 247, 242);
     border: 0 none;
-    border-radius: 25px;
     box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
     padding: 20px 30px;
     box-sizing: border-box;
@@ -56,8 +50,7 @@
     z-index: 1;
     /*stacking fieldsets above each other*/
     position: relative;
-    max-height: 80vh;
-    /* overflow: auto; */
+    min-height: 50vh;
 }
 
 /*Hide all except first fieldset*/
@@ -97,7 +90,7 @@
     font-weight: bold;
     color: white;
     border: 0 none;
-    border-radius: 25px;
+    /* border-radius: 25px; */
     cursor: pointer;
     padding: 10px 5px;
     margin: 10px 5px;
@@ -113,7 +106,6 @@
     font-weight: bold;
     color: white;
     border: 0 none;
-    border-radius: 25px;
     cursor: pointer;
     padding: 10px 5px;
     margin: 10px 5px;
@@ -187,6 +179,7 @@
     position: relative;
     letter-spacing: 1px;
     text-align: center;
+    font-size: 1.5em;
 }
 
 #progressbar li:before {
@@ -202,6 +195,7 @@
     background: white;
     border-radius: 25px;
     margin: 0px auto 18px auto;
+    font-size:1em;
 }
 
 /*progressbar connectors*/
@@ -212,7 +206,7 @@
     background: white;
     position: absolute;
     left: -50%;
-    top: 9px;
+    top: 16px;
     z-index: -1; /*put it behind the numbers*/
 }
 
@@ -239,7 +233,7 @@
     font-weight: bold;
     color: #fb921f;
     border: 0 none;
-    border-radius: 25px;
+    /* border-radius: 25px; */
     cursor: pointer;
     padding: 5px 25px;
     font-size: 12px;

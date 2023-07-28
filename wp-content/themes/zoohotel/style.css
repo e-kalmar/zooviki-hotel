@@ -6,12 +6,17 @@ html, body {
   background-image: url("./assets/media/img/background.jpg");
 }
 
+.container-fluid, .container {
+  scroll-behavior: smooth;
+}
+
 html,
 header,
 #navbarNav > ul > li > a,
 body,
 .container,
-.container-fluid {
+.container-fluid,
+#booking-handler-form {
   font-size: 1vw;
 }
 
