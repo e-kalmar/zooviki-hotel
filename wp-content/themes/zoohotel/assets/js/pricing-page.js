@@ -307,7 +307,7 @@
 	});
 
 
-	const closeModalBtn = document.querySelector("fieldset .close-modal");
+	const closeModalBtn = document.querySelectorAll("fieldset .close-modal");
 	const modalWrapper = document.querySelector("div .modal-wrapper");
 	const cardBtn = document.querySelectorAll(".card  .card-body .btn");
 	const backToTopBtn = document.getElementById("back-to-top-btn");
@@ -327,21 +327,22 @@
 		});
 	}
 
-	closeModalBtn.addEventListener('click', (e) => {
-		$(modalWrapper).fadeOut();
-		document.getElementsByTagName('html')[0].style.overflow = 'auto';
+	for ( let i in [...closeModalBtn]) {
+		closeModalBtn[i].addEventListener('click', (e) => {
+			$(modalWrapper).fadeOut();
+			document.getElementsByTagName('html')[0].style.overflow = 'auto';
 
-		if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) $(backToTopBtn).fadeIn();
-		else $(backToTopBtn).fadeOut();
+			if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) $(backToTopBtn).fadeIn();
+			else $(backToTopBtn).fadeOut();
 
-		for ( let i in [...allFormINputs] ) {
-			if ( $(allFormINputs[i]).attr('type') != 'button') {
-				$(allFormINputs[i]).val('').change();
-			}
-		}
+			// for ( let x in [...allFormINputs] ) {
+			// 	if ( $(allFormINputs[x]).attr('type') != 'button') {
+			// 		$(allFormINputs[x]).val('').change();
+			// 	}
+			// }
 
-		$(".validate-text").hide();
-
-	});
+			$(".validate-text").hide();
+		})
+	}
 	// END
 })()
