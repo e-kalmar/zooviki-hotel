@@ -13,7 +13,7 @@ get_header();
 <div class="container zoo-hotel-pricing-page">
   <div class="content-wrap shadow p-3 mb-5 rounded p-4">
     <div class="row justify-content-center">
-      <h3 class="shadow-lg p-3 mb-5 bg-transperent rounded text-center text-success">Изберете стая за вашето куче!</h3>
+      <h3 class="shadow-lg p-3 mb-5 bg-transperent rounded text-center text-success" style="font-family: 'Edu SA Beginner', cursive;">Изберете стая за вашето куче!</h3>
       <div class="col-lg-6 col-xxl-4 mb-5">
         <div class="card border-0 h-100">
           <div class="card-body text-center">
@@ -251,5 +251,8 @@ get_header();
 </div>
 <!-- /.MultiStep Form -->
 
-
+<link rel="preconnect" href="https://fonts.googleapis.com"> 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+<link href="https://fonts.googleapis.com/css2?family=Edu+SA+Beginner&display=swap" rel="stylesheet">
 <?php get_footer();
+
