@@ -69,14 +69,14 @@ get_header();
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Успешно изпращане !</h5>
+                <h5 class="modal-title text-success">Успешно изпращане !</h5>
             </div>
             <div class="modal-body">
                 <p>Вие успешно изпратихте вашето запитване.<br />
                     Наш служител ще се свърже с вас за да отговори на въпросите ви.</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="close-btn">Затвори</button>
+                <button type="button" class="btn action-button btn-secondary" data-bs-dismiss="modal" id="close-btn">Затвори</button>
             </div>
         </div>
     </div>

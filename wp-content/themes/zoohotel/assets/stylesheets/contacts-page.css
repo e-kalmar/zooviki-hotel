@@ -16,7 +16,6 @@ div.zoohotel-contacts-page .content-wrap {
 }
 
 @media screen and (max-width: 768px) {
-
   /* ... */
   .zoohotel-contacts-page .header-image {
     width: 50%;
@@ -24,7 +23,6 @@ div.zoohotel-contacts-page .content-wrap {
 }
 
 @media screen and (max-width: 992px) {
-
   /* ... */
   .zoohotel-contacts-page .header-image {
     width: 50%;
@@ -32,7 +30,6 @@ div.zoohotel-contacts-page .content-wrap {
 }
 
 @media screen and (max-width: 1200) {
-
   /* ... */
   .zoohotel-contacts-page .header-image {
     width: 50%;
