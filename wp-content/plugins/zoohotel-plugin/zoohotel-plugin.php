@@ -16,9 +16,12 @@ class ZooHotelPlugin {
     $this->all_guests = array();
     $this->ROOM_TYPES = array();
 
-    for ($i=0; $i <1; $i++) { 
+
+    // set i to total number of room types
+    for ($i=0; $i <6; $i++) { 
+        array_push($this->all_guests,array());
         foreach ($this->get_bookings_by_room_type($i+1) as $value) {
-            array_push($this->all_guests,array(
+            array_push($this->all_guests[$i],array(
                 get_post_meta($value,'checkin-date')[0],
                 get_post_meta($value,'checkout-date')[0],
                 get_post_meta($value,'first-name')[0] . ' ' . get_post_meta($value,'last-name')[0],
@@ -31,14 +34,31 @@ class ZooHotelPlugin {
                 get_post_meta($value,'status')[0],
             ));            
         }
+        if(!empty($this->all_guests[$i])){
+        array_push($this->ROOM_TYPES,        
+        array(
+            'Room Type '. strval($i+1),                
+            $this->all_guests[$i]
+            
+        ));
+    }
     }
     
-        array_push($this->ROOM_TYPES,        
-            array(
-                "Room Type 1",                
-                $this->all_guests
+        // array_push($this->ROOM_TYPES,        
+        //     array(
+        //         "Room Type 1",                
+        //         $this->all_guests[0]
                 
-        ));
+        // ),
+        //     array(
+        //         "Room Type 2",
+        //         $this->all_guests[1]
+        //     ),
+        //     array(
+        //         "Room Type 3",
+        //         $this->all_guests[2]
+        //     ),
+        // );
 
     
         // $this->ROOM_TYPES =array(
@@ -226,7 +246,6 @@ foreach ($this->ROOM_TYPES as $table) {
     echo '</tr>';
 
     foreach ($data as $row) {
-        echo '<pre>';
         echo '<tr>';
         foreach ($row as $key=>$value) {
             
@@ -234,20 +253,27 @@ foreach ($this->ROOM_TYPES as $table) {
         }
 
 
-
+        $currentID = $this->get_booking_by_uuid($row[8])[0];
         echo '<td><form method="post">';
         echo '<input name="uuid" hidden value="'. $row[8] . '"></input>';
         echo '<div class="actions">';
         echo '<button  class="btn btn-success" type="submit" name="confirm-btn">Потвърди</button>';
-        echo '<button  class="btn btn-warning" type="submit" name="edit-btn">Промени</button>';
-        echo '<button  class="btn btn-primary" type="submit" name="checkout--btn">Check-out</button>';
+        echo '<a href='. get_site_url() . '/wp-admin/post.php?post='.$currentID.'&action=edit class="btn btn-warning" name="edit-btn">Промени</a>';
+        echo '<button  class="btn btn-primary" type="submit" name="checkout-btn">Check-out</button>';
         echo '<button  class="btn btn-danger" type="submit" name="delete-btn" >Изтрий</button>';
         echo '</div>';
         echo '</form></td>';
+
         echo '</tr>';
     }
         if(isset($_POST['confirm-btn'])){
             $this->confirmBooking($_POST['uuid']);
+        };
+        if(isset($_POST['checkout-btn'])){
+            $this->checkoutRoom($_POST['uuid']);
+        };
+        if(isset($_POST['delete-btn'])){
+            $this->deleteBooking($_POST['uuid']);
         };
 
         echo '</table>';
@@ -264,8 +290,19 @@ foreach ($this->ROOM_TYPES as $table) {
 
 
     }
-   
+    public function checkoutRoom($uuid){
+        $post = $this->get_booking_by_uuid($uuid)[0];
+        update_post_meta($post,'status','Checked-out');
+        echo '<META HTTP-EQUIV=Refresh CONTENT="0; URL='. get_site_url() .'/wp-admin/edit.php?post_type=zoohotel_plugin&page=manage_rooms">';
 
+    }
+   
+    public function deleteBooking($uuid){
+        $post = $this->get_booking_by_uuid($uuid)[0];
+        wp_trash_post($post);
+        echo '<META HTTP-EQUIV=Refresh CONTENT="0; URL='. get_site_url() .'/wp-admin/edit.php?post_type=zoohotel_plugin&page=manage_rooms">';
+
+    }
 
     public function load_assets(){
         wp_enqueue_style('zoohotel-plugin', plugin_dir_url(__FILE__) . 'assets/css/zoohotel-plugin.css', array(), 1, 'all');
