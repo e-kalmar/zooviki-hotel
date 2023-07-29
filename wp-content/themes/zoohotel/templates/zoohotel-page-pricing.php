@@ -13,11 +13,12 @@ get_header();
 <div class="container zoo-hotel-pricing-page">
   <div class="content-wrap">
     <div class="row justify-content-center">
-      <h2 class="shadow-lg p-3 mb-5 bg-transperent rounded text-center header-text text-success" style="font-family: cursive;">Изберете стая за вашето куче!</h2>
+      <h2 class="shadow-lg p-3 mb-5 bg-transperent rounded text-center header-text text-success" style="font-family: 'Poppins', sans-serif;">Изберете стая за вашето куче!</h2>
       <div class="col-lg-6 col-xxl-4 mb-5">
         <div class="card border-0 h-100">
           <div class="card-body rounded text-center">
-            <img src="https://fakeimg.pl/640x360" class="card-img-top img-fluid">
+            <!-- <img src="https://fakeimg.pl/640x360" class="card-img-top img-fluid"> -->
+            <img src="https://picsum.photos/640/360" class="card-img-top img-fluid">
             <h5 class="card-title text-success mt-4"><i class="fas fa-house"></i> Малка стая</h5>
             <ul class="list-group list-group-light">
               <li class="list-group-item px-3">Площ: 3 m²</li>
@@ -32,7 +33,8 @@ get_header();
       <div class="col-lg-6 col-xxl-4 mb-5">
         <div class="card border-0 h-100">
           <div class="card-body rounded text-center">
-            <img src="https://fakeimg.pl/640x360" class="card-img-top img-fluid">
+            <!-- <img src="https://fakeimg.pl/640x360" class="card-img-top img-fluid"> -->
+            <img src="https://picsum.photos/640/360" class="card-img-top img-fluid">
             <h5 class="card-title text-success mt-4"><i class="fas fa-house"></i> Стандартна стая</h5>
             <ul class="list-group list-group-light">
               <li class="list-group-item px-3">Площ: 5 m²</li>
@@ -47,7 +49,8 @@ get_header();
       <div class="col-lg-6 col-xxl-4 mb-5">
         <div class="card border-0 h-100">
           <div class="card-body rounded text-center">
-            <img src="https://fakeimg.pl/640x360" class="card-img-top img-fluid">
+            <!-- <img src="https://fakeimg.pl/640x360" class="card-img-top img-fluid"> -->
+            <img src="https://picsum.photos/640/360" class="card-img-top img-fluid">
             <h5 class="card-title text-success mt-4"><i class="fas fa-house"></i> Двойна стая</h5>
             <ul class="list-group list-group-light">
               <li class="list-group-item px-3">Площ: 9 m²</li>
@@ -62,7 +65,8 @@ get_header();
       <div class="col-lg-6 col-xxl-4 mb-5">
         <div class="card border-0 h-100">
           <div class="card-body rounded text-center">
-            <img src="https://fakeimg.pl/640x360" class="card-img-top img-fluid">
+            <!-- <img src="https://fakeimg.pl/640x360" class="card-img-top img-fluid"> -->
+            <img src="https://picsum.photos/640/360" class="card-img-top img-fluid">
             <h5 class="card-title text-success mt-4"><i class="fas fa-house"></i> VIP стая</h5>
             <ul class="list-group list-group-light">
               <li class="list-group-item px-3">Видеонаблюдение</li>
@@ -79,7 +83,8 @@ get_header();
       <div class="col-lg-6 col-xxl-4 mb-5">
         <div class="card border-0 h-100">
           <div class="card-body rounded text-center">
-            <img src="https://fakeimg.pl/640x360" class="card-img-top img-fluid">
+            <!-- <img src="https://fakeimg.pl/640x360" class="card-img-top img-fluid"> -->
+            <img src="https://picsum.photos/640/360" class="card-img-top img-fluid">
             <h5 class="card-title text-success mt-4"><i class="fas fa-house"></i> VIP стая</h5>
             <ul class="list-group list-group-light">
               <li class="list-group-item px-3">Видеонаблюдение</li>
@@ -96,7 +101,8 @@ get_header();
       <div class="col-lg-6 col-xxl-4 mb-5">
         <div class="card border-0 h-100">
           <div class="card-body rounded text-center">
-            <img src="https://fakeimg.pl/640x360" class="card-img-top img-fluid">
+            <!-- <img src="https://fakeimg.pl/640x360" class="card-img-top img-fluid"> -->
+            <img src="https://picsum.photos/640/360" class="card-img-top img-fluid">
             <h5 class="card-title text-success mt-4"><i class="fas fa-house"></i> VIP стая</h5>
             <ul class="list-group list-group-light">
               <li class="list-group-item px-3">Видеонаблюдение</li>
@@ -133,7 +139,7 @@ get_header();
 
   <!-- MultiStep Form -->
   <div class="row">
-    <div class="col-md-6 col-md-offset-3 modal-wrapper reservation-modal container-fluid">
+    <div class="col-md-6 col-md-offset-3 modal-wrapper reservation-modal">
       <form id="booking-handler-form" class="class-booking-handler-form">
         <!-- progressbar -->
         <ul id="progressbar">
@@ -142,7 +148,7 @@ get_header();
           <li>Преглед на вашата резервация</li>
         </ul>
         <!-- fieldsets -->
-        <fieldset class="rounded">
+        <fieldset class="rounded overflow-none">
           <span class="close-modal"><ion-icon name="close-outline"></ion-icon></span>
           <h2 class="fs-title"><span class="roomtype-placeholder text-success"></span> Генерална информация</h2>
           <h3 class="fs-subtitle">Моля въведете нужните данни за вашата резервация</h3>
@@ -157,9 +163,9 @@ get_header();
           <input type="text" name="checkout-date" class="end rounded form-control-lg" placeholder="Дата на напускане" readonly id="pricing-form-date-2">
           <div class="invalid-feedback">Моля въведете дата напускане.</div>
 
-          <input type="button" name="next" class="btn btn-primary action-button mt-4 next-btn rounded" value="Напред" />
+          <button type="button" name="next" class="btn btn-primary action-button mt-4 next-btn rounded">Напред</button>
         </fieldset>
-        <fieldset class="rounded">
+        <fieldset class="rounded overflow-auto">
           <span class="close-modal"><ion-icon name="close-outline"></ion-icon></span>
           <h2 class="fs-title"><span class="roomtype-placeholder text-success"></span> Информация за гостите</h2>
           <h3 class="fs-subtitle">Моля попълнете вашите данни.</h3>
@@ -191,10 +197,10 @@ get_header();
             любимец.</p>
           <input type="number" id="pet-age" class="rounded form-control-lg" name="pet-age" placeholder="Възраст" />
 
-          <input type="button" name="previous" class="btn btn-primary mt-4 previous-btn action-button-previous rounded" value="Назад" />
-          <input type="button" name="next" class="btn btn-primary action-button mt-4 next-btn rounded" value="Напред" />
+          <button type="button" name="previous" class="btn btn-primary mt-4 previous-btn action-button-previous rounded">Назад</button>
+          <button type="button" name="next" class="btn btn-primary action-button mt-4 next-btn rounded">Напред</button>
         </fieldset>
-        <fieldset class="rounded">
+        <fieldset class="rounded overflow-auto">
           <span class="close-modal"><ion-icon name="close-outline"></ion-icon></span>
           <h2 class="fs-title"><span class="roomtype-placeholder text-success"></span> Детайли</h2>
           <p class="text-fluid text-center pt-5">Вашата информация</p>
@@ -240,11 +246,8 @@ get_header();
               </tbody>
             </table>
           </div>
-          <span class="buttons-wrap">
-            <input type="button" name="previous" class="btn btn-primary mt-4 previous-btn action-button-previous rounded" value="Назад" />
-            <input type="submit" name="submit" class="btn btn-primary action-button mt-4 rounded" value="Резервирай" />
-          </span>
-          <div class="loader" id="loader"></div>
+          <button type="button" name="previous" class="btn btn-primary mt-4 previous-btn action-button-previous rounded"/>Назад</button>
+          <button type="button" name="submit" class="btn btn-primary mt-4 init-booking-btn action-button rounded">Резервирай</button>
         </fieldset>
         <input type="hidden" name="room-type">
       </form>

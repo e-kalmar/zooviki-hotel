@@ -15,6 +15,11 @@
 .zoo-hotel-pricing-page .content-wrap .card-body,
 .zoo-hotel-pricing-page .content-wrap .card {
     background-color:rgba(251, 247, 242) ;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.zoo-hotel-pricing-page .content-wrap .card:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .zoo-hotel-pricing-page .content-wrap .card-body .list-group li,
@@ -31,11 +36,9 @@
     top: 0;
     width: 100%; /* Full width */
     height: 100%; /* Full height */
-    overflow: none; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.8); /* Black */
     display: none;
-    overflow: hidden;
 }
 
 #booking-handler-form fieldset {

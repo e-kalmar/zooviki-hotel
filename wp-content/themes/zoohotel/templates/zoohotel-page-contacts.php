@@ -9,31 +9,32 @@ get_header();
 
 <!-- PAGE TEMPLATE STARTS HERE -->
 <!--Section: Contact v.2-->
-<div class="container zoohotel-contacts-page">
+<div class="container-fluid zoohotel-contacts-page">
     <div class="content-wrap shadow p-3 mb-5 rounded p-4">
         <img src="<?php echo get_template_directory_uri() . "/assets/media/img/contact-us.png"; ?>"
             class="img-fluid z-depth-1 header-image" alt="Contact us image">
 
-        <h3 class="text-center w-responsive mx-auto mb-5 text-fluid" style="font-family: cursive;">Имате въпрос?<br>Не се колебайте и веднага се
-            свържете с нас.<br>Нашият екип ще се свърже с вас за да ви помогне.</h3>
+        <h3 class="text-center w-responsive mx-auto mb-5 text-fluid" style="font-family: 'Poppins', sans-serif;">
+            <br><u>Имате въпрос?</u><br><br>Не се колебайте и веднага се
+            свържете с нас.<br><br>Нашият екип ще се свърже с вас за да ви помогне.</h3>
 
-        <form id="contact-form" name="contact-form needs-validation">
-            <div class="form-group">
+        <form id="contact-form" class="d-flex align-items-center flex-column" name="contact-form needs-validation">
+            <div class="form-group col-md-6">
                 <label for="name" class="form-label">Име</label>
                 <input type="text" id="name" name="name" class="form-control" required>
                 <div class="invalid-feedback">Моля въведете вашето име.</div>
             </div>
-            <div class="form-group">
+            <div class="form-group col-md-6">
                 <label for="email" class="form-label">Имейл адрес</label>
                 <input type="email" id="email" name="email" class="form-control" required>
                 <div class="invalid-feedback">Моля въведете валиден имейл адрес.</div>
             </div>
-            <div class="form-group">
+            <div class="form-group col-md-6">
                 <label for="subject" class="form-label">Тема</label>
                 <input type="text" id="subject" name="subject" class="form-control" required>
                 <div class="invalid-feedback">Моля напишете кратко описание на вашия въпрос.</div>
             </div>
-            <div class="form-group">
+            <div class="form-group col-md-6">
                 <label for="message" class="form-label">Съобщение</label>
                 <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"
                     required></textarea>
@@ -46,15 +47,15 @@ get_header();
                         hidden></span></button>
             </div>
             <br><br>
-            <ul class="list-group">
+            <ul class="list-group col-md-12 col-lg-6 col-sm-12">
                 <li class="list-group-item active">
-                <i class="fas fa-map-marker-alt fa-2x"></i><span class="float-end">Гр. Бургас, ж-к Ветрен</span>
+                    <i class="fas fa-map-marker-alt fa-2x"></i><span class="float-end badge bg-primary text-wrap p-2">Гр. Бургас, ж-к Ветрен</span>
                 </li>
                 <li class="list-group-item active">
-                    <i class="fas fa-envelope fa-2x"></i><span class="float-end">support@pethotelviki.eu</span>
+                    <i class="fas fa-envelope fa-2x"></i><span class="float-end badge bg-primary text-wrap p-2">support@pethotelviki.eu</span>
                 </li>
                 <li class="list-group-item active">
-                <i class="fas fa-phone fa-2x"></i><span class="float-end">+359 887 654 321</span>
+                    <i class="fas fa-phone fa-2x"></i><span class="float-end badge bg-primary text-wrap p-2">+359 887 654 321</span>
                 </li>
             </ul>
             <div class="status"></div>

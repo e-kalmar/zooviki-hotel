@@ -2,14 +2,39 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  width: 25%;
 }
-.zoohotel-contacts-page button{
+
+.zoohotel-contacts-page button {
   background: #fb921f !important;
   color: white;
 
 }
 
-div.zoohotel-contacts-page .content-wrap{
+div.zoohotel-contacts-page .content-wrap {
   background-color: rgba(251, 247, 242, .98);
+}
+
+@media screen and (max-width: 768px) {
+
+  /* ... */
+  .zoohotel-contacts-page .header-image {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 992px) {
+
+  /* ... */
+  .zoohotel-contacts-page .header-image {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 1200) {
+
+  /* ... */
+  .zoohotel-contacts-page .header-image {
+    width: 50%;
+  }
 }

@@ -2,47 +2,34 @@
     "use strict";
     const URL = document.getElementsByName('booking-url')[0].value;
     const NONCE = document.getElementsByName('nonce')[0].value;
-    const FORMS = [...document.querySelectorAll('.class-booking-handler-form')];
+    const FORM_BTN = document.getElementsByClassName('init-booking-btn')[0];
 
     const bookingHandler = (e) => {
-        if ($(e.target)[0].checkValidity()) {
-            $(".buttons-wrap").hide();
-            $(".loader").fadeIn();
-            e.preventDefault();
-            const form = $(e.target).serialize();
-            return $.ajax({
-                type: "post",
-                url: URL,
-                headers: {
-                    'X-WP-Nonce': NONCE,
-                },
-                data: form,
-                dataType: "dataType",
-                success: (response) => {
-                },
-                complete: function () {
-                    document.querySelector("div .modal-wrapper").style.display = 'none';
-        			document.getElementsByTagName('html')[0].style.overflow = 'auto';
-                    $('#success-modal').toggle();
-                }
-            });
-        }
-    }
+        $(".action-button").addClass('disabled');
+        $(".action-button-previous").addClass('disabled');
+        e.preventDefault();
 
-    for (let form of FORMS) {
-        form.addEventListener('submit', (e) => bookingHandler(e))
+        const form = $('#booking-handler-form').serialize();
 
-        // Client side validation for the form
-        var validation = Array.prototype.filter.call(FORMS, function (form) {
-            form.addEventListener('submit', function (event) {
-                if (form.checkValidity() === false) {
-                    event.preventDefault();
-                    event.stopPropagation();
-                }
-                form.classList.add('was-validated');
-            }, false);
+        return $.ajax({
+            type: "post",
+            url: URL,
+            headers: {
+                'X-WP-Nonce': NONCE,
+            },
+            data: form,
+            dataType: "dataType",
+            complete: function () {
+                document.querySelector("div .modal-wrapper").style.display = 'none';
+                document.getElementsByTagName('html')[0].style.overflow = 'auto';
+                $(".action-button").removeClass('disabled');
+                $(".action-button-previous").removeClass('disabled');
+                $('#success-modal').toggle();
+            }
         });
     }
+
+    FORM_BTN.addEventListener('click', (e) => bookingHandler(e))
 
     $('#close-btn').on('click', function () {
         $('#success-modal').hide();

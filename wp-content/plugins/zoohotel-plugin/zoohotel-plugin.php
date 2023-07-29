@@ -16,7 +16,7 @@ class ZooHotelPlugin {
     $this->all_guests = array();
     $this->ROOM_TYPES = array();
 
-    for ($i=0; $i <1; $i++) { 
+    for ($i=0; $i <1; $i++) {
         foreach ($this->get_bookings_by_room_type($i+1) as $value) {
             array_push($this->all_guests,array(
                 get_post_meta($value,'checkin-date')[0],
@@ -29,18 +29,18 @@ class ZooHotelPlugin {
                 get_post_meta($value,'pet-age')[0],
                 get_post_meta($value,'uuid')[0],
                 get_post_meta($value,'status')[0],
-            ));            
+            ));
         }
     }
-    
-        array_push($this->ROOM_TYPES,        
+
+        array_push($this->ROOM_TYPES,
             array(
-                "Room Type 1",                
+                "Room Type 1",
                 $this->all_guests
-                
+
         ));
 
-    
+
         // $this->ROOM_TYPES =array(
         // //     array(
         // //         "Room Type 1",
@@ -93,7 +93,7 @@ class ZooHotelPlugin {
         }
          return $IDs;
     }
-    
+
     public function get_booking_by_uuid($uuid){
         $args = array(
             'post_type'  => 'zoohotel_plugin',
@@ -129,7 +129,7 @@ class ZooHotelPlugin {
 
         register_post_type('zoohotel_plugin', $args);
     }
-    
+
     public function add_rooms_sub_menu()
     {
         add_submenu_page(
@@ -139,10 +139,10 @@ class ZooHotelPlugin {
         'manage_options',
         'manage_rooms',
         array($this,'view_rooms'),
-        '0'); 
+        '0');
     }
     public function view_rooms(){
-        
+
         ?>
         <style>
          /* Style for the dropdown button */
@@ -229,7 +229,7 @@ foreach ($this->ROOM_TYPES as $table) {
         echo '<pre>';
         echo '<tr>';
         foreach ($row as $key=>$value) {
-            
+
             echo '<td>' . $value . '</td>';
         }
 
@@ -255,7 +255,7 @@ foreach ($this->ROOM_TYPES as $table) {
     }
 
     }
-    
+
 
     public function confirmBooking($uuid){
         $post = $this->get_booking_by_uuid($uuid)[0];
@@ -264,13 +264,15 @@ foreach ($this->ROOM_TYPES as $table) {
 
 
     }
-   
+
 
 
     public function load_assets(){
-        wp_enqueue_style('zoohotel-plugin', plugin_dir_url(__FILE__) . 'assets/css/zoohotel-plugin.css', array(), 1, 'all');
-        wp_enqueue_script('zoohotel-plugin', plugin_dir_url(__FILE__) . 'assets/js/zoohotel-plugin.js', array(), 1, 'all');
-        wp_enqueue_script('wp-util');
+        if (is_page('pricing')) {
+            wp_enqueue_style('zoohotel-plugin', plugin_dir_url(__FILE__) . 'assets/css/zoohotel-plugin.css', array(), 1, 'all');
+            wp_enqueue_script('zoohotel-plugin', plugin_dir_url(__FILE__) . 'assets/js/zoohotel-plugin.js', array(), 1, 'all');
+            wp_enqueue_script('wp-util');
+        }
     }
 
     public function register_rest_api(){
@@ -283,7 +285,7 @@ foreach ($this->ROOM_TYPES as $table) {
     public function handle_booking_form($data){
         $headers = $data->get_headers();
         $params = $data->get_params();
-        $nonce = $headers['x_wp_nonce'][0];        
+        $nonce = $headers['x_wp_nonce'][0];
         $uuid = uniqid("");
 
         if(!wp_verify_nonce($nonce, 'wp_rest')){
@@ -335,7 +337,7 @@ for (let i = 0; i < collapsibleBtns.length; i++) {
 }
 
 });
-    
+
 
 
 

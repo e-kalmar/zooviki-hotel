@@ -102,8 +102,51 @@ body,
   background-color: rgba(251, 247, 242, 0.87);
 }
 input[type=button],
-input[type=submit] {
+input[type=submit],
+button {
   width: fit-content!important;
+}
+
+.zoohotel-home-page .card{
+  transition: box-shadow 0.3s ease-in-out;
+}
+.zoohotel-home-page .card:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.loader {
+  display: none;
+
+  -webkit-animation-name: spin;
+  -webkit-animation-duration: 4000ms;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-name: spin;
+  -moz-animation-duration: 4000ms;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: linear;
+  -ms-animation-name: spin;
+  -ms-animation-duration: 4000ms;
+  -ms-animation-iteration-count: infinite;
+  -ms-animation-timing-function: linear;
+
+  animation-name: spin;
+  animation-duration: 4000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@-moz-keyframes spin {
+  from { -moz-transform: rotate(0deg); }
+  to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+  from { -webkit-transform: rotate(0deg); }
+  to { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+  from {transform:rotate(0deg);}
+  to {transform:rotate(360deg);}
 }
 
 /* Responsive font size for different screen sizes */
@@ -140,7 +183,7 @@ input[type=submit] {
   #back-to-top-btn i {
     min-height: 3vh;
     min-width: 8vw;
-    font-size: 4vw;
+    font-size: 8vw;
   }
 
   .fs-title {

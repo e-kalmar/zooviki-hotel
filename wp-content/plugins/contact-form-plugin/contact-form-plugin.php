@@ -43,8 +43,10 @@ class ContactFormPlugin {
     }
 
     public function load_assets(){
-        wp_enqueue_script('contact-form-plugin', plugin_dir_url(__FILE__) . 'assets/js/contact-form-plugin.js', array(), 1, 'all');
-        wp_enqueue_script('wp-util');
+        if (is_page('contacts')) {
+            wp_enqueue_script('contact-form-plugin', plugin_dir_url(__FILE__) . 'assets/js/contact-form-plugin.js', array(), 1, 'all');
+            wp_enqueue_script('wp-util');
+        }
     }
 
     public function register_rest_api(){
@@ -81,9 +83,9 @@ class ContactFormPlugin {
             $from = get_post_meta($post_id,'email')[0];
             $name = get_post_meta($post_id,'name')[0];
             $content = get_post_meta($post_id,'message')[0];
-            $headers = 'From:' . $from; 
+            $headers = 'From:' . $from;
             wp_mail('support@pethotelviki.eu',$subject,$content,$headers);
-            
+
             return new WP_REST_Response('SUCCESS', 200);
         }
     }

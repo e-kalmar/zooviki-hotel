@@ -307,10 +307,11 @@
 	});
 
 
-	const closeModalBtn = document.querySelectorAll("fieldset .close-modal ion-icon");
+	const closeModalBtn = document.querySelector("fieldset .close-modal");
 	const modalWrapper = document.querySelector("div .modal-wrapper");
 	const cardBtn = document.querySelectorAll(".card  .card-body .btn");
 	const backToTopBtn = document.getElementById("back-to-top-btn");
+	const allFormINputs = document.querySelectorAll("#booking-handler-form fieldset input");
 
 	for (let i in [...cardBtn]) {
 		cardBtn[i].addEventListener('click', (e) => {
@@ -326,15 +327,21 @@
 		});
 	}
 
-	for (let i in [...closeModalBtn]) {
-		closeModalBtn[i].addEventListener('click', (e) => {
-			$(modalWrapper).fadeOut();
-			document.getElementsByTagName('html')[0].style.overflow = 'auto';
+	closeModalBtn.addEventListener('click', (e) => {
+		$(modalWrapper).fadeOut();
+		document.getElementsByTagName('html')[0].style.overflow = 'auto';
 
-			if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) $(backToTopBtn).fadeIn();
-			else $(backToTopBtn).fadeOut();
-		});
-	}
+		if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) $(backToTopBtn).fadeIn();
+		else $(backToTopBtn).fadeOut();
 
+		for ( let i in [...allFormINputs] ) {
+			if ( $(allFormINputs[i]).attr('type') != 'button') {
+				$(allFormINputs[i]).val('').change();
+			}
+		}
+
+		$(".validate-text").hide();
+
+	});
 	// END
 })()
