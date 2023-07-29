@@ -24,7 +24,9 @@
                 document.getElementsByTagName('html')[0].style.overflow = 'auto';
                 $(".action-button").removeClass('disabled');
                 $(".action-button-previous").removeClass('disabled');
-                $('#success-modal').toggle();
+                window.location = window.location.href + "?openmodal=1";
+
+
             }
         });
     }

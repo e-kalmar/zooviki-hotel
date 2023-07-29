@@ -188,7 +188,7 @@
 		customMonths: ['Януари', 'Февруари', 'Март', 'Април', 'Май', 'Юни', 'Юли', 'Август', 'Септември', 'Октомври', 'Ноември', 'Декември'],
 		minDate: dateToday,
 		formatter: (input, date, instance) => {
-			const value = date.toLocaleDateString()
+			const value = date.toDateString()
 			input.value = value
 		},
 	})
@@ -200,7 +200,7 @@
 		customDays: ['Н', 'П', 'В', 'С', 'Ч', 'П', 'С'],
 		customMonths: ['Януари', 'Февруари', 'Март', 'Април', 'Май', 'Юни', 'Юли', 'Август', 'Септември', 'Октомври', 'Ноември', 'Декември'],
 		formatter: (input, date, instance) => {
-			const value = date.toLocaleDateString()
+			const value = date.toDateString()
 			input.value = value
 		},
 	})

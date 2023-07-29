@@ -148,7 +148,7 @@ get_header();
           <li>Преглед на вашата резервация</li>
         </ul>
         <!-- fieldsets -->
-        <fieldset class="rounded overflow-none">
+        <fieldset class="rounded overflow-none" id="fs-1">
           <span class="close-modal"><ion-icon name="close-outline"></ion-icon></span>
           <h2 class="fs-title"><span class="roomtype-placeholder text-success"></span> Генерална информация</h2>
           <h3 class="fs-subtitle">Моля въведете нужните данни за вашата резервация</h3>
@@ -165,7 +165,7 @@ get_header();
 
           <button type="button" name="next" class="btn btn-primary action-button mt-4 next-btn rounded">Напред</button>
         </fieldset>
-        <fieldset class="rounded overflow-auto">
+        <fieldset class="rounded overflow-auto" id="fs-2">
           <span class="close-modal"><ion-icon name="close-outline"></ion-icon></span>
           <h2 class="fs-title"><span class="roomtype-placeholder text-success"></span> Информация за гостите</h2>
           <h3 class="fs-subtitle">Моля попълнете вашите данни.</h3>
@@ -274,6 +274,17 @@ get_header();
 </style>
 <!-- /.MultiStep Form -->
 
+<!-- Show modal after page refresh and successful ajax -->
+<?php
+    if($_GET['openmodal'] == 1){ ?>
+        <script>
+                 $(function(){
+                  $('#success-modal').toggle();
+                 });
+        </script>
+<?php         
+    }
+?>
 <link rel="preconnect" href="https://fonts.googleapis.com"> 
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
 <link href="https://fonts.googleapis.com/css2?family=Edu+SA+Beginner&display=swap" rel="stylesheet">
