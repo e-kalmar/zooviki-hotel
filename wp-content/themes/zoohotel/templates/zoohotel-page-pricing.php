@@ -131,7 +131,7 @@ get_header();
             Наш служител ще се свърже с вас за потвърждние.</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-dark" data-bs-dismiss="modal" id="close-btn">Затвори</button>
+          <button type="button" class="btn" data-bs-dismiss="modal" id="close-btn">Затвори</button>
         </div>
       </div>
     </div>
@@ -179,7 +179,7 @@ get_header();
 
           <p class="validate-text text-danger validate-phone-regex">Моля въведете валиден телефонен номер.</p>
           <p class="validate-text text-danger validate-phone-empty">Моля въведете телефонен номер.</p>
-          <input type="tel" id="client-phone" name="client-phone" class="rounded form-control-lg" placeholder="Телефон" />
+          <input type="tel" id="client-phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="client-phone" class="rounded form-control-lg" placeholder="Телефон" />
 
           <p class="validate-text text-danger validate-address-empty">Моля въведете вашият адрес.</p>
           <input type="text" id="client-address" class="rounded form-control-lg" name="client-address" placeholder="Адрес" />
@@ -276,7 +276,7 @@ get_header();
 
 <!-- Show modal after page refresh and successful ajax -->
 <?php
-    if($_GET['openmodal'] == 1){ ?>
+    if($_GET['success'] == 1){ ?>
         <script>
                  $(function(){
                   $('#success-modal').toggle();

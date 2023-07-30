@@ -53,7 +53,7 @@
 		} else $('.validate-dates-discrepancy').fadeOut();
 
 		if ( document.getElementsByName('checkin-date')[0].value != '' && document.getElementsByName('checkout-date')[0].value != '' ) {
-			if (checkinDate.toISOString() === checkoutDate.toISOString()) {
+			if (checkinDate === checkoutDate) {
 				$('.validate-dates-equal').fadeIn();
 				boolCheck = false;
 			} else $('.validate-dates-equal').fadeOut();
@@ -96,9 +96,10 @@
 		if ( phoneNum.toString() == '' ) {
 			$('.validate-phone-empty').fadeIn();
 			boolCheck = false
+			return;
 		} else $('.validate-phone-empty').fadeOut();
 
-		if ( !isValidPhoneNumber( phoneNum.toString() ) ) {
+		if ( !isValidPhoneNumber( phoneNum.toString() ) && phoneNum.toString() != '' ) {
 			$('.validate-phone-regex').fadeIn();
 			boolCheck = false;
 		} else $('.validate-phone-regex').fadeOut();
@@ -114,7 +115,7 @@
 		const petAge = document.getElementById('pet-age').value;
 		$(".validate-text").hide();
 
-		if ( !(/^\d{1,2}$/).test(petAge) ) {
+		if ( !(/^\d{1,2}$/).test(petAge) && petAge != '') {
 			$('.validate-pet-age-regex').fadeIn();
 			boolCheck = false
 		} else $('.validate-pet-age-regex').fadeOut();
@@ -188,7 +189,8 @@
 		customMonths: ['Януари', 'Февруари', 'Март', 'Април', 'Май', 'Юни', 'Юли', 'Август', 'Септември', 'Октомври', 'Ноември', 'Декември'],
 		minDate: dateToday,
 		formatter: (input, date, instance) => {
-			const value = date.toDateString()
+			const value = date.toLocaleDateString();
+
 			input.value = value
 		},
 	})
@@ -200,7 +202,8 @@
 		customDays: ['Н', 'П', 'В', 'С', 'Ч', 'П', 'С'],
 		customMonths: ['Януари', 'Февруари', 'Март', 'Април', 'Май', 'Юни', 'Юли', 'Август', 'Септември', 'Октомври', 'Ноември', 'Декември'],
 		formatter: (input, date, instance) => {
-			const value = date.toDateString()
+			const value = date.toLocaleDateString();
+			
 			input.value = value
 		},
 	})

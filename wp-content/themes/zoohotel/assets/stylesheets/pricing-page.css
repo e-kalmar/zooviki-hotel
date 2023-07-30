@@ -87,7 +87,7 @@
 }
 
 /*buttons*/
-#booking-handler-form .action-button {
+#booking-handler-form .action-button{
     width: 100px;
     background: #fb921f;
     font-weight: bold;
@@ -97,6 +97,14 @@
     cursor: pointer;
     padding: 10px 5px;
     margin: 10px 5px;
+}
+#close-btn{
+    background: #fb921f;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    /* border-radius: 25px; */
+    cursor: pointer;
 }
 
 #booking-handler-form .action-button:hover, #booking-handler-form .action-button:focus {
