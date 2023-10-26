@@ -35,3 +35,9 @@ div.zoohotel-contacts-page .content-wrap {
     width: 50%;
   }
 }
+
+.contact-us-header{
+  font-family: 'Amatic SC';
+  font-size: 35px;
+  font-weight: bolder;
+}

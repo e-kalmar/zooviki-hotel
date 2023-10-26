@@ -13,73 +13,66 @@ get_header();
   <div class="content-wrap shadow p-3 mb-5 rounded">
     <!--Section: FAQ-->
     <section>
-      <h3 class="text-center mb-4 pb-2 text-primary fw-bold">FAQ</h3>
-      <p class="text-center mb-5">
-        Find the answers for the most frequently asked questions below
-      </p>
+      <h1 class="text-center mb-4 pb-2 text-primary fw-bold faq-header"><strong>Често задавни въпроси</strong></h3>
 
+      <div class="faq-wrapper"> 
       <div class="row">
-        <div class="col-md-6 col-lg-4 mb-4">
-          <h6 class="mb-3 text-primary"><i class="far fa-paper-plane text-primary pe-2"></i> A simple
-            question?</h6>
+        <div class="row mb-4">
+          <h6 class="mb-3 text-primary question-header"> КАКВА Е МИНИМАЛНАТА ВЪЗРАСТ ЗА НАСТАНЯВАНЕ В ХОТЕЛА?</h6>
           <p>
-            <strong><u>Absolutely!</u></strong> We work with top payment companies which guarantees
-            your
-            safety and
-            security. All billing information is stored on our payment processing partner.
+          С цел опазване на здравето на всички четириноги посетители на хотел „Viki“, при настаняване Вашето куче трябва да има завършен ваксинационен курс и ваксинация срещу Кучешка кашлица, направена минимум три дни преди деня на пристигането си. Кутрета също са добре дошли, стига да са минали поне две седмици от поставянето на задължителните бебешки ваксини и на ваксина срещу Кучешка кашлица.
           </p>
         </div>
 
-        <div class="col-md-6 col-lg-4 mb-4">
-          <h6 class="mb-3 text-primary"><i class="fas fa-pen-alt text-primary pe-2"></i> A question
-            that
-            is longer then the previous one?</h6>
-          <p>
-            <strong><u>Yes, it is possible!</u></strong> You can cancel your subscription anytime in
-            your
-            account. Once the subscription is
-            cancelled, you will not be charged next month.
-          </p>
+        <div class="row mb-4">
+          <h6 class="mb-3 text-primary question-header">КАКВО ДА НОСЯ, КОГАТО НАСТАНЯВАМ КУЧЕТО СИ?</h6>
+             <ul>
+              <li>Най-важното е да донесете паспорт, за да се уверим, че всички ваксинации и обезпаразитявания са в ред</li>
+              <li>Храна, достатъчна за целия престой; в случай, че не носите храна, кучето Ви може да се храни с гранули, предоставена от нас срещу допълнително заплащане;</li>
+              <li>Нашийник – здрав и плътен нашийник, по възможност не най-луксозният, който притежавате; има възможност да бъде скъсан или повреден при игра, затова препоръчваме да изпратите любимеца си с по-обикновен нашийник; за безопасността и комфорта на кучето Ви, стоенето с нагръдник на двора не е препоръчително; ако Вашето куче е с противопаразитна каишка, тя ще бъде премахната и прибана до заминаването му, тъй като при игра може да се скъса и да бъде погълната от друго куче; противопаразитната каишка НЕ Е достатъчно обезпаразитяване според ЗВМД, така че кучето Ви трябва да бъде обезпаразитено с хапче или пипета за външни паразити;</li>
+              <li>Не е нужно да носите легълца, постелки или одеала, защото разполагаме с чисти, меки и удобни легла във всякакви размери; всяко легло е изпрано и дезинфекцирано преди употреба;</li>
+              <li>Не е нужно да носите повод – имаме предостатъчно на разположение; </li>
+            </ul>
         </div>
 
-        <div class="col-md-6 col-lg-4 mb-4">
-          <h6 class="mb-3 text-primary"><i class="fas fa-user text-primary pe-2"></i> A simple
-            question?
+        <div class="row mb-4">
+          <h6 class="mb-3 text-primary question-header">КАКВИ ХРАНИ ПРЕДЛАГАТЕ В ХОТЕЛА?
           </h6>
-          <p>
-            Currently, we only offer monthly subscription. You can upgrade or cancel your monthly
-            account at any time with no further obligation.
+          <p> Ако кучето Ви има чувствителен стомах Ви препоръчваме да не сменяте храната му. В случай, че не носите храна или ако просто искате да разнообразите диетата на своя любимец хотел „Viki“ предлага няколко вида гранулирани и консервирани храни при допълнително заплащане според дажбата. Ето някои от предлаганите храни:<br/>
+              <b>Сухи храни:</b><br/>
+              Royal Canine  ,  Purina ProPlan, N&D, Dr.Clouder,  Eukanuba,  DogChow, Friskies, и др<br/>
+              <b>Консервирана храна:</b><br/>
+              Pipper, N&D, Nuevo, Rinti,  и др.
           </p>
         </div>
 
-        <div class="col-md-6 col-lg-4 mb-4">
-          <h6 class="mb-3 text-primary"><i class="fas fa-rocket text-primary pe-2"></i> A simple
-            question?
-          </h6>
+        <div class="row mb-4">
+          <h6 class="mb-3 text-primary question-header">ЗАЩО Е ЗАДЪЛЖИТЕЛНО КУЧЕТО МИ ДА Е ВАКСИНИРАНО СРЕЩУ КУЧЕШКА КАЩЛИЦА, ПРЕДИ ДА МОЖЕ ДА БЪДЕ НАСТАНЕНО В ХОТЕЛА?</h6>
           <p>
-            Yes. Go to the billing section of your dashboard and update your payment information.
+          Кучешката кашлица е силно заразна вирусна инфекция, каято се предава изключително бързо. За нас е много важно да поддържаме кучето Ви в оптимално здраве, докато е поверено на нашите грижи. Тъй като сме запознати със скоростта, с която се разпространява Кучешката кашлица, не искаме да поемаме рискове всички гости на хотела да се заразят.
           </p>
         </div>
 
-        <div class="col-md-6 col-lg-4 mb-4">
-          <h6 class="mb-3 text-primary"><i class="fas fa-home text-primary pe-2"></i> A simple
-            question?
-          </h6>
-          <p><strong><u>Unfortunately no</u>.</strong> We do not issue full or partial refunds for any
-            reason.</p>
-        </div>
-
-        <div class="col-md-6 col-lg-4 mb-4">
-          <h6 class="mb-3 text-primary"><i class="fas fa-book-open text-primary pe-2"></i> Another
-            question that is longer than usual</h6>
+        <div class="row mb-4">
+          <h6 class="mb-3 text-primary question-header">ИМАТЕ ЛИ ВЕТЕРИНАР В ХОТЕЛА?</h6>
           <p>
-            Of course! We’re happy to offer a free plan to anyone who wants to try our service.
+          Хотел “Viki” работи със ветеринарен лекар, който е на разположение 24/7 за оказване на съдействие при възникнало неразположение от страна на домашния Ви любимец.
           </p>
         </div>
+
+        <div class="row mb-4">
+          <h6 class="mb-3 text-primary question-header">КАКВИ ВАКСИНАЦИИ ТРЯБВА ДА ИМА КУЧЕТО МИ, ЗА ДА МОЖЕ ДА БЪДЕ НАСТАНЕНО В ХОТЕЛА?</h6>
+          <p>
+          Всяко куче, което приемем за хотел или за целодневна занималня, трябва да бъде с активна годишна ваксина и ваксина срещу бяс, трябва да е обезпаразитено най-много 2 седмици преди посещението при нас и да има поставена ваксина срещу Кучешка кашлица. Всичко това трябва да бъде отразено в паспорта, който носите. Ако при пием на кучето в хотела годишната ваксина и/или ваксината срещу бяс липсват в паспорта и ветеринарят на кучето Ви не може да докаже поставянето им, кучето ще бъде заведено за ваксинация за сметка на стопанина си.
+          </p>
+        </div>
+      </div>
       </div>
     </section>
     <!--Section: FAQ-->
   </div>
 </div>
+<link rel="preconnect" href="https://fonts.googleapis.com"> 
 
+<link href='https://fonts.googleapis.com/css?family=Amatic SC' rel='stylesheet'>
 <?php get_footer();

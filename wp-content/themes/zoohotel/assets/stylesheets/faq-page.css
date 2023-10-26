@@ -13,3 +13,17 @@ div.zoohotel-faq-page .content-wrap {
 @media screen and (max-width: 1200) {
   /* ... */
 }
+.question-header{
+  font-family: 'Amatic SC';
+  font-size: 35px;
+  font-weight: bolder;
+  color: #fb921f !important;
+}
+.faq-header{
+  font-family: 'Amatic SC';
+  font-size: 45px;
+  color: #fb921f !important;
+}
+.faq-wrapper{
+  margin-left: 30px;
+}

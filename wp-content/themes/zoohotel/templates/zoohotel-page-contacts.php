@@ -11,13 +11,12 @@ get_header();
 <!--Section: Contact v.2-->
 <div class="container-fluid zoohotel-contacts-page">
     <div class="content-wrap shadow p-3 mb-5 rounded p-4">
-        <img src="<?php echo get_template_directory_uri() . "/assets/media/img/contact-us.png"; ?>"
-            class="img-fluid z-depth-1 header-image" alt="Contact us image">
-
-        <h3 class="text-center w-responsive mx-auto mb-5 text-fluid" style="font-family: 'Poppins', sans-serif;">
-            <br><u>Имате въпрос?</u><br><br>Не се колебайте и веднага се
-            свържете с нас.<br><br>Нашият екип ще се свърже с вас за да ви помогне.</h3>
-
+        <h1 class="text-center w-responsive mx-auto mb-5 text-fluid">
+            <span class="contact-us-header">СВЪРЖЕТЕ СЕ С НАС.</span>
+        </h3>
+        <h5 class="text-center w-responsive mx-auto mb-5 text-fluid">
+                <br>Напишете ни съобщение чрез формата, или просто ни изпратете имейл директно на Zooviki.office@gmail.com
+        </h5>
         <form id="contact-form" class="d-flex align-items-center flex-column" name="contact-form needs-validation">
             <div class="form-group col-md-6">
                 <label for="name" class="form-label">Име</label>
@@ -85,6 +84,8 @@ get_header();
         </div>
     </div>
 </div>
+<link rel="preconnect" href="https://fonts.googleapis.com"> 
 
+<link href='https://fonts.googleapis.com/css?family=Amatic SC' rel='stylesheet'>
 <!--Section: Contact v.2-->
 <?php get_footer();
