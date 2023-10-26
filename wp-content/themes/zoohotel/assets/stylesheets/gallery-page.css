@@ -2,10 +2,7 @@ div.zoohotel-gallery-page .content-wrap {
     background-color: rgba(251, 247, 242, .98);
 }
 
-div.zoohotel-gallery-page.container,
-div.zoohotel-gallery-page.container-fluid {
-    height: 100vh;
-}
 .footer{
-    margin-top: 4300px;
+    position: relative;
+    margin-top:auto;
 }
