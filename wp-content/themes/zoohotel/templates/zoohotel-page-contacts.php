@@ -47,17 +47,17 @@ get_header();
             </div>
             <br><br>
             <ul class="list-group col-md-12 col-lg-6 col-sm-12">
-                <li class="list-group-item active">
-                    <i class="fas fa-map-marker-alt fa-2x"></i><span class="float-end badge bg-primary text-wrap p-2">кв. Ветрен улица 4-та, Стопански двор (Бившата кравеферма)</span>
+                <li class="list-group-item ">
+                    <i class="fas fa-map-marker-alt fa-2x contact-icon"></i><span class="float-end badge contact-info text-wrap p-2">кв. Ветрен улица 4-та, Стопански двор (Бившата кравеферма)</span>
                 </li>
-                <li class="list-group-item active">
-                    <i class="fas fa-envelope fa-2x"></i><span class="float-end badge bg-primary text-wrap p-2">zooviki.office@gmail.com</span>
+                <li class="list-group-item ">
+                    <i class="fas fa-envelope fa-2x contact-icon"></i><span class="float-end badge contact-info text-wrap p-2">zooviki.office@gmail.com</span>
                 </li>
-                <li class="list-group-item active">
-                    <i class="fas fa-phone fa-2x"></i><span class="float-end badge bg-primary text-wrap p-2">0898 42 83 35 / 0878 93 99 96</span>
+                <li class="list-group-item ">
+                    <i class="fas fa-phone fa-2x contact-icon"></i><span class="float-end badge contact-info text-wrap p-2">0898 42 83 35 / 0878 93 99 96</span>
                 </li>
-                <li class="list-group-item active">
-                    <i class="fa-solid fa-clock fa-2x"></i><span class="float-end badge bg-primary text-wrap p-2">Всеки ден - 9:30 - 19:30</span>
+                <li class="list-group-item ">
+                    <i class="fa-solid fa-clock fa-2x contact-icon"></i><span class="float-end badge contact-info text-wrap p-2">Всеки ден - 9:30 - 19:30</span>
                 </li>
 
             </ul>

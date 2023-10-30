@@ -3,11 +3,21 @@ div.zoohotel-faq-page .content-wrap {
 }
 
 @media screen and (max-width: 768px) {
-  /* ... */
+  .zoohotel-faq-page .faq-header{
+    font-size: 3rem;
+  }
+  .zoohotel-faq-page .question-header{
+    font-size: 2.3rem;
+  }
 }
 
 @media screen and (max-width: 992px) {
-  /* ... */
+  .zoohotel-faq-page .faq-header{
+    font-size: 3rem;
+  }
+  .zoohotel-faq-page .question-header{
+    font-size: 2.3rem;
+  }
 }
 
 @media screen and (max-width: 1200) {

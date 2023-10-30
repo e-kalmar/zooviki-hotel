@@ -8,8 +8,61 @@ get_header();
 ?>
 
 <!-- PAGE TEMPLATE STARTS HERE -->
+<div class="container-fluid zoohotel-faq-page">
+  <div class="content-wrap shadow p-3 mb-5 rounded">
+    <!--Section: FAQ-->
+    <section>
+
+      <div class="faq-wrapper"> 
+      <div class="row">
+        <div class="row mb-4">
+          <h6 class="mb-3 text-primary question-header"> ПРЕСТОЙ</h6>
+             <ul>
+              <li>Малка стая - 25лв</li>
+              <li>Стандартна стая - 30лв</li>
+              <li>Двойна стая - 45лв</li>
+              <li>Малка стая VIP - 35лв / собствен двор + видеонаблюдение / </li>
+              <li>Стандартна стая VIP - 30лв / собствен двор + видеонаблюдение - 4кв / </li>
+              <li>Стандартна стая VIP - 30лв / собствен двор + видеонаблюдение - 6кв / </li>
+              <li>Двойна стая VIP - 45лв / собствен двор + видеонаблюдение /  </li>
+            </ul>
+            <p>Цената включва пристигане (след 8:00) в Ден 1, нощувка и напускане. Ако кучето трябва да остане след 13:00ч., има допълнителна такса, както следва</p><br/>
+            <p><b>*50%</b> от цената на нощувка при напускане на хотела до <b>16:00ч.</b></p><br/>
+            <p><b>*100%</b> от цената на нощувка при напускане на хотела след <b>16:00ч</b></p><br/>
+            <p>Хотелът предлага отстъпки по договаряне при престой на две или повече кучета от едно домакинство, както и при престой, по-дълъг от две седмици</p>
+        </div>
+
+        <div class="row mb-4">
+          <h6 class="mb-3 text-primary question-header">КЪПАНЕ</h6>
+              <p>Включва: разресване, премахване на сплитания, изкъпване с професионални шампоан и балсам, подходящи за съответната козина, подсушаване със сешоар, почистване на уши.</p>
+             <ul>
+              <li>Къпане на късокосместо куче до 10кг - 20лв</li>
+              <li>Къпане на късокосместо куче до 20кг. - 30лв</li>
+              <li>Къпане на късокосместо куче над 20 кг - 40лв</li>
+            </ul>
+            <br/>
+             <ul>
+              <li>Къпане на дългокосместо куче до 10кг - 30лв</li>
+              <li>Къпане на дългокосместо куче до 20кг - 40лв</li>
+              <li>Къпане на дългокосместо куче над 20кг - 60лв</li>
+            </ul>
+
+        </div>
+        <div class="row mb-4">
 
 
+            <p>Хотел „Viki” приема възрастни и несоциални кучета, като заплащането се договаря допълнително.</p><br/>
+            <p>В хотела не се приемат разгонени кучета. Ако Вашето куче се разгони по време на престоя си, препоръчително е да има човек, на когото да бъде върнато. Ако няма такава възможност, цената на нощувка е двойна за периода, в който кучето е разгонено.</p>
+        </div>
+       
+      </div>
+      </div>
+    </section>
+    <!--Section: FAQ-->
+  </div>
+</div>
+
+<!-- 
 <div class="container zoo-hotel-pricing-page">
   <div class="content-wrap">
     <div class="row justify-content-center">
@@ -17,7 +70,6 @@ get_header();
       <div class="col-lg-6 col-xxl-4 mb-5">
         <div class="card border-0 h-100">
           <div class="card-body rounded text-center">
-            <!-- <img src="https://fakeimg.pl/640x360" class="card-img-top img-fluid"> -->
             <img src="https://picsum.photos/640/360" class="card-img-top img-fluid">
             <h5 class="card-title text-success mt-4"><i class="fas fa-house"></i> Малка стая</h5>
             <ul class="list-group list-group-light">
@@ -33,7 +85,6 @@ get_header();
       <div class="col-lg-6 col-xxl-4 mb-5">
         <div class="card border-0 h-100">
           <div class="card-body rounded text-center">
-            <!-- <img src="https://fakeimg.pl/640x360" class="card-img-top img-fluid"> -->
             <img src="https://picsum.photos/640/360" class="card-img-top img-fluid">
             <h5 class="card-title text-success mt-4"><i class="fas fa-house"></i> Стандартна стая</h5>
             <ul class="list-group list-group-light">
@@ -49,7 +100,6 @@ get_header();
       <div class="col-lg-6 col-xxl-4 mb-5">
         <div class="card border-0 h-100">
           <div class="card-body rounded text-center">
-            <!-- <img src="https://fakeimg.pl/640x360" class="card-img-top img-fluid"> -->
             <img src="https://picsum.photos/640/360" class="card-img-top img-fluid">
             <h5 class="card-title text-success mt-4"><i class="fas fa-house"></i> Двойна стая</h5>
             <ul class="list-group list-group-light">
@@ -65,7 +115,6 @@ get_header();
       <div class="col-lg-6 col-xxl-4 mb-5">
         <div class="card border-0 h-100">
           <div class="card-body rounded text-center">
-            <!-- <img src="https://fakeimg.pl/640x360" class="card-img-top img-fluid"> -->
             <img src="https://picsum.photos/640/360" class="card-img-top img-fluid">
             <h5 class="card-title text-success mt-4"><i class="fas fa-house"></i> VIP стая</h5>
             <ul class="list-group list-group-light">
@@ -83,7 +132,6 @@ get_header();
       <div class="col-lg-6 col-xxl-4 mb-5">
         <div class="card border-0 h-100">
           <div class="card-body rounded text-center">
-            <!-- <img src="https://fakeimg.pl/640x360" class="card-img-top img-fluid"> -->
             <img src="https://picsum.photos/640/360" class="card-img-top img-fluid">
             <h5 class="card-title text-success mt-4"><i class="fas fa-house"></i> VIP стая</h5>
             <ul class="list-group list-group-light">
@@ -101,7 +149,6 @@ get_header();
       <div class="col-lg-6 col-xxl-4 mb-5">
         <div class="card border-0 h-100">
           <div class="card-body rounded text-center">
-            <!-- <img src="https://fakeimg.pl/640x360" class="card-img-top img-fluid"> -->
             <img src="https://picsum.photos/640/360" class="card-img-top img-fluid">
             <h5 class="card-title text-success mt-4"><i class="fas fa-house"></i> VIP стая</h5>
             <ul class="list-group list-group-light">
@@ -116,10 +163,10 @@ get_header();
         </div>
       </div>
 
-    </div> <!-- end of row -->
+    </div> 
   </div>
 
-  <!-- Success Modal -->
+
   <div class="modal" aria-hidden="true" tabindex="-1" role="dialog" id="success-modal">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -137,17 +184,14 @@ get_header();
     </div>
   </div>
 
-  <!-- MultiStep Form -->
   <div class="row">
     <div class="col-md-6 col-md-offset-3 modal-wrapper reservation-modal">
       <form id="booking-handler-form" class="class-booking-handler-form">
-        <!-- progressbar -->
         <ul id="progressbar">
           <li class="active">Резервация</li>
           <li>Информация за гостите</li>
           <li>Преглед на вашата резервация</li>
         </ul>
-        <!-- fieldsets -->
         <fieldset class="rounded overflow-none" id="fs-1">
           <span class="close-modal"><ion-icon name="close-outline"></ion-icon></span>
           <h2 class="fs-title"><span class="roomtype-placeholder text-success"></span> Генерална информация</h2>
@@ -253,7 +297,9 @@ get_header();
       </form>
     </div>
   </div>
-</div>
+</div> -->
+
+
 <style>
 .loader {
   display:none;
@@ -288,5 +334,6 @@ get_header();
 <link rel="preconnect" href="https://fonts.googleapis.com"> 
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
 <link href="https://fonts.googleapis.com/css2?family=Edu+SA+Beginner&display=swap" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Amatic SC' rel='stylesheet'>
 <?php get_footer();
 

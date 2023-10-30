@@ -87,3 +87,18 @@
   font-family: 'Amatic SC';
   color: #fb921f;
 }
+@media screen and (max-width: 768px) {
+  .card-header{
+      font-size: 2.3rem !important;
+    }
+}
+
+@media screen and (max-width: 992px) {
+  .card-header{
+      font-size: 2.3rem !important;
+    }
+}
+
+@media screen and (max-width: 1200) {
+  /* ... */
+}
