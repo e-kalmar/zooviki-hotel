@@ -46,6 +46,8 @@ get_header();
                         hidden></span></button>
             </div>
             <br><br>
+
+
             <ul class="list-group col-md-12 col-lg-6 col-sm-12">
                 <li class="list-group-item ">
                     <i class="fas fa-map-marker-alt fa-2x contact-icon"></i><span class="float-end badge contact-info text-wrap p-2">кв. Ветрен улица 4-та, Стопански двор (Бившата кравеферма)</span>
@@ -61,6 +63,11 @@ get_header();
                 </li>
 
             </ul>
+            <br><br>
+
+            <div style="width: 50%"><iframe width="100%" height="450" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=42.602316,%2027.392575+(Pet%20Hotel%20Viki)&amp;t=&amp;z=17&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.maps.ie/population/">Calculate population in area</a></iframe>
+            </div>
+
             <div class="status"></div>
         </form>
         <!--Grid column-->
