@@ -98,7 +98,7 @@
 .dog-image img{
   max-width: 100%;
   height: auto;
-  display: block;
+  border-radius: 5px;
 }
 
 .text-column {
@@ -107,10 +107,7 @@
   padding:20px;
 }
 .text-container {
-    display: contents;
-    max-width: 800px;
-    margin: 20px auto;
-    overflow: hidden;
+    display: flex;
 }
 .home-header{
   font-family: 'Amatic SC';
@@ -120,9 +117,13 @@
 }
 
 
+
 @media screen and (max-width: 768px) {
   .card-header{
       font-size: 2.3rem !important;
+    }
+  .text-container{
+      display: block !important;
     }
 }
 
@@ -130,6 +131,16 @@
   .card-header{
       font-size: 2.3rem !important;
     }
+  .text-container{
+      display: flex !important;
+    }
+  .dog-image{
+      flex: none;    
+    }
+  .text-container:nth-child(even){
+    display: flex !important;
+    flex-direction: column-reverse !important;
+  }
 }
 
 @media screen and (max-width: 1200) {
