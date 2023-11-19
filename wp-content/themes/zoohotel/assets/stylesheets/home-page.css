@@ -141,6 +141,9 @@
     display: flex !important;
     flex-direction: column-reverse !important;
   }
+  .home-header{
+    font-size: 2.5rem;
+  }
 }
 
 @media screen and (max-width: 1200) {
