@@ -1,3 +1,5 @@
+@import "core/bootstrap/rfs";
+
 html, body {
   scroll-behavior: smooth;
   height: 100%;
@@ -8,6 +10,10 @@ html, body {
 
 .container-fluid, .container {
   scroll-behavior: smooth;
+}
+
+.font-cursive {
+  font-family: cursive;
 }
 
 html,
@@ -61,8 +67,6 @@ body,
   background-color: #fb921f;
   color: black;
 }
-
-@import "core/bootstrap/rfs";
 
 .title {
   @include responsive-font-size(4rem);
@@ -122,7 +126,7 @@ button {
   body,
   .container,
   form fieldset {
-    font-size: 1vw;
+    font-size: 1rem;
   }
 
   .fs-title {
@@ -142,7 +146,7 @@ button {
   .container,
   .container-fluid,
   form fieldset {
-    font-size: 3.5vw;
+    font-size: 2.5vw;
   }
 
   #back-to-top-btn i {
@@ -174,7 +178,7 @@ button {
   #back-to-top-btn i {
     min-height: 3vh;
     min-width: 8vw;
-    font-size: 4vw;
+    font-size: 10vw;
   }
 
   .fs-title {

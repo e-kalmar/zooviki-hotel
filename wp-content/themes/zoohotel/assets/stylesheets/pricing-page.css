@@ -1,3 +1,6 @@
+/*custom font*/
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
 .modal-prev-page-btn,
 .zoo-hotel-pricing-page #submit-btn {
     display: none;
@@ -8,9 +11,6 @@
 .modal-prev-page-btn {
     min-width: 150px;
 }
-
-/*custom font*/
-@import url(https://fonts.googleapis.com/css?family=Montserrat);
 
 .zoo-hotel-pricing-page .content-wrap .card-body,
 .zoo-hotel-pricing-page .content-wrap .card {
@@ -263,19 +263,19 @@
 div.zoohotel-faq-page .content-wrap {
     background-color: rgba(251, 247, 242, .98);
   }
-  
+
   @media screen and (max-width: 768px) {
     .question-header{
         font-size: 2.3rem !important;
       }
   }
-  
+
   @media screen and (max-width: 992px) {
     .question-header{
         font-size: 2.3rem !important;
       }
   }
-  
+
   @media screen and (max-width: 1200) {
     /* ... */
   }

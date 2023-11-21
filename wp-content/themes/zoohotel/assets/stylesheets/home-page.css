@@ -89,7 +89,7 @@
   color: #fb921f;
 }
 .dog-image{
-  flex: 1; 
+  flex: 1;
   max-width: 100%;
   margin-right: 20px;
   padding: 20px;
@@ -98,12 +98,13 @@
 .dog-image img{
   max-width: 100%;
   height: auto;
-  border-radius: 5px;
+  border-radius: 25px;
+  box-shadow: 0px 0px 15px 0px #0000005c;
 }
 
 .text-column {
-  flex: 1; 
-  font-size: 1.5rem; 
+  flex: 1;
+  font-size: 1.5rem;
   padding:20px;
 }
 .text-container {
@@ -135,7 +136,7 @@
       display: flex !important;
     }
   .dog-image{
-      flex: none;    
+      flex: none;
     }
   .text-container:nth-child(even){
     display: flex !important;

@@ -7,6 +7,9 @@
                 <div class="logo-text-container zoo-hotel-logo-container">
                     <img class="img-fluid" src="<?php echo get_template_directory_uri() . '/assets/media/img/logo.png' ?>" alt="Logo">
                 </div>
+                <div class="logo-text-container zoo-hotel-label-container">
+                    <span><?php echo APP_NAME ?></span>
+                </div>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

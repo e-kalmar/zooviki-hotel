@@ -65,22 +65,27 @@ function add_footer_styles()
 {
 	wp_enqueue_style('footer_styles', get_template_directory_uri() . '/assets/stylesheets/footer.css');
 }
-;
 add_action('get_footer', 'add_footer_styles');
 
 function add_header_styles()
 {
 	wp_enqueue_style('header_styles', get_template_directory_uri() . '/assets/stylesheets/header.css');
 }
-;
 add_action('get_header', 'add_header_styles', 10, 1);
 
 function add_header_scripts()
 {
+	printf( "<link rel=\"" . get_theme_file_path() . "/favicon.png" .  "\" type=\"image/vnd.microsoft.icon\" href=\"%s/favicon.png\" />\n", site_url() );
+
 	if (is_page('pricing')) {
 		wp_enqueue_script('pricing-page-js', get_template_directory_uri() . '/assets/js/pricing-page.js', array(), false);
 	}
 	wp_enqueue_script('header-js', get_template_directory_uri() . '/assets/js/header.js', array(), false);
 }
-;
 add_action('wp_head', 'add_header_scripts', );
+
+
+//GLOBAL VARIABLES
+
+// App name
+define('APP_NAME', 'Зоохотел<br>Вики');

@@ -17,6 +17,14 @@ header {
   left: 0;
 }
 
+.navbar-brand .zoo-hotel-label-container span {
+  font-family: 'Amatic SC', sans-serif;
+  font-weight: bolder;
+  font-size: 1.2rem;
+  color: #ff7709 !important;
+  letter-spacing: 2px;
+}
+
 .logo-title {
   font-family: 'pattaya';
 }
@@ -50,4 +58,11 @@ header {
 
 .nav-link {
   font-family: "Poppins", sans-serif;
+}
+
+@media screen and (min-width: 993px) {
+  .navbar-nav {
+    position: absolute;
+    right: 0;
+  }
 }
