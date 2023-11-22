@@ -12,5 +12,6 @@ get_header();
         <?php echo do_shortcode('[modula id="19"]'); ?>
     </div>
 </div>
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href='https://fonts.googleapis.com/css?family=Amatic SC' rel='stylesheet'>
 <?php get_footer();
