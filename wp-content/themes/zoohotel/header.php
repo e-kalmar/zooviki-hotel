@@ -1,7 +1,7 @@
 <?php wp_head(); ?>
 
 <header>
-   <nav class="navbar navbar-expand-lg mb-5 p-3 ">
+   <nav class="navbar navbar-expand-lg mb-5">
         <div class="container-fluid">
             <a class="navbar-brand" href="/">
                 <div class="logo-text-container zoo-hotel-logo-container">

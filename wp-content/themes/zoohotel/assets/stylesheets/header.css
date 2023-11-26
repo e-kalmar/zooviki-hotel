@@ -66,7 +66,6 @@ header {
 .navbar-toggler-icon {
   width: 3em !important;
   height: 3em !important;
-
 }
 
 @media screen and (min-width: 993px) {
@@ -74,5 +73,19 @@ header {
     position: absolute;
     right: 0;
   }
+}
 
+@media screen and (max-width: 993px) {
+  .navbar-brand .zoo-hotel-label-container span {
+    font-size: 1.2rem;
+  }
+
+  .navbar-brand .zoo-hotel-logo-container img {
+    width: 3em;
+  }
+
+  .navbar-toggler-icon {
+    width: 2em !important;
+    height: 2em !important;
+  }
 }
