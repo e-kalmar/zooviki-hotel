@@ -8,6 +8,12 @@
  * @link
  */
 
+/**
+ * GLOBAL VARIABLES
+ * Keep in the beginning of this file
+*/
+define('APP_NAME', 'Зоохотел<br>Вики'); // App name
+
 function admin_load_bootstrap()
 {
 	wp_enqueue_style('mdbootstrap-css', "https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.css");
@@ -17,7 +23,6 @@ add_action('admin_enqueue_scripts', 'admin_load_bootstrap', 10, 1);
 function zoohotel_scripts()
 {
 	// STYLES
-	// wp_enqueue_style( 'bootstrap-css', 		'https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css' );
 	wp_enqueue_style('styles-main', get_stylesheet_uri());
 	wp_enqueue_style('pattaya-google-fonts', 'https://fonts.googleapis.com/css2?family=Pattaya&display=swap');
 	wp_enqueue_style('font-awesome', "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css");
@@ -42,7 +47,7 @@ function zoohotel_scripts()
 	}
 
 	// Gallery page styles/scripts
-	if (is_page('pricing')) {
+	if (is_page('reservation')) {
 		wp_enqueue_script('datepicker-js', 'https://unpkg.com/js-datepicker');
 	}
 
@@ -77,15 +82,9 @@ function add_header_scripts()
 {
 	printf( "<link rel=\"" . get_theme_file_path() . "/favicon.png" .  "\" type=\"image/vnd.microsoft.icon\" href=\"%s/favicon.png\" />\n", site_url() );
 
-	if (is_page('pricing')) {
-		wp_enqueue_script('pricing-page-js', get_template_directory_uri() . '/assets/js/pricing-page.js', array(), false);
+	if (is_page('reservation')) {
+		wp_enqueue_script('reservation-page-js', get_template_directory_uri() . '/assets/js/reservation-page.js', array(), false);
 	}
 	wp_enqueue_script('header-js', get_template_directory_uri() . '/assets/js/header.js', array(), false);
 }
 add_action('wp_head', 'add_header_scripts', );
-
-
-//GLOBAL VARIABLES
-
-// App name
-define('APP_NAME', 'Зоохотел<br>Вики');

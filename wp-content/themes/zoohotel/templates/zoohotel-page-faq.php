@@ -13,7 +13,7 @@ get_header();
   <div class="content-wrap shadow p-3 mb-5 rounded">
     <!--Section: FAQ-->
     <section>
-      <h1 class="text-center mb-4 pb-2 text-primary fw-bold faq-header"><strong>Често задавни въпроси</strong></h3>
+      <h1 class="text-center mb-4 pb-2 fw-bold primary-header">Често задавни въпроси</h1>
 
       <div class="faq-wrapper"> 
       <div class="row">
@@ -74,5 +74,4 @@ get_header();
 </div>
 <link rel="preconnect" href="https://fonts.googleapis.com"> 
 
-<link href='https://fonts.googleapis.com/css?family=Amatic SC' rel='stylesheet'>
 <?php get_footer();

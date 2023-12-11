@@ -1,0 +1,11 @@
+#services-form .form-buttons .update,
+#services-form .form-buttons .delete,
+#services-form .form-buttons .clear {
+  display: none;
+}
+
+#services-table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}

@@ -1,9 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=Amatic SC');
+@import url('https://fonts.googleapis.com/css2?family=Hedvig+Letters+Sans&display=swap');
+
+* {
+  font-family: 'Hadvig Letters Sans', sans-serif;
+  font-size: 1.2rem;
+}
+
 header {
   box-shadow: 0 1px 2px rgba(0,0,0,0.19), 0 -1px 6px rgba(0,0,0,0.23);
 }
 
 .navbar {
   background-color: #94e69f;
+}
+
+.primary-header {
+  color: #fb921f;
+  display: block;
+  font-size: 45px;
+  font-weight: bolder;
+  font-family: 'Amatic SC';
+  text-decoration: underline;
 }
 
 .navbar-nav {
@@ -20,18 +37,13 @@ header {
 .navbar-brand .zoo-hotel-label-container span {
   font-family: 'Amatic SC', sans-serif;
   font-weight: bolder;
-  font-size: 2.2rem;
+  font-size: 1.6rem;
   color: #ff7709 !important;
   letter-spacing: 2px;
 }
 
-.logo-title {
-  font-family: 'pattaya';
-}
-
 .nav-item {
   --c:linear-gradient(#ff7709 0 0); /* update the color here */
-
 
   float: left;
   padding: 12px;
@@ -59,10 +71,6 @@ header {
   font-size: 2rem;
 }
 
-.nav-link {
-  font-family: "Poppins", sans-serif;
-}
-
 .navbar-toggler-icon {
   width: 3em !important;
   height: 3em !important;
@@ -76,6 +84,10 @@ header {
 }
 
 @media screen and (max-width: 993px) {
+  .primary-header {
+    font-size: 2.2rem;
+  }
+
   .navbar-brand .zoo-hotel-label-container span {
     font-size: 1.2rem;
   }

@@ -9,7 +9,7 @@
 
 .modal-next-page-btn,
 .modal-prev-page-btn {
-    min-width: 150px;
+min-width: 150px;
 }
 
 .zoo-hotel-pricing-page .content-wrap .card-body,
@@ -98,6 +98,7 @@
     padding: 10px 5px;
     margin: 10px 5px;
 }
+
 #close-btn{
     background: #fb921f;
     font-weight: bold;
@@ -262,34 +263,29 @@
 
 div.zoohotel-faq-page .content-wrap {
     background-color: rgba(251, 247, 242, .98);
-  }
+}
 
-  @media screen and (max-width: 768px) {
-    .question-header{
-        font-size: 2.3rem !important;
-      }
-  }
-
-  @media screen and (max-width: 992px) {
-    .question-header{
-        font-size: 2.3rem !important;
-      }
-  }
-
-  @media screen and (max-width: 1200) {
-    /* ... */
-  }
-  .question-header{
+.question-header{
     font-family: 'Amatic SC';
-    font-size: 40px;
+    font-size: 50px;
     font-weight: bolder;
     color: #fb921f !important;
-  }
-  .faq-header{
-    font-family: 'Amatic SC';
-    font-size: 45px;
-    color: #fb921f !important;
-  }
-  .faq-wrapper{
+}
+
+.faq-wrapper{
     margin-left: 30px;
-  }
+}
+
+@media screen and (max-width: 768px) {
+/* ... */
+}
+
+@media screen and (max-width: 992px) {
+.question-header{
+    font-size: 1.6rem !important;
+    }
+}
+
+@media screen and (max-width: 1200) {
+/* ... */
+}

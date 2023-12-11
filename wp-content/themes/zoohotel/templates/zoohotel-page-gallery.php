@@ -13,5 +13,4 @@ get_header();
     </div>
 </div>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href='https://fonts.googleapis.com/css?family=Amatic SC' rel='stylesheet'>
 <?php get_footer();

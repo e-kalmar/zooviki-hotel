@@ -2,6 +2,25 @@ div.zoohotel-faq-page .content-wrap {
   background-color: rgba(251, 247, 242, .98);
 }
 
+.question-header{
+  font-family: 'Amatic SC';
+  font-size: 40px;
+  font-weight: bolder;
+  color: #fb921f !important;
+}
+
+.faq-header strong {
+  color: #fb921f;
+  display: block;
+  font-size: 45px;
+  font-family: 'Amatic SC';
+  text-decoration: underline;
+}
+
+.faq-wrapper{
+  margin-left: 30px;
+}
+
 @media screen and (max-width: 768px) {
   .zoohotel-faq-page .faq-header{
     font-size: 3rem;
@@ -12,7 +31,7 @@ div.zoohotel-faq-page .content-wrap {
 }
 
 @media screen and (max-width: 992px) {
-  .zoohotel-faq-page .faq-header{
+  .zoohotel-faq-page .faq-header strong {
     font-size: 3rem;
   }
   .zoohotel-faq-page .question-header{
@@ -22,18 +41,4 @@ div.zoohotel-faq-page .content-wrap {
 
 @media screen and (max-width: 1200) {
   /* ... */
-}
-.question-header{
-  font-family: 'Amatic SC';
-  font-size: 40px;
-  font-weight: bolder;
-  color: #fb921f !important;
-}
-.faq-header{
-  font-family: 'Amatic SC';
-  font-size: 45px;
-  color: #fb921f !important;
-}
-.faq-wrapper{
-  margin-left: 30px;
 }

@@ -23,6 +23,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo site_url() . '/pricing/' ?>">Цени</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?php echo site_url() . '/reservation/' ?>">Резервация</a>
+                    </li>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo site_url() . '/faq/' ?>">Въпроси</a>

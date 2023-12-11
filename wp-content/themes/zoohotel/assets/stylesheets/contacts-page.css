@@ -60,8 +60,8 @@ div.zoohotel-contacts-page .content-wrap {
 
 .contact-us-header{
   font-family: 'Amatic SC';
-  font-size: 35px;
+  font-size: 45px;
   font-weight: bolder;
   color: #fb921f !important;
-
+  text-decoration: underline;
 }

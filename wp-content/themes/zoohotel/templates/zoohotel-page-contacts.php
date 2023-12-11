@@ -12,7 +12,7 @@ get_header();
 <div class="container-fluid zoohotel-contacts-page">
     <div class="content-wrap shadow p-3 mb-5 rounded p-4">
         <h1 class="text-center w-responsive mx-auto mb-5 text-fluid">
-            <span class="contact-us-header">СВЪРЖЕТЕ СЕ С НАС.</span>
+            <span class="contact-us-header">СВЪРЖЕТЕ СЕ С НАС</span>
         </h3>
         <h5 class="text-center w-responsive mx-auto mb-5 text-fluid">
                 <br>Напишете ни съобщение чрез формата, или просто ни изпратете имейл директно на Zooviki.office@gmail.com
@@ -93,6 +93,5 @@ get_header();
 </div>
 <link rel="preconnect" href="https://fonts.googleapis.com"> 
 
-<link href='https://fonts.googleapis.com/css?family=Amatic SC' rel='stylesheet'>
 <!--Section: Contact v.2-->
 <?php get_footer();

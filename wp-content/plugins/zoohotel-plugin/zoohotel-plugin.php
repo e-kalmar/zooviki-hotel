@@ -357,22 +357,22 @@ foreach ($this->ROOM_TYPES as $table) {
 $GLOBALS['zoohotel-plugin'] = new ZooHotelPlugin();
 
 ?>
+
 <script>
 document.addEventListener("DOMContentLoaded", () => {
     let collapsibleBtns = document.querySelectorAll('.collapsible-btn');
-for (let i = 0; i < collapsibleBtns.length; i++) {
-    console.log(collapsibleBtns[i]);
-    collapsibleBtns[i].addEventListener('click', function() {
-        this.classList.toggle('active');
-        const content = this.nextElementSibling;
-        if (content.style.display === 'block') {
-            content.style.display = 'none';
-        } else {
-            content.style.display = 'block';
-        }
-    });
-}
-
+    for (let i = 0; i < collapsibleBtns.length; i++) {
+        console.log(collapsibleBtns[i]);
+        collapsibleBtns[i].addEventListener('click', function() {
+            this.classList.toggle('active');
+            const content = this.nextElementSibling;
+            if (content.style.display === 'block') {
+                content.style.display = 'none';
+            } else {
+                content.style.display = 'block';
+            }
+        });
+    }
 });
 
 
