@@ -8,7 +8,7 @@
       2 => __('Къпане'),
     );
 ?>
-<input type='hidden' name='delete-service-url' value="<?php echo get_rest_url(null, 'zoohotel-services/delete') ?>"/>
+<input type='hidden' name='service-categories' value="<?php echo json_encode($categories); ?>"/>
 <input name="nonce" value="<?php echo wp_create_nonce("zoo-nonce")?>" type="hidden">
 
 <div class="container zoohotel-services-page">

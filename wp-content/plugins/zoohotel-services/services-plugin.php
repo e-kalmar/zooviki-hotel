@@ -18,22 +18,15 @@ class ZoohotelServicePlugin
   public function __construct()
   {
     if ( !is_admin() ) return;
+    $this->get_db_hooks();
+
     add_action( 'admin_menu', array($this, 'plugin_menu_inclusion') ); // create admin menu
     add_action( 'admin_enqueue_scripts', array($this, 'enqueue_plugin_assets') ); // hook scripts to plugin
-
-    add_action( 'wp_ajax_delete_service_action', array($this, 'delete_service_action_function') );
 
     // Handle POST request on submit
     add_action('wp_ajax_add_service', array($this, 'add_service'));
 
     register_activation_hook(__FILE__, function() {
-      add_action('rest_api_init', function() {
-        register_rest_route('zoohotel-services', 'delete', array(
-          'methods' => WP_REST_Server::CREATABLE, // POST
-          'callback' => array($this, 'delete_service'),
-        ));
-      });
-
       // Migrate DB on activation TODO: Add seeder function
       require_once(__DIR__ . '/db.php');
       $db = new ZoohotelServicePluginEntity();
@@ -63,6 +56,13 @@ class ZoohotelServicePlugin
     );
   }
 
+  public function get_db_hooks()
+  {
+    require_once(__DIR__ . '/db.php');
+    $db = new ZoohotelServicePluginEntity();
+    return $db->ajax_hooks_callstack();
+  }
+
   /**
    * Do stuff when you enter the plguin view
    * @return void
@@ -89,6 +89,14 @@ class ZoohotelServicePlugin
     // SCRIPTS
     wp_enqueue_script( 'services_plugin_admin_custom_scripts', plugin_dir_url( __FILE__ ) . '/assets/main.js');
     wp_enqueue_script('services_plugin_admin_jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js');
+
+    wp_localize_script( 
+      'services_plugin_admin_custom_scripts', 
+      'queries',
+      array( 
+        'ajaxurl' => admin_url( 'admin-ajax.php' ),
+      )
+    );
   }
 
   /**
@@ -117,14 +125,6 @@ class ZoohotelServicePlugin
     // Redirect to plugin's page
     $url = admin_url('admin.php?page=services');
     wp_redirect($url); 
-  }
-
-  public function delete_service_action_function()
-  {
-    var_dump( 123, 'Martyn' );die;
-    require_once(__DIR__ . '/db.php');
-    $db = new ZoohotelServicePluginEntity();
-    $db->delete(1); // where 1 should be $id
   }
 }
 

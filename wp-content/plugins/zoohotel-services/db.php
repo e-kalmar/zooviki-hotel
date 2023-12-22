@@ -26,6 +26,17 @@ class ZoohotelServicePluginEntity
     dbDelta( $sql );
   }
 
+  public function ajax_hooks_callstack()
+  {
+    // DELETE SERVICE AJAX
+    add_action( 'wp_ajax_delete', array($this, 'delete_service') );
+    add_action( 'wp_ajax_nopriv_delete', array($this, 'delete_service') );
+
+    // UPDATE SERVICE AJAX
+    add_action( 'wp_ajax_update', array($this, 'update_service') );
+    add_action( 'wp_ajax_nopriv_update', array($this, 'update_service') );
+  }
+
   /**
    * Drop tables on ZoohotelServicePlugin deactivation
    * @return void
@@ -62,8 +73,10 @@ class ZoohotelServicePluginEntity
    * Delete row in ZoohotelServicePlugin db table
    * @return void
    */
-  public function delete($id)
+  public function delete_service()
   {
+    $id = $_POST["id"];
+
     if ( $id && is_user_logged_in() ) {
       global $wpdb;
       $table_name = $wpdb->prefix . "zoohotel_services";
@@ -75,7 +88,48 @@ class ZoohotelServicePluginEntity
         )
       );
 
-      return wp_send_json('Deleted');
+      $response["status"] = 200;
+      $response["flashMessage"] = "Услугата е изтрита успешно";
+      $response["service_id"] = $id;
+
+      wp_send_json($response);
+      wp_die();
+    }
+  }
+
+  /**
+   * Update row in ZoohotelServicePlugin db table
+   * @return void
+   */
+  public function update_service()
+  {
+    $id = $_POST["id"];
+
+    if ( $id && is_user_logged_in() ) {
+
+      global $wpdb;
+      $table_name   = $wpdb->prefix . "zoohotel_services";
+      $service      = $_POST["service"];
+      $price        = $_POST["price"];
+      $description  = $_POST["description"];
+      $category     = $_POST["category"];
+      $wpdb->update( 
+        $table_name, 
+        array(
+          'service'     => $service,
+          'price'       => $price,
+          'description' => $description,
+          'category'    => $category,
+        ),
+        array('id' => $id), // Where clause
+      );
+
+      $response["status"] = 200;
+      $response["flashMessage"] = "Услугата е обновена успешно";
+      $response["service_id"] = $id;
+
+      wp_send_json($response);
+      wp_die();
     }
   }
 }

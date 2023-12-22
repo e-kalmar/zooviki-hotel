@@ -63,35 +63,71 @@ document.addEventListener('DOMContentLoaded', () => {
 
   deleteFormBtn.addEventListener('click', async (e) => {
     const ID    = servicesForm.querySelector('input[name="url-id"]').value;
-    const URL   = document.getElementsByName("delete-service-url")[0].value;
+    const URL   = queries.ajaxurl;
     const NONCE = document.querySelector('input[name="nonce"]').value;
-    console.log(NONCE);return;
-    // FETCH
-    // const response = await fetch(URL, {
-    //   method: "POST",
-    //   headers: new Headers({
-    //     'Content-Type': 'application/json;charset=UTF-8',
-    //     'X-WP-Nonce' : NONCE,
-    //   }),
-    //   body: JSON.stringify({
-    //     id: ID,
-    //   }),
-    // });
-    // const result = await response.json();
 
-    // AJAX
-    $.ajax({
-      type: "post",
-      url: URL,
-      headers: {
-          'X-WP-Nonce': NONCE,
-      },
-      data: {
-        id: ID,
-      },
-      success: function (response) {
-        console.log(response)
+    deleteFormBtn.classList.add('disabled');
+
+    servicesTableRows.forEach(row => {
+      if ( row.querySelector(".table-row-id").innerText == ID ) {
+        row.remove();
+        createFormBtn.style.display = 'inline-block';
+        updateFormBtn.style.display = 'none';
+        clearFormBtn.style.display  = 'none';
+        deleteFormBtn.style.display = 'none';
       }
-    });
+    })
+    // FETCH
+    let requestData = {
+      action: "delete",
+      id: ID,
+      nonce: NONCE,
+    };
+      
+    // Initiating AJAX request 
+    return fetch(URL, {
+      method:"post",
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(requestData).toString(),
+    })
+  })
+  
+  updateFormBtn.addEventListener('click', async (e) => {
+    const ID    = servicesForm.querySelector('input[name="url-id"]').value;
+    const URL   = queries.ajaxurl;
+    const NONCE = document.querySelector('input[name="nonce"]').value;
+
+    updateFormBtn.classList.add('disabled');
+
+    servicesTableRows.forEach(row => {
+      if ( row.querySelector(".table-row-id").innerText == ID ) {
+        row.querySelector('.table-row-service').innerText     = servicesForm.querySelector('#service').value;
+        row.querySelector('.table-row-price').innerText       = servicesForm.querySelector('#price').value;
+        row.querySelector('.table-row-description').innerText = servicesForm.querySelector('#description').value;
+        row.querySelector('.table-row-category').innerText    = servicesForm.querySelector('#category').value;
+
+        createFormBtn.style.display = 'inline-block';
+        updateFormBtn.style.display = 'none';
+        clearFormBtn.style.display  = 'none';
+        deleteFormBtn.style.display = 'none';
+      }
+    })
+
+    // FETCH
+    let requestData = {
+      action: "update",
+      id: ID,
+      service:      servicesForm.querySelector('#service').value,
+      price:        servicesForm.querySelector('#price').value,
+      description:  servicesForm.querySelector('#description').value,
+      category:     servicesForm.querySelector('#category').value,
+      nonce:        NONCE,
+    };
+
+    return fetch(URL, {
+      method:"post",
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(requestData).toString(),
+    })
   })
 })
