@@ -56,7 +56,7 @@ get_header();
                     <i class="fas fa-envelope fa-2x contact-icon"></i><span class="float-end badge contact-info text-wrap p-2">zooviki.office@gmail.com</span>
                 </li>
                 <li class="list-group-item ">
-                    <i class="fas fa-phone fa-2x contact-icon"></i><span class="float-end badge contact-info text-wrap p-2">0898 42 83 35 / 0878 93 99 96</span>
+                    <i class="fas fa-phone fa-2x contact-icon"></i><span class="float-end badge contact-info text-wrap p-2">0898 42 33 35 / 0878 93 99 96</span>
                 </li>
                 <li class="list-group-item ">
                     <i class="fa-solid fa-clock fa-2x contact-icon"></i><span class="float-end badge contact-info text-wrap p-2">Всеки ден - 9:30 - 19:30</span>
